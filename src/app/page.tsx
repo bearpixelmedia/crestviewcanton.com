@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Hero } from "@/components/Hero";
 import { PageShell } from "@/components/PageShell";
-import { YoutubeLiveBanner } from "@/components/YoutubeLiveBanner";
+import { HomeBanner } from "@/components/HomeBanner";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -77,7 +77,7 @@ const testimonials = [
 export default function HomePage() {
   return (
     <PageShell hero>
-      <YoutubeLiveBanner />
+      <HomeBanner />
       <Hero />
 
       <section className="relative overflow-hidden bg-paper">
