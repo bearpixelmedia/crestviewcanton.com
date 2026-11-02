@@ -1,8 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { ministryLinks, site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
+
+const ministryImages: Record<string, { src: string; alt: string }> = {
+  "/childrens-ministry": photos.kidsHeritage,
+  "/student-ministry": photos.youthHeritage,
+  "/adult-ministry": photos.seniors,
+  "/missions": photos.community,
+  "/serve": photos.kitchen,
+};
 
 export const metadata: Metadata = {
   title: "Ministries",
@@ -17,7 +28,14 @@ export default function MinistriesPage() {
         eyebrow="Ministries"
         title="Find a ministry that’s a perfect fit for you."
         lead="Ministry is our hands-on demonstration of Christ’s love to one another and to the community we serve. We offer many opportunities to get involved, and we’d love for you to join us."
+        image={photos.fellowship.src}
+        imageAlt={photos.fellowship.alt}
       />
+      <PhotoBand
+        src={photos.breakfast.src}
+        alt={photos.breakfast.alt}
+      />
+
 
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
@@ -56,24 +74,47 @@ export default function MinistriesPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="grid gap-10 sm:grid-cols-2">
-            {ministryLinks.map((item) => (
-              <article key={item.href} className="border-t border-pine/15 pt-6">
-                <h3 className="font-display text-2xl text-pine">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink/75">
-                  {item.body}
-                </p>
-                <Link
-                  href={item.href}
-                  className="mt-4 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
-                >
-                  Explore
-                </Link>
-              </article>
-            ))}
+            {ministryLinks.map((item) => {
+              const img = ministryImages[item.href];
+              return (
+                <article key={item.href} className="group">
+                  {img ? (
+                    <div className="relative mb-5 aspect-[16/10] overflow-hidden bg-fog">
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    </div>
+                  ) : null}
+                  <h3 className="font-display text-2xl text-pine">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink/75">
+                    {item.body}
+                  </p>
+                  <Link
+                    href={item.href}
+                    className="mt-4 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
+                  >
+                    Explore
+                  </Link>
+                </article>
+              );
+            })}
           </div>
 
-          <div className="mt-16 grid gap-10 border-t border-pine/10 pt-12 lg:grid-cols-2">
+          <div className="mt-16 grid gap-10 border-t border-pine/10 pt-12 lg:grid-cols-2 lg:items-start">
             <div>
+              <div className="relative mb-6 aspect-[16/10] overflow-hidden bg-fog">
+                <Image
+                  src={photos.seniors2.src}
+                  alt={photos.seniors2.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
               <h2 className="font-display text-2xl text-pine">
                 Men · Women · Senior Adults
               </h2>
@@ -99,6 +140,15 @@ export default function MinistriesPage() {
               </p>
             </div>
             <div>
+              <div className="relative mb-6 aspect-[16/10] overflow-hidden bg-fog">
+                <Image
+                  src={photos.worship.src}
+                  alt={photos.worship.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
               <h2 className="font-display text-2xl text-pine">
                 Worship &amp; Family
               </h2>

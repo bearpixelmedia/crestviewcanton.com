@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -62,6 +63,8 @@ export default function ServePage() {
         eyebrow="Serve / Volunteer"
         title="Ministry is love with work gloves on."
         lead="There are more ways than finances to help grow ministry, your time and gifts matter. We appreciate your willingness to serve."
+        image={photos.kitchen.src}
+        imageAlt={photos.kitchen.alt}
       />
 
       <section className="bg-fog">

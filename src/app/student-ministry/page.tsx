@@ -1,7 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,7 +20,14 @@ export default function StudentMinistryPage() {
         eyebrow="Crestview Youth"
         title="Hey guys, welcome!"
         lead="We’re glad you’re here. We hope this ministry is a place you can plug in and help us REACH the whole world with the gospel of Jesus Christ. We love worship, evangelism, missions, and having a great time as a group!"
+        image={photos.youthHeritage.src}
+        imageAlt={photos.youthHeritage.alt}
       />
+      <PhotoBand
+        src={photos.fellowship.src}
+        alt={photos.fellowship.alt}
+      />
+
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
@@ -49,7 +59,17 @@ export default function StudentMinistryPage() {
       </section>
 
       <section className="bg-fog">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="relative aspect-[4/5] overflow-hidden bg-paper">
+            <Image
+              src="/staff/jarred-rathbone.jpg"
+              alt="Jarred Rathbone, Youth Pastor"
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover object-top"
+            />
+          </div>
+          <div>
           <h2 className="font-display text-3xl text-pine">
             Meet Jarred Rathbone
           </h2>
@@ -75,6 +95,9 @@ export default function StudentMinistryPage() {
               crestviewyouth3258@gmail.com
             </a>
           </p>
+          </div>
+        </div>
+        <div className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
 
           <h3 className="mt-12 font-display text-2xl text-pine">
             Youth apparel

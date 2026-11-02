@@ -1,6 +1,8 @@
 import { PageHero } from "@/components/PageHero";
+import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,7 +18,14 @@ export default function GiveOnlinePage() {
         eyebrow="Give Online"
         title="Because of you, we get to reach more people for Jesus."
         lead="Thank you for everything you do! Because of you, we are blessed with opportunities to reach more people for Jesus. Below are ways you can contribute, and there are more ways than finances to help grow our ministry."
+        image={photos.fellowship.src}
+        imageAlt={photos.fellowship.alt}
       />
+      <PhotoBand
+        src={photos.breakfast.src}
+        alt={photos.breakfast.alt}
+      />
+
 
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">

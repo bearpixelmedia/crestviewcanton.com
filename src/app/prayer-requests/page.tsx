@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
+import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,7 +20,14 @@ export default function PrayerRequestsPage() {
         eyebrow="Prayer Requests"
         title="We would be honored to pray with you and for you."
         lead="Crestview as the body of Christ believes that God hears and answers prayer. Share a request with our church family and leadership, confidentially if you prefer."
+        image={photos.worship.src}
+        imageAlt={photos.worship.alt}
       />
+      <PhotoBand
+        src={photos.campus.src}
+        alt={photos.campus.alt}
+      />
+
 
       <section className="bg-paper">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-2">

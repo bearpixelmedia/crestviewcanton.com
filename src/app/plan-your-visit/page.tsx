@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,6 +19,8 @@ export default function PlanYourVisitPage() {
         eyebrow="Plan Your Visit"
         title="We’re saving you a seat."
         lead="Welcome! If you are looking for a church home or simply exploring faith, we would love for you to visit Crestview Baptist Church. Take a few moments to learn what to expect, then join us this Sunday."
+        image={photos.campus.src}
+        imageAlt={photos.campus.alt}
       />
 
       <section className="bg-paper">

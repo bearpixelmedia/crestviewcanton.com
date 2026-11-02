@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     "Glimpses of life and history at Crestview Baptist Church in Canton, NC.",
 };
 
-const photos = [
+const galleryPhotos = [
   {
     src: "/images/social/campus-entrance.jpg",
     alt: "Crestview Baptist Church entrance and sign",
@@ -96,12 +97,14 @@ export default function PhotoGalleryPage() {
         eyebrow="Photo Gallery"
         title="Glimpses of life at Crestview."
         lead="Explore moments from worship, ministries, and God’s faithfulness through the years, plus recent photos from Facebook and YouTube."
+        image={photos.fellowship.src}
+        imageAlt={photos.fellowship.alt}
       />
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {photos.map((p) => (
+            {galleryPhotos.map((p) => (
               <figure key={p.src} className="group">
                 <div className="relative aspect-[4/3] overflow-hidden bg-fog">
                   <Image

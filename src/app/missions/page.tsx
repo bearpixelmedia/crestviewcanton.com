@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,7 +27,14 @@ export default function MissionsPage() {
         eyebrow="Missions & Outreach"
         title="Here and to the nations."
         lead="We share the Gospel and extend Christ’s love to people in our community and around the world. Crestview partners in prayer, giving, and service so others can know Jesus."
+        image={photos.community.src}
+        imageAlt={photos.community.alt}
       />
+      <PhotoBand
+        src={photos.fellowship.src}
+        alt={photos.fellowship.alt}
+      />
+
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">

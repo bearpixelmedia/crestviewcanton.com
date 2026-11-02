@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -44,7 +46,14 @@ export default function MembershipPage() {
         eyebrow="Membership & Next Steps"
         title="Discover your place here."
         lead="If you are new to Crestview, returning after time away, or ready to take a next step in faith and belonging, we’d love to walk with you."
+        image={photos.campus.src}
+        imageAlt={photos.campus.alt}
       />
+      <PhotoBand
+        src={photos.breakfast.src}
+        alt={photos.breakfast.alt}
+      />
+
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">

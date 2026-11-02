@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { staff, site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,6 +19,8 @@ export default function AboutPage() {
         eyebrow="About Crestview"
         title="Get to know us before you visit."
         lead="Welcome! We’re glad you’re here. If you are looking for a church home or simply exploring faith, we would love for you to learn more about us, who we are, what we believe, and how you can connect with our church family."
+        image={photos.campus.src}
+        imageAlt={photos.campus.alt}
       />
 
       <section className="bg-paper">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -45,6 +46,8 @@ export default function AdultMinistryPage() {
         eyebrow="Adult Ministry & Small Groups"
         title="Grow in God’s Word, together."
         lead="Life Groups meet Sundays at 9:30 AM. Spiritual Formation University (SFU) offers discipling opportunities Sunday evenings at 6:00 PM for all ages."
+        image={photos.seniors.src}
+        imageAlt={photos.seniors.alt}
       />
 
       <section className="bg-paper">

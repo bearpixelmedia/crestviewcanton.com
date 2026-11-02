@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,6 +30,8 @@ export default function ChildrensMinistryPage() {
         eyebrow="Crestview Kids"
         title="Planting seeds for Jesus."
         lead="Thanks for visiting our Crestview Kids page! We love the little ones and we’re all in for helping children and families grow and learn about Jesus."
+        image={photos.kidsHeritage.src}
+        imageAlt={photos.kidsHeritage.alt}
       />
 
       <section className="bg-paper">

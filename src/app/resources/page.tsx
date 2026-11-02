@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
+import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,7 +19,14 @@ export default function ResourcesPage() {
         eyebrow="Resources"
         title="Tools to help you grow in Christ."
         lead="Explore discipleship opportunities, media, and ways to stay connected to Crestview’s teaching ministry."
+        image={photos.worship.src}
+        imageAlt={photos.worship.alt}
       />
+      <PhotoBand
+        src={photos.campus.src}
+        alt={photos.campus.alt}
+      />
+
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
