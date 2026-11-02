@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
+import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function SermonsMediaPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="https://www.facebook.com/"
+                  href={site.social.facebook}
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-sm bg-pine px-4 py-2.5 text-sm font-semibold text-fog hover:bg-canopy"
@@ -38,7 +39,7 @@ export default function SermonsMediaPage() {
                   Facebook Page
                 </a>
                 <a
-                  href="https://www.youtube.com/"
+                  href={site.social.youtube}
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-sm border border-pine/25 px-4 py-2.5 text-sm font-semibold text-pine hover:bg-fog"

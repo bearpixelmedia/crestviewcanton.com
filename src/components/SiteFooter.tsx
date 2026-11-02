@@ -74,6 +74,32 @@ export function SiteFooter() {
               </a>
             </li>
             <li>{site.address.full}</li>
+            <li className="flex flex-wrap gap-x-4 gap-y-1 pt-2">
+              <a
+                href={site.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-fog"
+              >
+                Facebook
+              </a>
+              <a
+                href={site.social.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-fog"
+              >
+                YouTube
+              </a>
+              <a
+                href={site.social.facebookKids}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-fog"
+              >
+                Kids on Facebook
+              </a>
+            </li>
           </ul>
         </div>
       </div>

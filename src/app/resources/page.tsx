@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
+import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -44,7 +45,25 @@ export default function ResourcesPage() {
             <article className="border-t border-pine/15 pt-6">
               <h2 className="font-display text-2xl text-pine">Sermons &amp; Media</h2>
               <p className="mt-3 text-sm leading-relaxed text-ink/75">
-                Watch or listen to Sunday messages on Facebook and YouTube.
+                Watch or listen to Sunday messages on{" "}
+                <a
+                  href={site.social.facebook}
+                  className="font-semibold text-canopy underline-offset-2 hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Facebook
+                </a>{" "}
+                and{" "}
+                <a
+                  href={site.social.youtube}
+                  className="font-semibold text-canopy underline-offset-2 hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  YouTube
+                </a>
+                .
               </p>
               <Link
                 href="/sermons-media"
@@ -52,6 +71,20 @@ export default function ResourcesPage() {
               >
                 Go to Sermons &amp; Media
               </Link>
+            </article>
+            <article className="border-t border-pine/15 pt-6">
+              <h2 className="font-display text-2xl text-pine">Crestview Kids</h2>
+              <p className="mt-3 text-sm leading-relaxed text-ink/75">
+                Follow children&apos;s ministry updates on Facebook.
+              </p>
+              <a
+                href={site.social.facebookKids}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
+              >
+                Crestview Kids on Facebook
+              </a>
             </article>
             <article className="border-t border-pine/15 pt-6">
               <h2 className="font-display text-2xl text-pine">Teachlife Radio</h2>

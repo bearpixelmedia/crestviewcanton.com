@@ -1,3 +1,4 @@
+import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
@@ -105,74 +106,9 @@ export default function ContactPage() {
           <div className="bg-fog px-6 py-8 sm:px-8">
             <h2 className="font-display text-2xl text-pine">Send a Message</h2>
             <p className="mt-2 text-sm text-ink/70">
-              We’ll respond as soon as we can. (Form is a local stub for now.)
+              We’ll respond as soon as we can.
             </p>
-            <form className="mt-6 space-y-4" action="#">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-canopy"
-                >
-                  Name
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full rounded-sm border border-pine/15 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-leaf/40"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-canopy"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full rounded-sm border border-pine/15 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-leaf/40"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-canopy"
-                >
-                  Phone
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  className="w-full rounded-sm border border-pine/15 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-leaf/40"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-canopy"
-                >
-                  How can we help?
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  className="w-full rounded-sm border border-pine/15 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-leaf/40"
-                />
-              </div>
-              <button
-                type="submit"
-                className="rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog hover:bg-canopy"
-              >
-                Send Message
-              </button>
-            </form>
+            <ContactForm intent="contact" className="mt-6" />
           </div>
         </div>
       </section>

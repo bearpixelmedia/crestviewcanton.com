@@ -32,8 +32,13 @@ export const site = {
     ],
   },
   social: {
-    facebook: "https://www.facebook.com/",
-    youtube: "https://www.youtube.com/",
+    /** Verified: facebook.com/crestviewcanton — address/phone match church NAP */
+    facebook: "https://www.facebook.com/crestviewcanton/",
+    /** Verified: live crestviewcanton.com embeds use this channel (@CrestviewCanton) */
+    youtube: "https://www.youtube.com/@CrestviewCanton",
+    youtubeChannelId: "UC_ohIdzlSH3I7DOdcUpqAEQ",
+    /** Verified kids ministry page */
+    facebookKids: "https://www.facebook.com/crestviewcantonkids/",
   },
   officeHours: "Monday–Friday, 9:00 AM – 6:00 PM",
 } as const;
@@ -98,13 +103,13 @@ export const staff = [
     name: "Tammie Beck",
     role: "Custodian",
     photo: "/staff/tammie-beck.jpg",
-    bio: "Tammie Beck serves as Crestview Baptist Church’s Custodian, keeping our facilities welcoming and ready for worship and ministry.",
+    bio: "Tammie Beck of Canton serves as Crestview Baptist Church’s Custodian, keeping our facilities welcoming and ready for worship and ministry. She and her husband, Eddie, serve Crestview’s campus together — Tammie indoors and Eddie on the grounds. TODO (office): tenure, prior work, and family details — searched Website/_new_sitemap/NEW-STAFF-BIOS.md, STAFF-PAGE.md, Elementor reference, and live crestviewcanton.com; no additional verified facts published yet.",
   },
   {
     slug: "eddie-beck",
     name: "Eddie Beck",
     role: "Lawn Management",
     photo: "/staff/eddie-beck.jpg",
-    bio: "Eddie Beck cares for the Crestview Baptist Church grounds — helping our property reflect the care we want for everyone who visits.",
+    bio: "Eddie Beck of Canton cares for the Crestview Baptist Church grounds as Lawn Management lead — helping our property reflect the care we want for everyone who visits. He serves alongside his wife, Tammie, who is Crestview’s Custodian. TODO (office): tenure, prior work, and family details — same sources as Tammie’s bio; church docs still mark these as pending Sharon / Pastor Dan input.",
   },
 ] as const;

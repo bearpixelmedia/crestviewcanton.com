@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
@@ -80,29 +80,45 @@ export default function PlanYourVisitPage() {
             </div>
           </div>
 
-          <div className="mt-16 border-t border-pine/10 pt-10">
-            <h2 className="font-display text-3xl text-pine">Find Us</h2>
-            <p className="mt-3 text-ink/75">
-              {site.address.full}
-              <br />
-              <a href={`tel:${site.phoneTel}`} className="font-semibold text-canopy">
-                {site.phone}
-              </a>{" "}
-              ·{" "}
-              <a href={`mailto:${site.email}`} className="font-semibold text-canopy">
-                {site.email}
-              </a>
-            </p>
-            <p className="mt-8 text-ink/80">
-              Join us this Sunday — Morning Worship begins at 10:45 AM. Life
-              Groups meet at 9:30 AM. There&apos;s a place here for you.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex rounded-sm bg-dawn px-5 py-3 text-sm font-semibold text-forest"
-            >
-              Contact Us
-            </Link>
+          <div className="mt-16 grid gap-12 border-t border-pine/10 pt-10 lg:grid-cols-2">
+            <div>
+              <h2 className="font-display text-3xl text-pine">Find Us</h2>
+              <p className="mt-3 text-ink/75">
+                {site.address.full}
+                <br />
+                <a
+                  href={`tel:${site.phoneTel}`}
+                  className="font-semibold text-canopy"
+                >
+                  {site.phone}
+                </a>{" "}
+                ·{" "}
+                <a
+                  href={`mailto:${site.email}`}
+                  className="font-semibold text-canopy"
+                >
+                  {site.email}
+                </a>
+              </p>
+              <p className="mt-8 text-ink/80">
+                Join us this Sunday — Morning Worship begins at 10:45 AM. Life
+                Groups meet at 9:30 AM. There&apos;s a place here for you.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-display text-3xl text-pine">
+                Tell us you&apos;re coming
+              </h2>
+              <p className="mt-3 text-sm text-ink/70">
+                Optional — drop a note so we can greet you and help with kids
+                check-in.
+              </p>
+              <ContactForm
+                intent="visit"
+                submitLabel="Send visit note"
+                className="mt-6"
+              />
+            </div>
           </div>
         </div>
       </section>

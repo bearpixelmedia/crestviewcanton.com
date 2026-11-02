@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
 import { Hero } from "@/components/Hero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
@@ -218,25 +219,12 @@ export default function HomePage() {
               messages from our church family. We’re excited to walk this
               journey of faith together with you!
             </p>
-            <form className="mt-8 flex max-w-md flex-col gap-3 sm:flex-row" action="#">
-              <label className="sr-only" htmlFor="home-email">
-                Email
-              </label>
-              <input
-                id="home-email"
-                type="email"
-                name="email"
-                required
-                placeholder="Your email"
-                className="min-w-0 flex-1 rounded-sm border border-pine/20 bg-white px-4 py-3 text-sm outline-none ring-leaf/40 focus:ring-2"
-              />
-              <button
-                type="submit"
-                className="rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog hover:bg-canopy"
-              >
-                Join Us
-              </button>
-            </form>
+            <ContactForm
+              intent="newsletter"
+              fields={["email", "message"]}
+              submitLabel="Join Us"
+              className="mt-8 max-w-md"
+            />
             <p className="mt-3 text-xs text-ink/50">
               By clicking Join Us, you’re choosing to stay connected with our
               community.
