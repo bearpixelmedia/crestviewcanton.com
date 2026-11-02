@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Client content reference (not part of Next app)
+.DS_Store
+Website/
+CONTENT.docx

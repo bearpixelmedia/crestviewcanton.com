@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Crestview Baptist Church
 
-## Getting Started
+Custom website for **Crestview Baptist Church** (Canton, NC) — built outside WordPress/Elementor.
 
-First, run the development server:
+**Stack** (matched to today’s sibling builds — especially [Paul’s Pallet Walls](https://github.com/bearpixelmedia/pauls-pallet-walls)):
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS v4
+- Deploy target: Vercel
+
+**Copy source:** Elementor reference [ilwoltux.elementor.cloud](https://ilwoltux.elementor.cloud/) for headings, body, and nav labels. Layout and visual design are original (not a recreation of the Elementor look). Contact/schedule details use church content from `Website/`.
+
+## Local preview
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Path | Purpose |
+|------|---------|
+| `/` | Home |
+| `/our-beliefs` | Our Beliefs |
+| `/sermons-media` | Sermons & Media |
+| `/give-online` | Give Online (MyVanco) |
+| `/resources` | Resources |
+| `/frequently-asked-questions` | FAQ |
+| `/plan-your-visit` | Plan Your Visit |
+| `/about` | About Crestview |
+| `/our-staff` | Our Staff (incl. Dr. Daniel Page) |
+| `/contact` | Contact |
 
-## Learn More
+## Notes
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Giving link: `https://secure.myvanco.com/L-ZB2Z/home`
+- Office: 3258 Pisgah Drive, Canton, NC 28716 · (828) 648-1110
+- Reference content retained in `Website/` and `CONTENT.docx` (gitignored from the app package)
