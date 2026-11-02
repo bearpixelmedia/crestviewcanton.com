@@ -30,8 +30,6 @@ export default function ChildrensMinistryPage() {
         eyebrow="Crestview Kids"
         title="Planting seeds for Jesus."
         lead="Thanks for visiting our Crestview Kids page! We love the little ones and we’re all in for helping children and families grow and learn about Jesus."
-        image={photos.kidsHeritage.src}
-        imageAlt={photos.kidsHeritage.alt}
       />
 
       <section className="bg-paper">
@@ -61,8 +59,8 @@ export default function ChildrensMinistryPage() {
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden bg-fog">
             <Image
-              src={photos.breakfast.src}
-              alt={photos.breakfast.alt}
+              src={photos.kidsHeritage.src}
+              alt={photos.kidsHeritage.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

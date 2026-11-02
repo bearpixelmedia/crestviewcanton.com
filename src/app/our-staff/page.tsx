@@ -2,7 +2,6 @@ import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { staff } from "@/lib/site";
-import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,11 +17,9 @@ export default function OurStaffPage() {
         eyebrow="Our Leadership Team"
         title="Meet our team of Christ followers."
         lead="We are blessed to have an amazing leadership team. Our staff is a dedicated group of Christ followers who are excited to connect with you!"
-        image={photos.pastor.src}
-        imageAlt={photos.pastor.alt}
       />
 
-<section className="bg-paper">
+      <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="space-y-16">
             {staff.map((person, index) => {

@@ -1,18 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { ministryLinks, site } from "@/lib/site";
-import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
-
-const ministryImages: Record<string, { src: string; alt: string }> = {
-  "/childrens-ministry": photos.kidsHeritage,
-  "/student-ministry": photos.youthHeritage,
-  "/adult-ministry": photos.seniors,
-  "/missions": photos.community,
-  "/serve": photos.kitchen,
-};
 
 export const metadata: Metadata = {
   title: "Ministries",
@@ -27,16 +17,14 @@ export default function MinistriesPage() {
         eyebrow="Ministries"
         title="Find a ministry that’s a perfect fit for you."
         lead="Ministry is our hands-on demonstration of Christ’s love to one another and to the community we serve. We offer many opportunities to get involved, and we’d love for you to join us."
-        image={photos.fellowship.src}
-        imageAlt={photos.fellowship.alt}
       />
 
-<section className="bg-paper">
-        <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
-          <blockquote className="border-l-2 border-gold pl-5 font-display text-xl text-canopy">
+      <section className="bg-paper">
+        <div className="mx-auto max-w-3xl px-5 py-20 sm:px-8">
+          <blockquote className="border-l-2 border-gold pl-6 font-display text-2xl leading-snug text-canopy">
             “…love one another; as I have loved you… By this all will know that
             you are My disciples, if you have love for one another.”
-            <cite className="mt-2 block font-sans text-sm not-italic text-ink/60">
+            <cite className="mt-4 block font-sans text-sm not-italic tracking-wide text-ink/55">
               John 13:34–35
             </cite>
           </blockquote>
@@ -44,21 +32,21 @@ export default function MinistriesPage() {
       </section>
 
       <section className="bg-fog">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <h2 className="font-display text-3xl text-pine">
-            Featured: Life Groups
-          </h2>
-          <p className="mt-2 text-sm font-semibold uppercase tracking-[0.14em] text-leaf">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
             Sunday School · 9:30 AM
           </p>
-          <p className="mt-4 max-w-2xl text-ink/80 leading-relaxed">
+          <h2 className="mt-4 font-display text-[clamp(1.85rem,3.5vw,2.5rem)] leading-[1.08] tracking-[-0.02em] text-pine">
+            Featured: Life Groups
+          </h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink/75">
             Whatever your age, we have a class for you. Enter the main doors into
             the welcome center and greeters can help you find a class. Life
             Groups Director, Josh Jamison.
           </p>
           <Link
             href="/adult-ministry"
-            className="mt-6 inline-flex text-sm font-semibold text-canopy underline-offset-2 hover:underline"
+            className="mt-8 inline-flex text-sm font-semibold text-canopy underline-offset-4 hover:underline"
           >
             See Adult Ministry &amp; Small Groups
           </Link>
@@ -66,53 +54,32 @@ export default function MinistriesPage() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <div className="grid gap-10 sm:grid-cols-2">
-            {ministryLinks.map((item) => {
-              const img = ministryImages[item.href];
-              return (
-                <article key={item.href} className="group">
-                  {img ? (
-                    <div className="relative mb-5 aspect-[16/10] w-full overflow-hidden bg-fog">
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        sizes="(max-width: 640px) 100vw, 50vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                    </div>
-                  ) : null}
-                  <h3 className="font-display text-2xl text-pine">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-ink/75">
-                    {item.body}
-                  </p>
-                  <Link
-                    href={item.href}
-                    className="mt-4 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
-                  >
-                    Explore
-                  </Link>
-                </article>
-              );
-            })}
+        <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+          <div className="grid gap-x-12 gap-y-14 sm:grid-cols-2">
+            {ministryLinks.map((item) => (
+              <article key={item.href} className="border-t border-pine/12 pt-7">
+                <h3 className="font-display text-[1.65rem] leading-snug text-pine">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink/70">
+                  {item.body}
+                </p>
+                <Link
+                  href={item.href}
+                  className="mt-5 inline-flex text-sm font-semibold text-dawn-deep transition-colors hover:text-canopy"
+                >
+                  Explore
+                </Link>
+              </article>
+            ))}
           </div>
 
-          <div className="mt-16 grid gap-10 border-t border-pine/10 pt-12 lg:grid-cols-2 lg:items-start">
+          <div className="mt-20 grid gap-14 border-t border-pine/10 pt-16 lg:grid-cols-2">
             <div>
-              <div className="relative mb-6 aspect-[16/10] overflow-hidden bg-fog">
-                <Image
-                  src={photos.seniors2.src}
-                  alt={photos.seniors2.alt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
               <h2 className="font-display text-2xl text-pine">
                 Men · Women · Senior Adults
               </h2>
-              <ul className="mt-4 space-y-3 text-sm text-ink/80">
+              <ul className="mt-5 space-y-4 text-sm leading-relaxed text-ink/75">
                 <li>
                   <strong className="text-canopy">Men’s Ministry</strong>{" "}
                   (God’s Mighty Warriors), Developing men to grow in Christ and
@@ -129,24 +96,15 @@ export default function MinistriesPage() {
                   Hearts), Regular fellowship and luncheons.
                 </li>
               </ul>
-              <p className="mt-4 text-sm text-ink/65">
+              <p className="mt-5 text-sm text-ink/55">
                 {site.phone} · {site.email}
               </p>
             </div>
             <div>
-              <div className="relative mb-6 aspect-[16/10] overflow-hidden bg-fog">
-                <Image
-                  src={photos.worship.src}
-                  alt={photos.worship.alt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
               <h2 className="font-display text-2xl text-pine">
                 Worship &amp; Family
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-ink/80">
+              <p className="mt-5 text-sm leading-relaxed text-ink/75">
                 Crestview Worship exists to lead worshippers into authentic
                 worship through music, prayer, and technology. Interested in
                 serving through music or production? Contact Anita about
@@ -159,7 +117,7 @@ export default function MinistriesPage() {
                 </a>
                 .
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-ink/80">
+              <p className="mt-4 text-sm leading-relaxed text-ink/75">
                 Family Ministry includes God’s Kidz, Children’s Choir, and
                 seasonal activities.
               </p>
@@ -169,13 +127,13 @@ export default function MinistriesPage() {
           <div className="mt-16 flex flex-wrap gap-3">
             <Link
               href="/serve"
-              className="rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog hover:bg-canopy"
+              className="rounded-sm bg-pine px-6 py-3.5 text-sm font-semibold text-fog transition-colors hover:bg-canopy"
             >
               Serve / Volunteer
             </Link>
             <Link
               href="/contact"
-              className="rounded-sm border border-pine/25 px-5 py-3 text-sm font-semibold text-pine hover:bg-fog"
+              className="rounded-sm border border-pine/25 px-6 py-3.5 text-sm font-semibold text-pine transition-colors hover:bg-fog"
             >
               Contact Us
             </Link>

@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
-import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
+import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -63,16 +63,14 @@ export default function ServePage() {
         eyebrow="Serve / Volunteer"
         title="Ministry is love with work gloves on."
         lead="There are more ways than finances to help grow ministry, your time and gifts matter. We appreciate your willingness to serve."
-        image={photos.kitchen.src}
-        imageAlt={photos.kitchen.alt}
       />
 
       <section className="bg-fog">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-2 sm:px-8 lg:items-center">
           <div className="relative aspect-[4/3] w-full overflow-hidden bg-fog">
             <Image
-              src="/images/social/fb-serve-5.jpg"
-              alt="Crestview members gathered in fellowship while serving together"
+              src={photos.community.src}
+              alt={photos.community.alt}
               fill
               sizes="(max-width: 640px) 100vw, 50vw"
               className="object-cover"

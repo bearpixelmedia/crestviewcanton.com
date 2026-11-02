@@ -2,7 +2,6 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
-import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,11 +36,9 @@ export default function OurBeliefsPage() {
         eyebrow="Our Beliefs"
         title="Who We Are"
         lead="Welcome to our church! We are a Southern Baptist community in Canton, North Carolina, committed to helping everyone know Jesus Christ. Our mission is to guide you in growing your faith, connecting with fellow believers, and encouraging you to serve others."
-        image={photos.worship.src}
-        imageAlt={photos.worship.alt}
       />
 
-<section className="bg-paper">
+      <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
           <h2 className="font-display text-3xl text-pine">
             Our Core Beliefs and Principles

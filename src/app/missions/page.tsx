@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
-import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
+import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,12 +27,19 @@ export default function MissionsPage() {
         eyebrow="Missions & Outreach"
         title="Here and to the nations."
         lead="We share the Gospel and extend Christ’s love to people in our community and around the world. Crestview partners in prayer, giving, and service so others can know Jesus."
-        image={photos.community.src}
-        imageAlt={photos.community.alt}
       />
 
-<section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+      <section className="bg-paper">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+          <div className="relative mb-12 aspect-[16/9] w-full overflow-hidden bg-fog">
+            <Image
+              src={photos.mission.src}
+              alt={photos.mission.alt}
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
           <p className="text-sm text-ink/70">
             Outreach Coordinators, Jason &amp; Holly Haley ·{" "}
             <a

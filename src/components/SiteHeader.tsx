@@ -18,22 +18,22 @@ export function SiteHeader({ variant }: Props) {
   const [open, setOpen] = useState(false);
 
   const linkClass = isHero
-    ? "transition-colors hover:text-fog"
-    : "text-ink/70 transition-colors hover:text-pine";
+    ? "text-[0.8125rem] tracking-wide transition-colors hover:text-fog"
+    : "text-[0.8125rem] tracking-wide text-ink/65 transition-colors hover:text-pine";
 
   return (
     <header
       className={
         isHero
           ? "absolute inset-x-0 z-30 top-[var(--yt-live-banner,0px)]"
-          : "sticky z-30 border-b border-pine/10 bg-paper/95 backdrop-blur-md top-[var(--yt-live-banner,0px)]"
+          : "sticky z-30 border-b border-pine/8 bg-paper/90 backdrop-blur-md top-[var(--yt-live-banner,0px)]"
       }
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
         <BrandLogo tone={isHero ? "hero" : "solid"} />
 
         <nav
-          className={`hidden items-center gap-6 text-sm lg:flex ${
+          className={`hidden items-center gap-7 lg:flex ${
             isHero ? "text-mist/90" : ""
           }`}
         >
@@ -46,8 +46,8 @@ export function SiteHeader({ variant }: Props) {
             href="/plan-your-visit"
             className={
               isHero
-                ? "rounded-sm bg-dawn px-3.5 py-2 font-semibold text-forest transition-colors hover:bg-dawn-deep hover:text-fog"
-                : "rounded-sm bg-pine px-3.5 py-2 font-semibold text-fog transition-colors hover:bg-canopy"
+                ? "rounded-sm bg-dawn px-4 py-2.5 text-[0.8125rem] font-semibold tracking-wide text-forest transition-colors hover:bg-dawn-deep hover:text-fog"
+                : "rounded-sm bg-pine px-4 py-2.5 text-[0.8125rem] font-semibold tracking-wide text-fog transition-colors hover:bg-canopy"
             }
           >
             Plan Your Visit
@@ -72,15 +72,15 @@ export function SiteHeader({ variant }: Props) {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-white/10 bg-pine px-5 py-4 lg:hidden"
+          className="border-t border-white/10 bg-pine px-5 py-5 lg:hidden"
         >
-          <nav className="flex flex-col gap-3 text-fog">
+          <nav className="flex flex-col gap-3.5 text-fog">
             {primaryNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-1 text-base"
+                className="py-1 text-base tracking-wide"
               >
                 {item.label}
               </Link>
@@ -88,7 +88,7 @@ export function SiteHeader({ variant }: Props) {
             <Link
               href="/plan-your-visit"
               onClick={() => setOpen(false)}
-              className="mt-1 inline-flex w-fit rounded-sm bg-dawn px-3.5 py-2 text-sm font-semibold text-forest"
+              className="mt-1 inline-flex w-fit rounded-sm bg-dawn px-4 py-2.5 text-sm font-semibold text-forest"
             >
               Plan Your Visit
             </Link>
@@ -104,7 +104,7 @@ export function SiteHeader({ variant }: Props) {
                   {item.label}
                 </Link>
               ))}
-            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-gold-soft">
+            <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gold-soft">
               More
             </p>
             {moreNav.map((item) => (

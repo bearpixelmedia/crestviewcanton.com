@@ -19,8 +19,6 @@ export default function AboutPage() {
         eyebrow="About Crestview"
         title="Get to know us before you visit."
         lead="Welcome! We’re glad you’re here. If you are looking for a church home or simply exploring faith, we would love for you to learn more about us, who we are, what we believe, and how you can connect with our church family."
-        image={photos.campus.src}
-        imageAlt={photos.campus.alt}
       />
 
       <section className="bg-paper">
@@ -43,8 +41,8 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] h-full min-h-[280px] overflow-hidden bg-fog sm:min-h-[340px]">
               <Image
-                src={photos.fellowship.src}
-                alt={photos.fellowship.alt}
+                src={photos.history.src}
+                alt={photos.history.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

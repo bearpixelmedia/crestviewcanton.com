@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
-import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
+import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -46,8 +46,6 @@ export default function AdultMinistryPage() {
         eyebrow="Adult Ministry & Small Groups"
         title="Grow in God’s Word, together."
         lead="Life Groups meet Sundays at 9:30 AM. Spiritual Formation University (SFU) offers discipling opportunities Sunday evenings at 6:00 PM for all ages."
-        image={photos.seniors.src}
-        imageAlt={photos.seniors.alt}
       />
 
       <section className="bg-paper">
@@ -130,8 +128,8 @@ export default function AdultMinistryPage() {
         <div className="mx-auto grid max-w-6xl gap-4 px-5 pb-16 sm:grid-cols-2 sm:px-8">
           <div className="relative aspect-[16/10] w-full overflow-hidden bg-fog">
             <Image
-              src="/images/ministries/senior-adults.jpg"
-              alt="Joyful Hearts senior adults"
+              src={photos.seniors.src}
+              alt={photos.seniors.alt}
               fill
               sizes="(max-width: 640px) 100vw, 50vw"
               className="object-cover"
@@ -139,8 +137,8 @@ export default function AdultMinistryPage() {
           </div>
           <div className="relative aspect-[16/10] w-full overflow-hidden bg-fog">
             <Image
-              src="/images/ministries/senior-adults-2.jpg"
-              alt="Crestview senior adult fellowship"
+              src={photos.seniors2.src}
+              alt={photos.seniors2.alt}
               fill
               sizes="(max-width: 640px) 100vw, 50vw"
               className="object-cover"

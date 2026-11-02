@@ -2,7 +2,6 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
-import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,11 +17,9 @@ export default function EventsPage() {
         eyebrow="Events Calendar"
         title="Come see what God is doing."
         lead="Here’s a snapshot of regular gatherings at Crestview. For dated special events, check the church bulletin, Happenings updates, and announcements."
-        image={photos.breakfast.src}
-        imageAlt={photos.breakfast.alt}
       />
 
-<section className="bg-paper">
+      <section className="bg-paper">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-2">
           <div>
             <h2 className="font-display text-2xl text-pine">Sunday</h2>

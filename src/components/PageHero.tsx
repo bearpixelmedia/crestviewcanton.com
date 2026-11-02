@@ -19,8 +19,10 @@ export function PageHero({
 }: Props) {
   return (
     <section
-      className={`relative overflow-hidden bg-pine text-fog ${
-        image ? "min-h-[42vh] sm:min-h-[48vh]" : ""
+      className={`relative overflow-hidden text-fog ${
+        image
+          ? "min-h-[44vh] bg-pine sm:min-h-[50vh]"
+          : "bg-gradient-to-br from-forest via-pine to-canopy"
       }`}
     >
       {image ? (
@@ -34,15 +36,19 @@ export function PageHero({
             className="object-cover"
             style={{ objectPosition: imagePosition }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/88 to-forest/55" />
-          <div className="absolute inset-0 bg-gradient-to-t from-forest/92 via-forest/25 to-forest/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/88 to-forest/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-forest/45" />
         </div>
       ) : (
         <>
-          <div aria-hidden className="absolute inset-0 ridge opacity-80" />
+          <div aria-hidden className="absolute inset-0 ridge opacity-90" />
           <div
             aria-hidden
-            className="absolute -right-24 top-10 h-64 w-64 rounded-full bg-gold/10 blur-3xl"
+            className="absolute -right-20 top-0 h-[70%] w-[55%] rounded-full bg-gold/8 blur-3xl"
+          />
+          <div
+            aria-hidden
+            className="absolute -left-16 bottom-0 h-48 w-48 rounded-full bg-dawn/10 blur-3xl"
           />
         </>
       )}
@@ -50,16 +56,16 @@ export function PageHero({
         aria-hidden
         className="absolute inset-0 grain opacity-[0.1] mix-blend-overlay"
       />
-      <div className="relative z-10 mx-auto flex min-h-[inherit] max-w-6xl flex-col justify-end px-5 pb-14 pt-28 sm:px-8 sm:pb-16 sm:pt-32">
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col justify-end px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-36">
         {eyebrow ? (
-          <p className="animate-soft-in text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft">
+          <p className="animate-soft-in text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-gold-soft">
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="animate-rise mt-3 max-w-3xl font-display text-[clamp(2.2rem,5vw,3.75rem)] leading-[1.05] tracking-tight text-fog">
+        <h1 className="animate-rise mt-4 max-w-[18ch] font-display text-[clamp(2.35rem,5.2vw,3.9rem)] leading-[1.02] tracking-[-0.02em] text-fog">
           {title}
         </h1>
-        <p className="animate-rise-delay-1 mt-5 max-w-2xl text-base leading-relaxed text-mist/90 sm:text-lg">
+        <p className="animate-rise-delay-1 mt-6 max-w-xl text-[1.05rem] leading-relaxed text-mist/90 sm:text-lg">
           {lead}
         </p>
       </div>

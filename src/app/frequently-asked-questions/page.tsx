@@ -2,7 +2,6 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
-import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -36,11 +35,9 @@ export default function FaqPage() {
         eyebrow="FAQ"
         title="Common questions about visiting Crestview."
         lead="New here? These answers cover the basics. Still curious? We’d love to talk."
-        image={photos.campus.src}
-        imageAlt={photos.campus.alt}
       />
 
-<section className="bg-paper">
+      <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
           <div className="space-y-8">
             {faqs.map((item) => (

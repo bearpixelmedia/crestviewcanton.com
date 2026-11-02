@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
-import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
+import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,12 +19,19 @@ export default function SermonsMediaPage() {
         eyebrow="Sermons & Media"
         title="Miss us on Sunday? Give us a listen here."
         lead="This page features Sunday morning sermons and messages from Crestview. Need encouragement on the road? Share last week’s sermon with a friend."
-        image={photos.worship.src}
-        imageAlt={photos.worship.alt}
       />
 
-<section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+      <section className="bg-paper">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+          <div className="relative mb-14 aspect-[21/9] w-full overflow-hidden bg-fog">
+            <Image
+              src={photos.worship.src}
+              alt={photos.worship.alt}
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <h2 className="font-display text-3xl text-pine">Watch Live</h2>

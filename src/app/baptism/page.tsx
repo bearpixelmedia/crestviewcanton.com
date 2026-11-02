@@ -2,7 +2,6 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
-import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,11 +17,9 @@ export default function BaptismPage() {
         eyebrow="Baptism"
         title="Begin your public journey of faith."
         lead="Baptism is one of two ordinances Jesus gave His church. At Crestview, baptism is the immersion of believers in water, signifying union with Christ and with His church."
-        image={photos.worship.src}
-        imageAlt={photos.worship.alt}
       />
 
-<section className="bg-paper">
+      <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
           <h2 className="font-display text-3xl text-pine">
             What baptism means

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
-import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,11 +17,9 @@ export default function NewsPage() {
         eyebrow="News & Announcements"
         title="Stay connected with Crestview."
         lead="Dated campaigns and one-off announcements change week to week. For the latest, check the Sunday bulletin, Facebook, and Church Center, then reach out to the office if you have something to share."
-        image={photos.fellowship.src}
-        imageAlt={photos.fellowship.alt}
       />
 
-<section className="bg-paper">
+      <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="grid gap-10 sm:grid-cols-2">
             <article className="border-t border-pine/15 pt-6">

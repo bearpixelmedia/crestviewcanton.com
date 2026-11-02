@@ -1,9 +1,7 @@
-import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
-import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,8 +17,6 @@ export default function PlanYourVisitPage() {
         eyebrow="Plan Your Visit"
         title="We’re saving you a seat."
         lead="Welcome! If you are looking for a church home or simply exploring faith, we would love for you to visit Crestview Baptist Church. Take a few moments to learn what to expect, then join us this Sunday."
-        image={photos.campus.src}
-        imageAlt={photos.campus.alt}
       />
 
       <section className="bg-paper">
@@ -86,15 +82,6 @@ export default function PlanYourVisitPage() {
 
           <div className="mt-16 grid gap-12 border-t border-pine/10 pt-10 lg:grid-cols-2">
             <div>
-              <div className="relative mb-8 aspect-[16/10] w-full overflow-hidden bg-fog">
-                <Image
-                  src={photos.breakfast.src}
-                  alt={photos.breakfast.alt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
               <h2 className="font-display text-3xl text-pine">Find Us</h2>
               <p className="mt-3 text-ink/75">
                 {site.address.full}

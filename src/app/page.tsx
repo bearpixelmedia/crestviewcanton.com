@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Hero } from "@/components/Hero";
 import { PageShell } from "@/components/PageShell";
 import { HomeBanner } from "@/components/HomeBanner";
+import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -55,19 +56,19 @@ const pathways = [
 
 const lifePhotos = [
   {
-    src: "/images/social/campus-entrance.jpg",
-    alt: "Crestview Baptist Church entrance and roadside sign",
-    caption: "Home on Pisgah Drive",
-  },
-  {
-    src: "/images/social/fb-serve-5.jpg",
-    alt: "Men gathering for fellowship and breakfast at Crestview",
-    caption: "Fellowship around the table",
-  },
-  {
-    src: "/images/social/fb-serve-2.jpg",
-    alt: "Church breakfast buffet during a Crestview gathering",
+    src: photos.breakfast.src,
+    alt: photos.breakfast.alt,
     caption: "Shared meals, shared life",
+  },
+  {
+    src: photos.buffet.src,
+    alt: photos.buffet.alt,
+    caption: "Gathered around the table",
+  },
+  {
+    src: photos.kitchen.src,
+    alt: photos.kitchen.alt,
+    caption: "Serving with glad hearts",
   },
 ] as const;
 
@@ -79,12 +80,12 @@ export default function HomePage() {
 
       <section className="relative overflow-hidden bg-paper">
         <div aria-hidden className="absolute inset-0 ridge" />
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:grid-cols-2 sm:px-8 lg:gap-16 lg:items-center">
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:grid-cols-2 sm:px-8 lg:gap-20 lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-leaf">
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
               Find Your Community
             </p>
-            <h2 className="mt-3 font-display text-3xl leading-tight text-pine sm:text-4xl">
+            <h2 className="mt-4 font-display text-[clamp(2rem,4vw,2.75rem)] leading-[1.08] tracking-[-0.02em] text-pine">
               Our Mission and Values
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink/80">
@@ -107,10 +108,10 @@ export default function HomePage() {
               Explore Our Beliefs
             </Link>
           </div>
-          <div className="relative aspect-[4/3] w-full overflow-hidden bg-fog sm:aspect-auto sm:min-h-[400px] sm:h-full">
+          <div className="relative aspect-[4/3] w-full overflow-hidden bg-fog sm:aspect-auto sm:h-full sm:min-h-[400px]">
             <Image
-              src="/images/social/fb-serve-5.jpg"
-              alt="Crestview church family gathered in fellowship"
+              src={photos.fellowship.src}
+              alt={photos.fellowship.alt}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
@@ -121,26 +122,28 @@ export default function HomePage() {
       </section>
 
       <section className="bg-fog">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+        <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
           <div className="max-w-2xl">
-            <h2 className="font-display text-3xl text-pine sm:text-4xl">
+            <h2 className="font-display text-[clamp(2rem,4vw,2.75rem)] leading-[1.08] tracking-[-0.02em] text-pine">
               Ways to grow with us
             </h2>
-            <p className="mt-3 text-ink/75">
+            <p className="mt-4 text-base leading-relaxed text-ink/70">
               From gathered worship to serving neighbors, there’s a place for you
               at Crestview.
             </p>
           </div>
-          <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-x-12 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {pathways.map((item) => (
-              <div key={item.title} className="border-t border-pine/15 pt-6">
-                <h3 className="font-display text-2xl text-pine">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink/75">
+              <div key={item.title} className="border-t border-pine/12 pt-7">
+                <h3 className="font-display text-[1.65rem] leading-snug text-pine">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink/70">
                   {item.body}
                 </p>
                 <Link
                   href={item.href}
-                  className="mt-4 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
+                  className="mt-5 inline-flex text-sm font-semibold text-dawn-deep transition-colors hover:text-canopy"
                 >
                   {item.cta}
                 </Link>
@@ -155,25 +158,25 @@ export default function HomePage() {
           aria-hidden
           className="absolute inset-0 grain opacity-[0.12] mix-blend-overlay"
         />
-        <div className="relative mx-auto max-w-3xl px-5 py-20 text-center sm:px-8">
-          <h2 className="font-display text-3xl sm:text-4xl">
+        <div className="relative mx-auto max-w-2xl px-5 py-24 text-center sm:px-8">
+          <h2 className="font-display text-[clamp(2rem,4vw,2.85rem)] leading-[1.08] tracking-[-0.02em]">
             Join Us This Sunday for Worship
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-mist/90">
+          <p className="mt-5 text-base leading-relaxed text-mist/90">
             Experience inspiring worship and uplifting fellowship with us.
             Whether you’re seeking answers or a community, we’re here to welcome
             you into a place of hope and encouragement.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/plan-your-visit"
-              className="inline-flex rounded-sm bg-dawn px-5 py-3 text-sm font-semibold text-forest hover:bg-dawn-deep hover:text-fog"
+              className="inline-flex rounded-sm bg-dawn px-6 py-3.5 text-sm font-semibold text-forest transition-transform hover:translate-y-[-1px] hover:bg-dawn-deep hover:text-fog"
             >
               Plan Your Visit
             </Link>
             <Link
               href="/about"
-              className="inline-flex rounded-sm border border-mist/40 px-5 py-3 text-sm font-medium text-fog hover:bg-white/5"
+              className="inline-flex rounded-sm border border-mist/40 px-6 py-3.5 text-sm font-medium text-fog transition-colors hover:bg-white/5"
             >
               Learn More
             </Link>
@@ -182,16 +185,16 @@ export default function HomePage() {
       </section>
 
       <section className="bg-pine text-fog">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft">
+        <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-gold-soft">
             Life at Crestview
           </p>
-          <h2 className="mt-3 max-w-2xl font-display text-3xl sm:text-4xl">
+          <h2 className="mt-4 max-w-2xl font-display text-[clamp(2rem,4vw,2.75rem)] leading-[1.08] tracking-[-0.02em]">
             Real moments from our church family
           </h2>
           <p className="mt-4 max-w-xl text-mist/80">
-            Photos from our Facebook and YouTube community, worship at home,
-            fellowship around the table, and serving neighbors together.
+            Photos from our Facebook community: fellowship around the table and
+            serving neighbors together.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
             {lifePhotos.map((p) => (
