@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
-import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -46,22 +45,17 @@ export default function ContactPage() {
         image={photos.campus.src}
         imageAlt={photos.campus.alt}
       />
-      <PhotoBand
-        src={photos.fellowship.src}
-        alt={photos.fellowship.alt}
-      />
 
-
-      <section className="bg-paper">
+<section className="bg-paper">
         <div className="mx-auto grid max-w-6xl gap-14 px-5 py-16 sm:px-8 lg:grid-cols-2">
           <div>
-            <div className="relative mb-8 aspect-[16/10] overflow-hidden bg-fog">
+            <div className="relative mb-8 aspect-[16/10] w-full overflow-hidden bg-fog">
               <Image
-                src={photos.campus.src}
-                alt={photos.campus.alt}
+                src={photos.fellowship.src}
+                alt={photos.fellowship.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-[center_40%]"
+                className="object-cover"
               />
             </div>
             <h2 className="font-display text-3xl text-pine">Church Office</h2>

@@ -8,7 +8,7 @@ type Props = {
   className?: string;
 };
 
-/** Full-bleed photo strip for interior pages. */
+/** Full-bleed photo strip for mid-page use (not under PageHero). */
 export function PhotoBand({
   src,
   alt,
@@ -17,8 +17,8 @@ export function PhotoBand({
   className = "",
 }: Props) {
   return (
-    <figure className={`relative overflow-hidden bg-forest ${className}`}>
-      <div className="relative aspect-[21/9] min-h-[180px] w-full sm:min-h-[220px] lg:min-h-[280px]">
+    <figure className={`relative w-full overflow-hidden bg-forest ${className}`}>
+      <div className="relative h-[38vw] min-h-[220px] max-h-[420px] w-full">
         <Image
           src={src}
           alt={alt}
@@ -27,7 +27,6 @@ export function PhotoBand({
           className="object-cover"
           style={{ objectPosition: position }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent" />
       </div>
       {caption ? (
         <figcaption className="sr-only">{caption}</figcaption>

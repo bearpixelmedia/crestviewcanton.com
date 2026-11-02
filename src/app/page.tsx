@@ -107,13 +107,13 @@ export default function HomePage() {
               Explore Our Beliefs
             </Link>
           </div>
-          <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px]">
+          <div className="relative aspect-[4/3] w-full overflow-hidden bg-fog sm:aspect-auto sm:min-h-[400px] sm:h-full">
             <Image
               src="/images/social/fb-serve-5.jpg"
               alt="Crestview church family gathered in fellowship"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-center"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-pine/35 to-transparent" />
           </div>

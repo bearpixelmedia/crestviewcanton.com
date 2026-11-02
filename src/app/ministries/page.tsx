@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { ministryLinks, site } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -31,13 +30,8 @@ export default function MinistriesPage() {
         image={photos.fellowship.src}
         imageAlt={photos.fellowship.alt}
       />
-      <PhotoBand
-        src={photos.breakfast.src}
-        alt={photos.breakfast.alt}
-      />
 
-
-      <section className="bg-paper">
+<section className="bg-paper">
         <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
           <blockquote className="border-l-2 border-gold pl-5 font-display text-xl text-canopy">
             “…love one another; as I have loved you… By this all will know that
@@ -79,7 +73,7 @@ export default function MinistriesPage() {
               return (
                 <article key={item.href} className="group">
                   {img ? (
-                    <div className="relative mb-5 aspect-[16/10] overflow-hidden bg-fog">
+                    <div className="relative mb-5 aspect-[16/10] w-full overflow-hidden bg-fog">
                       <Image
                         src={img.src}
                         alt={img.alt}

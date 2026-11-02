@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -23,13 +22,8 @@ export default function StudentMinistryPage() {
         image={photos.youthHeritage.src}
         imageAlt={photos.youthHeritage.alt}
       />
-      <PhotoBand
-        src={photos.fellowship.src}
-        alt={photos.fellowship.alt}
-      />
 
-
-      <section className="bg-paper">
+<section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-leaf">
             6th grade through 12th grade

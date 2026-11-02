@@ -128,7 +128,7 @@ export default function AdultMinistryPage() {
           </div>
         </div>
         <div className="mx-auto grid max-w-6xl gap-4 px-5 pb-16 sm:grid-cols-2 sm:px-8">
-          <div className="relative min-h-[200px] overflow-hidden">
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-fog">
             <Image
               src="/images/ministries/senior-adults.jpg"
               alt="Joyful Hearts senior adults"
@@ -137,7 +137,7 @@ export default function AdultMinistryPage() {
               className="object-cover"
             />
           </div>
-          <div className="relative min-h-[200px] overflow-hidden">
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-fog">
             <Image
               src="/images/ministries/senior-adults-2.jpg"
               alt="Crestview senior adult fellowship"

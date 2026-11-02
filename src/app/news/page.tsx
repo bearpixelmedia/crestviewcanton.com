@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -22,13 +21,8 @@ export default function NewsPage() {
         image={photos.fellowship.src}
         imageAlt={photos.fellowship.alt}
       />
-      <PhotoBand
-        src={photos.campus.src}
-        alt={photos.campus.alt}
-      />
 
-
-      <section className="bg-paper">
+<section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="grid gap-10 sm:grid-cols-2">
             <article className="border-t border-pine/15 pt-6">

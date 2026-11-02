@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -22,13 +21,8 @@ export default function SermonsMediaPage() {
         image={photos.worship.src}
         imageAlt={photos.worship.alt}
       />
-      <PhotoBand
-        src={photos.pastor.src}
-        alt={photos.pastor.alt}
-      />
 
-
-      <section className="bg-paper">
+<section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="grid gap-12 lg:grid-cols-2">
             <div>

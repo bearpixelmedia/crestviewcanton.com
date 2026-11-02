@@ -69,7 +69,7 @@ export default function ServePage() {
 
       <section className="bg-fog">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-2 sm:px-8 lg:items-center">
-          <div className="relative aspect-[4/3] overflow-hidden">
+          <div className="relative aspect-[4/3] w-full overflow-hidden bg-fog">
             <Image
               src="/images/social/fb-serve-5.jpg"
               alt="Crestview members gathered in fellowship while serving together"

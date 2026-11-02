@@ -41,13 +41,13 @@ export default function AboutPage() {
                 know Christ personally and grow in a life that honors Him.
               </p>
             </div>
-            <div className="relative min-h-[300px] overflow-hidden sm:min-h-[380px]">
+            <div className="relative aspect-[4/3] h-full min-h-[280px] overflow-hidden bg-fog sm:min-h-[340px]">
               <Image
-                src="/images/social/campus-entrance.jpg"
-                alt="Crestview Baptist Church campus entrance in Canton, NC"
+                src={photos.fellowship.src}
+                alt={photos.fellowship.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-[center_40%]"
+                className="object-cover"
               />
             </div>
           </div>

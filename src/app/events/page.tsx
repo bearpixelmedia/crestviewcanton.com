@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -22,13 +21,8 @@ export default function EventsPage() {
         image={photos.breakfast.src}
         imageAlt={photos.breakfast.alt}
       />
-      <PhotoBand
-        src={photos.fellowship.src}
-        alt={photos.fellowship.alt}
-      />
 
-
-      <section className="bg-paper">
+<section className="bg-paper">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-2">
           <div>
             <h2 className="font-display text-2xl text-pine">Sunday</h2>

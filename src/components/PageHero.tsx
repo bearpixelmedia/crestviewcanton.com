@@ -18,9 +18,13 @@ export function PageHero({
   imagePosition = "center",
 }: Props) {
   return (
-    <section className="relative overflow-hidden bg-pine text-fog">
+    <section
+      className={`relative overflow-hidden bg-pine text-fog ${
+        image ? "min-h-[42vh] sm:min-h-[48vh]" : ""
+      }`}
+    >
       {image ? (
-        <>
+        <div className="absolute inset-0">
           <Image
             src={image}
             alt={imageAlt}
@@ -30,9 +34,9 @@ export function PageHero({
             className="object-cover"
             style={{ objectPosition: imagePosition }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/85 to-forest/55" />
-          <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-transparent to-forest/50" />
-        </>
+          <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/88 to-forest/55" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest/92 via-forest/25 to-forest/55" />
+        </div>
       ) : (
         <>
           <div aria-hidden className="absolute inset-0 ridge opacity-80" />
@@ -46,7 +50,7 @@ export function PageHero({
         aria-hidden
         className="absolute inset-0 grain opacity-[0.1] mix-blend-overlay"
       />
-      <div className="relative mx-auto max-w-6xl px-5 pb-14 pt-28 sm:px-8 sm:pb-16 sm:pt-32">
+      <div className="relative z-10 mx-auto flex min-h-[inherit] max-w-6xl flex-col justify-end px-5 pb-14 pt-28 sm:px-8 sm:pb-16 sm:pt-32">
         {eyebrow ? (
           <p className="animate-soft-in text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft">
             {eyebrow}

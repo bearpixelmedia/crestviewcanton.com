@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
-import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { staff } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -22,13 +21,8 @@ export default function OurStaffPage() {
         image={photos.pastor.src}
         imageAlt={photos.pastor.alt}
       />
-      <PhotoBand
-        src={photos.campus.src}
-        alt={photos.campus.alt}
-      />
 
-
-      <section className="bg-paper">
+<section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <div className="space-y-16">
             {staff.map((person, index) => {

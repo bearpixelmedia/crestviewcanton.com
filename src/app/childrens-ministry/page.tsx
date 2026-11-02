@@ -59,10 +59,10 @@ export default function ChildrensMinistryPage() {
               accept God’s word…”, Mark 4:20 NLT
             </blockquote>
           </div>
-          <div className="relative min-h-[280px] overflow-hidden">
+          <div className="relative aspect-[4/3] w-full overflow-hidden bg-fog">
             <Image
-              src="/images/gallery/vbs-1967.jpg"
-              alt="Crestview children’s ministry heritage"
+              src={photos.breakfast.src}
+              alt={photos.breakfast.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

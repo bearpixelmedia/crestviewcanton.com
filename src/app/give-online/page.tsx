@@ -1,5 +1,4 @@
 import { PageHero } from "@/components/PageHero";
-import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -21,13 +20,8 @@ export default function GiveOnlinePage() {
         image={photos.fellowship.src}
         imageAlt={photos.fellowship.alt}
       />
-      <PhotoBand
-        src={photos.breakfast.src}
-        alt={photos.breakfast.alt}
-      />
 
-
-      <section className="bg-paper">
+<section className="bg-paper">
         <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
           <blockquote className="border-l-2 border-gold pl-5 font-display text-xl leading-snug text-canopy">
             “But this I say: He who sows sparingly will also reap sparingly, and

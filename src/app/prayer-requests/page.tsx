@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
-import { PhotoBand } from "@/components/PhotoBand";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
@@ -23,13 +22,8 @@ export default function PrayerRequestsPage() {
         image={photos.worship.src}
         imageAlt={photos.worship.alt}
       />
-      <PhotoBand
-        src={photos.campus.src}
-        alt={photos.campus.alt}
-      />
 
-
-      <section className="bg-paper">
+<section className="bg-paper">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-2">
           <div>
             <blockquote className="border-l-2 border-gold pl-5 font-display text-xl text-canopy">

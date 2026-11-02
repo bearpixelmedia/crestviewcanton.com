@@ -86,13 +86,13 @@ export default function PlanYourVisitPage() {
 
           <div className="mt-16 grid gap-12 border-t border-pine/10 pt-10 lg:grid-cols-2">
             <div>
-              <div className="relative mb-8 aspect-[16/10] overflow-hidden bg-fog">
+              <div className="relative mb-8 aspect-[16/10] w-full overflow-hidden bg-fog">
                 <Image
-                  src="/images/social/campus-entrance.jpg"
-                  alt="Crestview Baptist Church entrance on Pisgah Drive"
+                  src={photos.breakfast.src}
+                  alt={photos.breakfast.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-[center_40%]"
+                  className="object-cover"
                 />
               </div>
               <h2 className="font-display text-3xl text-pine">Find Us</h2>
