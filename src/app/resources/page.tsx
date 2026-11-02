@@ -41,6 +41,12 @@ export default function ResourcesPage() {
                 meet Sunday evenings at 6:00 PM with teaching focused on applying
                 God&apos;s Word.
               </p>
+              <Link
+                href="/adult-ministry"
+                className="mt-4 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
+              >
+                Adult Ministry &amp; Small Groups
+              </Link>
             </article>
             <article className="border-t border-pine/15 pt-6">
               <h2 className="font-display text-2xl text-pine">Sermons &amp; Media</h2>
@@ -91,6 +97,18 @@ export default function ResourcesPage() {
               <p className="mt-3 text-sm leading-relaxed text-ink/75">
                 Fridays at 10:00 AM with Pastor Dan Page — WPTL 101.7 FM / 920 AM.
               </p>
+            </article>
+            <article className="border-t border-pine/15 pt-6">
+              <h2 className="font-display text-2xl text-pine">Livestream</h2>
+              <p className="mt-3 text-sm leading-relaxed text-ink/75">
+                Join Morning Worship online when you can&apos;t be in the room.
+              </p>
+              <Link
+                href="/livestream"
+                className="mt-4 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
+              >
+                Watch online
+              </Link>
             </article>
           </div>
 

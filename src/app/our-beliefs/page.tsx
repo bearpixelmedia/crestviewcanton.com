@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
+import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -44,9 +45,10 @@ export default function OurBeliefsPage() {
           </h2>
           <p className="mt-4 text-ink/80 leading-relaxed">
             Crestview Baptist Church holds to the doctrinal confession of the
-            Southern Baptist Convention — the Baptist Faith and Message, 2000.
-            We center our faith on the love of Jesus Christ, believing in His
-            grace and the truth of His teachings.
+            Southern Baptist Convention — the Baptist Faith and Message, 2000
+            (SBC materials updated August 2024). We center our faith on the love
+            of Jesus Christ, believing in His grace and the truth of His
+            teachings.
           </p>
           <blockquote className="mt-8 border-l-2 border-gold pl-5 font-display text-xl text-canopy">
             “For I know the plans I have for you, declares the Lord…”
@@ -72,14 +74,23 @@ export default function OurBeliefsPage() {
           <p className="mt-12 text-sm text-ink/70">
             Read the full{" "}
             <a
-              href="https://bfm.sbc.net/"
+              href={site.bfmUrl}
               className="font-semibold text-canopy underline-offset-2 hover:underline"
               target="_blank"
               rel="noreferrer"
             >
               Baptist Faith and Message
             </a>{" "}
-            on the SBC website.
+            on the SBC website, or download the{" "}
+            <a
+              href={site.bfmPdf}
+              className="font-semibold text-canopy underline-offset-2 hover:underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              PDF edition
+            </a>{" "}
+            Sharon shared from the office.
           </p>
         </div>
       </section>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BrandLogo } from "@/components/BrandLogo";
-import { primaryNav } from "@/lib/site";
+import { moreNav, primaryNav, secondaryNav } from "@/lib/site";
 
 type Props = {
   variant?: "hero" | "solid";
@@ -92,27 +92,31 @@ export function SiteHeader({ variant }: Props) {
             >
               Plan Your Visit
             </Link>
-            <Link
-              href="/about"
-              onClick={() => setOpen(false)}
-              className="py-1 text-sm text-mist"
-            >
-              About
-            </Link>
-            <Link
-              href="/our-staff"
-              onClick={() => setOpen(false)}
-              className="py-1 text-sm text-mist"
-            >
-              Our Staff
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="py-1 text-sm text-mist"
-            >
-              Contact
-            </Link>
+            {secondaryNav
+              .filter((item) => item.href !== "/plan-your-visit")
+              .map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="py-1 text-sm text-mist"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-gold-soft">
+              More
+            </p>
+            {moreNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="py-1 text-sm text-mist/90"
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
         </div>
       ) : null}

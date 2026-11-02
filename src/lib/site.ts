@@ -19,6 +19,11 @@ export const site = {
   giveUrl: "https://secure.myvanco.com/L-ZB2Z/home",
   textToGive: "18285374412",
   textToGiveDisplay: "1 828 537 4412",
+  churchCenterRegistrations:
+    "https://crestviewbaptist.churchcenter.com/registrations",
+  bfmUrl: "https://bfm.sbc.net/",
+  bfmPdf:
+    "https://bfm.sbc.net/wp-content/uploads/2024/08/BFM2000.pdf",
   schedule: {
     sunday: [
       { label: "Life Groups (Sunday School)", time: "9:30 AM" },
@@ -43,20 +48,64 @@ export const site = {
   officeHours: "Monday–Friday, 9:00 AM – 6:00 PM",
 } as const;
 
-/** Primary nav — labels from Elementor reference IA */
+/** Primary nav */
 export const primaryNav = [
-  { href: "/our-beliefs", label: "Our Beliefs" },
+  { href: "/ministries", label: "Ministries" },
   { href: "/sermons-media", label: "Sermons & Media" },
+  { href: "/events", label: "Events" },
   { href: "/give-online", label: "Give Online" },
   { href: "/resources", label: "Resources" },
-  { href: "/frequently-asked-questions", label: "FAQ" },
 ] as const;
 
 export const secondaryNav = [
   { href: "/plan-your-visit", label: "Plan Your Visit" },
   { href: "/about", label: "About" },
   { href: "/our-staff", label: "Our Staff" },
+  { href: "/our-beliefs", label: "Our Beliefs" },
   { href: "/contact", label: "Contact" },
+] as const;
+
+export const moreNav = [
+  { href: "/childrens-ministry", label: "Children’s Ministry" },
+  { href: "/student-ministry", label: "Student Ministry" },
+  { href: "/adult-ministry", label: "Adult Ministry & Small Groups" },
+  { href: "/missions", label: "Missions & Outreach" },
+  { href: "/serve", label: "Serve / Volunteer" },
+  { href: "/prayer-requests", label: "Prayer Requests" },
+  { href: "/membership", label: "Membership & Next Steps" },
+  { href: "/baptism", label: "Baptism" },
+  { href: "/livestream", label: "Livestream" },
+  { href: "/news", label: "News & Announcements" },
+  { href: "/photo-gallery", label: "Photo Gallery" },
+  { href: "/frequently-asked-questions", label: "FAQ" },
+] as const;
+
+export const ministryLinks = [
+  {
+    href: "/childrens-ministry",
+    title: "Children’s Ministry",
+    body: "Planting seeds for Jesus — nursery through grade 5, VBS, God’s Kidz, and more.",
+  },
+  {
+    href: "/student-ministry",
+    title: "Student Ministry",
+    body: "6th–12th grade worship, evangelism, missions, and fellowship in the Youth Center.",
+  },
+  {
+    href: "/adult-ministry",
+    title: "Adult Ministry & Small Groups",
+    body: "Life Groups, SFU, Men’s Ministry, Revolve Women, and Joyful Hearts seniors.",
+  },
+  {
+    href: "/missions",
+    title: "Missions & Outreach",
+    body: "Local compassion and partners across the nations — Reach, Equip, Send.",
+  },
+  {
+    href: "/serve",
+    title: "Serve / Volunteer",
+    body: "Worship, kids, students, greeting, and more — find a place to use your gifts.",
+  },
 ] as const;
 
 export const staff = [
@@ -65,7 +114,8 @@ export const staff = [
     name: "Dr. Daniel Page",
     role: "Senior Pastor",
     photo: "/staff/daniel-page.jpg",
-    bio: "Dr. Daniel Page has developed a growing love for God’s Word through years of preaching and teaching. His goal is to communicate God’s powerful Word with relevant application for today’s world. Crestview called him in 2009; he and his family relocated from Raleigh to begin as Senior Pastor in June 2009.",
+    bio: "Dr. Daniel Page has developed a growing love for God’s Word through years of preaching and teaching. His goal is to communicate God’s powerful Word with relevant application for today’s world. Dan grew up in Cherryville, NC, trusted Christ at age 10, and studied music at Appalachian State University (B.M.E. 1987, M.M.E. 1989). After serving churches in worship, youth, and children’s ministry — including a mission year in France — he entered pastoral ministry in 2001 and completed an M.Div. from Southeastern Baptist Theological Seminary. Crestview called him in 2009; he and his family relocated from Raleigh to begin as Senior Pastor in June 2009. He completed a D.Min. in Evangelism and Discipleship from North Greenville University in 2017.",
+    contact: "pagebypage8@gmail.com",
   },
   {
     slug: "jarred-rathbone",
@@ -80,15 +130,15 @@ export const staff = [
     name: "Angie Watkins",
     role: "Children’s Ministry Director",
     photo: "/staff/angie-watkins.jpg",
-    bio: "Angie Watkins has a big heart for children. She volunteered in Crestview’s Children’s Ministry and directed VBS for more than 20 years before becoming Children’s Ministry Director in August 2021.",
-    contact: "crestview4kidz@gmail.com",
+    bio: "Angie Watkins has a big heart for children. She volunteered in Crestview’s Children’s Ministry and directed VBS for more than 20 years before becoming Children’s Ministry Director in August 2021. She leads a passionate team focused on sharing Christ’s love with children and families. Angie is married to Chris; they have two adult children, Samantha and Caleb. She is a 1991 graduate of Pisgah High School and a 1994 graduate of Cecil’s Business College.",
+    contact: "crestview4kidz@gmail.com · 828-648-1110",
   },
   {
     slug: "anita-diaz",
     name: "Anita Diaz",
     role: "Music Director / Worship Leader",
     photo: "/staff/anita-diaz.jpg",
-    bio: "Anita Diaz is a native of Balsam, N.C., and a Western Carolina University music graduate. She has served as worship leader, music director, and pianist in Haywood County churches for many years.",
+    bio: "Anita Diaz is a native of Balsam, N.C. She started playing piano and singing at age three and is a Western Carolina University graduate (Music major, Theatre minor). After performing as a jazz pianist/vocalist in Atlanta, she was selected for the United States Air Force Band program — serving at Robins AFB and later with The United States Air Force Band in Washington, D.C., including White House performances. She has performed with artists including Keiko Matsui and Randy Brecker, opened for Roy Clark, Restless Heart, Gary Morris, and Jamie O’Neal, and sung backup for CeCe Winans, Amy Grant, and Vince Gill. Anita has performed the National Anthem for major sports and NASCAR events. She has served as worship leader, music director, and pianist in Haywood County churches for many years (including worship teams at Biltmore Church). She and her husband Luis continue to look for ways to serve and reach people for Christ.",
     contact: "crestviewworship2@gmail.com",
   },
   {
@@ -96,20 +146,23 @@ export const staff = [
     name: "Sharon Bryson",
     role: "Administrative Assistant",
     photo: "/staff/sharon-bryson.jpg",
-    bio: "Sharon Bryson serves as Crestview’s Administrative Assistant. A Haywood County native and long-term church member, she was called to serve at Crestview in 2011 after 20 years as an Application Developer.",
+    bio: "Sharon Bryson serves as Crestview’s Administrative Assistant. A Haywood County native and long-term church member, she earned degrees and certificates from A-B Tech, UNC Asheville, and Haywood Community College. After 20 years as an Application Developer with Duke Energy Business Services (Nantahala area), she was called to serve at Crestview in 2011. Her favorite life verse is Philippians 4:13 — “I can do all things through Christ who strengthens me.”",
+    contact: "crestviewcanton@gmail.com · 828-648-1110",
   },
   {
     slug: "tammie-beck",
     name: "Tammie Beck",
     role: "Custodian",
     photo: "/staff/tammie-beck.jpg",
-    bio: "Tammie Beck of Canton serves as Crestview Baptist Church’s Custodian, keeping our facilities welcoming and ready for worship and ministry. She and her husband, Eddie, serve Crestview’s campus together — Tammie indoors and Eddie on the grounds. TODO (office): tenure, prior work, and family details — searched Website/_new_sitemap/NEW-STAFF-BIOS.md, STAFF-PAGE.md, Elementor reference, and live crestviewcanton.com; no additional verified facts published yet.",
+    // Longer tenure/family details still pending church office (NEW-STAFF-BIOS.md).
+    bio: "Tammie Beck of Canton serves as Crestview Baptist Church’s Custodian, keeping our facilities welcoming and ready for worship and ministry. She and her husband, Eddie, serve Crestview’s campus together — Tammie indoors and Eddie on the grounds.",
   },
   {
     slug: "eddie-beck",
     name: "Eddie Beck",
     role: "Lawn Management",
     photo: "/staff/eddie-beck.jpg",
-    bio: "Eddie Beck of Canton cares for the Crestview Baptist Church grounds as Lawn Management lead — helping our property reflect the care we want for everyone who visits. He serves alongside his wife, Tammie, who is Crestview’s Custodian. TODO (office): tenure, prior work, and family details — same sources as Tammie’s bio; church docs still mark these as pending Sharon / Pastor Dan input.",
+    // Longer tenure/family details still pending church office (NEW-STAFF-BIOS.md).
+    bio: "Eddie Beck of Canton cares for the Crestview Baptist Church grounds as Lawn Management lead — helping our property reflect the care we want for everyone who visits. He serves alongside his wife, Tammie, who is Crestview’s Custodian.",
   },
 ] as const;

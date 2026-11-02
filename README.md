@@ -6,9 +6,9 @@ Custom website for **Crestview Baptist Church** (Canton, NC) — built outside W
 
 - Next.js 16 (App Router) + React 19 + TypeScript
 - Tailwind CSS v4
-- Deploy target: Vercel
+- Deploy target: Vercel (`crestviewcanton-com` on Bear Pixel Media / `byronmccluney`)
 
-**Copy source:** Elementor reference [ilwoltux.elementor.cloud](https://ilwoltux.elementor.cloud/) for headings, body, and nav labels. Layout and visual design are original (not a recreation of the Elementor look). Contact/schedule details use church content from `Website/`.
+**Copy source:** `Website/_new_sitemap/pages/*/CONTENT.docx` + Elementor reference for some home marketing lines. Layout and visual design are original (not a recreation of the Elementor look).
 
 ## Local preview
 
@@ -21,7 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) (or the next free port print
 
 ## Forms (env vars Byron must set)
 
-Contact, Plan Your Visit, and home newsletter share `src/components/ContactForm.tsx`.
+Contact, Plan Your Visit, Prayer Requests, Serve interest, and home newsletter share `src/components/ContactForm.tsx`.
 
 | Variable | Required? | Purpose |
 |----------|-----------|---------|
@@ -29,52 +29,56 @@ Contact, Plan Your Visit, and home newsletter share `src/components/ContactForm.
 
 **Without Formspree:** forms still work via a prefilled `mailto:crestviewcanton@gmail.com` (no secrets needed for local/preview).
 
-Setup:
-
-1. Create a form at [formspree.io](https://formspree.io) aimed at `crestviewcanton@gmail.com` (or Sharon’s preferred inbox once confirmed).
-2. Copy the form ID into `.env.local` and Vercel → Project → Settings → Environment Variables.
-3. Redeploy.
-
-See `.env.example`. Resend / Next.js API route is documented there as a future option; not wired yet so we don’t invent API keys.
+See `.env.example`.
 
 ## Pages
 
 | Path | Purpose |
 |------|---------|
 | `/` | Home |
-| `/our-beliefs` | Our Beliefs |
+| `/ministries` | Ministries hub |
+| `/childrens-ministry` | Crestview Kids |
+| `/student-ministry` | Crestview Youth |
+| `/adult-ministry` | Life Groups, SFU, Men/Women/Seniors |
+| `/missions` | Missions & Outreach |
 | `/sermons-media` | Sermons & Media |
+| `/livestream` | Facebook Live + YouTube |
+| `/events` | Events calendar / weekly rhythm |
+| `/serve` | Serve / Volunteer |
+| `/prayer-requests` | Prayer requests |
 | `/give-online` | Give Online (MyVanco) |
 | `/resources` | Resources |
+| `/news` | News & Announcements |
+| `/membership` | Membership & Next Steps |
+| `/baptism` | Baptism |
+| `/photo-gallery` | Photo Gallery |
 | `/frequently-asked-questions` | FAQ |
 | `/plan-your-visit` | Plan Your Visit |
 | `/about` | About Crestview |
-| `/our-staff` | Our Staff (incl. Dr. Daniel Page) |
+| `/our-beliefs` | Our Beliefs |
+| `/our-staff` | Our Staff |
 | `/contact` | Contact |
 
 ## Socials (verified)
 
 - Facebook: https://www.facebook.com/crestviewcanton/
-- YouTube: https://www.youtube.com/@CrestviewCanton (`UC_ohIdzlSH3I7DOdcUpqAEQ`)
+- YouTube: https://www.youtube.com/@CrestviewCanton
 - Kids Facebook: https://www.facebook.com/crestviewcantonkids/
 
-## Deploy (Vercel)
-
-Team: **Bear Pixel Media** (`byronmccluney`).
+## Deploy
 
 ```bash
-# After the Vercel project exists and is linked to this repo:
-vercel --scope byronmccluney link
-vercel --scope byronmccluney deploy --prebuilt   # or push to trigger Git deploy
+vercel --scope byronmccluney link   # once
+# Prefer git push to trigger deploy (CLI file upload can fail on large uploads)
+git push origin cursor/crestview-baptist-site-c141
 ```
 
-Or: Vercel Dashboard → Add New Project → Import `bearpixelmedia/crestviewcanton.com` → Framework Next.js → Deploy.
-
-Set `NEXT_PUBLIC_FORMSPREE_ID` in the project env before relying on Formspree in production.
+Set `NEXT_PUBLIC_FORMSPREE_ID` in the Vercel project env before relying on Formspree in production.
 
 ## Notes
 
-- Giving link: `https://secure.myvanco.com/L-ZB2Z/home`
+- Giving: `https://secure.myvanco.com/L-ZB2Z/home`
 - Office: 3258 Pisgah Drive, Canton, NC 28716 · (828) 648-1110
-- Reference content retained in `Website/` and `CONTENT.docx` (gitignored from the app package)
-- **Tammie / Eddie Beck bios:** church `Website/_new_sitemap/NEW-STAFF-BIOS.md` still marks longer details as pending office input. Live Elementor and crestviewcanton.com were checked; no additional verified bio facts found — do not invent tenure/family details.
+- Reference content in `Website/` (gitignored)
+- Tammie / Eddie Beck: longer bios still pending church office
+- Dated news campaigns intentionally omitted until the office supplies current copy

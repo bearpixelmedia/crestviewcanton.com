@@ -99,9 +99,14 @@ export default function AboutPage() {
             Youth Ministry Center.
           </p>
           <p className="mt-6 text-ink/80 leading-relaxed">
-            We hold to the Baptist Faith and Message, 2000.{" "}
+            We hold to the Baptist Faith and Message, 2000 (SBC materials updated
+            August 2024).{" "}
             <Link href="/our-beliefs" className="font-semibold text-canopy">
               Explore Our Beliefs
+            </Link>
+            . See historic photos in our{" "}
+            <Link href="/photo-gallery" className="font-semibold text-canopy">
+              Photo Gallery
             </Link>
             .
           </p>

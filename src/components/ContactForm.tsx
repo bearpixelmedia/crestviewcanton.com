@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 
 type Props = {
   /** Used in Formspree _subject and mailto subject */
-  intent?: "contact" | "visit" | "newsletter";
+  intent?: "contact" | "visit" | "newsletter" | "prayer";
   fields?: ("name" | "email" | "phone" | "message")[];
   submitLabel?: string;
   className?: string;
@@ -38,7 +38,9 @@ export function ContactForm({
         ? `Crestview mailing list — ${email}`
         : intent === "visit"
           ? `Plan a visit — ${name || email}`
-          : `Website contact — ${name || email}`;
+          : intent === "prayer"
+            ? `Prayer request — ${name || email}`
+            : `Website contact — ${name || email}`;
 
     setStatus("sending");
     setErrorMsg("");
@@ -184,13 +186,17 @@ export function ContactForm({
             htmlFor={`cf-message-${intent}`}
             className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-canopy"
           >
-            {intent === "newsletter" ? "Notes (optional)" : "How can we help?"}
+            {intent === "newsletter"
+              ? "Notes (optional)"
+              : intent === "prayer"
+                ? "Prayer request"
+                : "How can we help?"}
           </label>
           <textarea
             id={`cf-message-${intent}`}
             name="message"
             rows={intent === "newsletter" ? 2 : 5}
-            required={intent === "contact"}
+            required={intent === "contact" || intent === "prayer"}
             className="w-full rounded-sm border border-pine/15 bg-white px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-leaf/40"
           />
         </div>
