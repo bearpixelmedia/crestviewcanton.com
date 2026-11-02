@@ -84,6 +84,14 @@ export function SiteFooter() {
                 Facebook
               </a>
               <a
+                href={site.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-fog"
+              >
+                Instagram
+              </a>
+              <a
                 href={site.social.youtube}
                 target="_blank"
                 rel="noopener noreferrer"

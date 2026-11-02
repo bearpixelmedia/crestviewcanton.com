@@ -44,6 +44,8 @@ export const site = {
     youtubeChannelId: "UC_ohIdzlSH3I7DOdcUpqAEQ",
     /** Verified kids ministry page */
     facebookKids: "https://www.facebook.com/crestviewcantonkids/",
+    /** Verified: Instagram @crestviewcanton */
+    instagram: "https://www.instagram.com/crestviewcanton/",
   },
   officeHours: "Monday–Friday, 9:00 AM – 6:00 PM",
 } as const;

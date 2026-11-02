@@ -53,24 +53,21 @@ const pathways = [
   },
 ] as const;
 
-const testimonials = [
+const lifePhotos = [
   {
-    quote:
-      "I came here looking for a fresh start and found a loving community instead. Each Sunday feels like a reunion, and I am grateful for the friendships I’ve formed here.",
-    name: "Sarah Lopez",
-    role: "New Attendee, Encourager",
+    src: "/images/social/campus-entrance.jpg",
+    alt: "Crestview Baptist Church entrance and roadside sign",
+    caption: "Home on Pisgah Drive",
   },
   {
-    quote:
-      "This church taught me the importance of serving others. I’ve been blessed by their generosity and feel called to give back in any way I can.",
-    name: "David Brown",
-    role: "Bible Study Leader",
+    src: "/images/social/fb-serve-5.jpg",
+    alt: "Men gathering for fellowship and breakfast at Crestview",
+    caption: "Fellowship around the table",
   },
   {
-    quote:
-      "Being part of this church has truly changed my life. The warmth and love here make it feel like home. I’ve grown so much in my faith through our community.",
-    name: "Emily Johnson",
-    role: "Church Member, Volunteer",
+    src: "/images/social/fb-serve-2.jpg",
+    alt: "Church breakfast buffet during a Crestview gathering",
+    caption: "Shared meals, shared life",
   },
 ] as const;
 
@@ -82,7 +79,7 @@ export default function HomePage() {
 
       <section className="relative overflow-hidden bg-paper">
         <div aria-hidden className="absolute inset-0 ridge" />
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:grid-cols-2 sm:px-8 lg:gap-16">
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:grid-cols-2 sm:px-8 lg:gap-16 lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-leaf">
               Find Your Community
@@ -110,15 +107,15 @@ export default function HomePage() {
               Explore Our Beliefs
             </Link>
           </div>
-          <div className="relative min-h-[280px] overflow-hidden sm:min-h-[360px]">
+          <div className="relative min-h-[280px] overflow-hidden sm:min-h-[400px]">
             <Image
-              src="/images/mission.jpg"
-              alt="Church community gathered together"
+              src="/images/social/fb-serve-5.jpg"
+              alt="Crestview church family gathered in fellowship"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-pine/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-pine/35 to-transparent" />
           </div>
         </div>
       </section>
@@ -187,25 +184,64 @@ export default function HomePage() {
       <section className="bg-pine text-fog">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft">
-            What Our Members Are Saying
+            Life at Crestview
           </p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl sm:text-4xl">
-            Hear from those who found a home in our community!
+            Real moments from our church family
           </h2>
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <blockquote key={t.name} className="border-l border-gold/40 pl-5">
-                <p className="text-base leading-relaxed text-mist/95">
-                  “{t.quote}”
-                </p>
-                <footer className="mt-5">
-                  <cite className="not-italic font-semibold text-gold-soft">
-                    {t.name}
-                  </cite>
-                  <p className="text-sm text-mist/70">{t.role}</p>
-                </footer>
-              </blockquote>
+          <p className="mt-4 max-w-xl text-mist/80">
+            Photos from our Facebook and YouTube community, worship at home,
+            fellowship around the table, and serving neighbors together.
+          </p>
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            {lifePhotos.map((p) => (
+              <figure key={p.src} className="group">
+                <div className="relative aspect-[4/5] overflow-hidden bg-forest/40 sm:aspect-[3/4]">
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <figcaption className="mt-3 text-sm text-mist/75">
+                  {p.caption}
+                </figcaption>
+              </figure>
             ))}
+          </div>
+          <div className="mt-10 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <a
+              href={site.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-gold-soft hover:text-fog"
+            >
+              Follow on Facebook
+            </a>
+            <a
+              href={site.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-gold-soft hover:text-fog"
+            >
+              Instagram
+            </a>
+            <a
+              href={site.social.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-gold-soft hover:text-fog"
+            >
+              YouTube
+            </a>
+            <Link
+              href="/photo-gallery"
+              className="font-semibold text-mist/80 hover:text-fog"
+            >
+              Full gallery
+            </Link>
           </div>
         </div>
       </section>

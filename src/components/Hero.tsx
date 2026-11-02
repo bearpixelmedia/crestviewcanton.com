@@ -7,18 +7,18 @@ export function Hero() {
     <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-forest text-fog pt-[var(--yt-live-banner,0px)]">
       <div className="absolute inset-0">
         <Image
-          src="/images/hero.jpg"
-          alt="Sanctuary light filling a church interior"
+          src="/images/social/campus-entrance.jpg"
+          alt="Crestview Baptist Church entrance and sign on Pisgah Drive in Canton, NC"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_35%]"
+          className="object-cover object-[center_42%] animate-hero-ken"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest via-transparent to-forest/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/78 to-forest/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest via-transparent to-forest/45" />
         <div
           aria-hidden
-          className="absolute inset-0 grain opacity-[0.16] mix-blend-overlay"
+          className="absolute inset-0 grain opacity-[0.14] mix-blend-overlay"
         />
       </div>
 

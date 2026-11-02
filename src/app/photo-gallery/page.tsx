@@ -13,6 +13,36 @@ export const metadata: Metadata = {
 
 const photos = [
   {
+    src: "/images/social/campus-entrance.jpg",
+    alt: "Crestview Baptist Church entrance and sign",
+    caption: "Church life, campus entrance (YouTube)",
+  },
+  {
+    src: "/images/social/fb-serve-5.jpg",
+    alt: "Men’s fellowship gathering at Crestview",
+    caption: "Church life, fellowship (Facebook)",
+  },
+  {
+    src: "/images/social/fb-serve-2.jpg",
+    alt: "Breakfast fellowship at Crestview",
+    caption: "Church life, shared meals (Facebook)",
+  },
+  {
+    src: "/images/social/fb-serve-1.jpg",
+    alt: "Crestview members in the community",
+    caption: "Outreach & neighbors (Facebook)",
+  },
+  {
+    src: "/images/social/fb-serve-3.jpg",
+    alt: "Serving together from Crestview Facebook",
+    caption: "Serve day moments (Facebook)",
+  },
+  {
+    src: "/images/social/fb-serve-4.jpg",
+    alt: "Crestview volunteers at work",
+    caption: "Hands and feet (Facebook)",
+  },
+  {
     src: "/images/gallery/worship.jpg",
     alt: "Sunday worship at Crestview",
     caption: "Church life, Sunday worship",
@@ -48,6 +78,11 @@ const photos = [
     caption: "Kids & students, VBS, 1967",
   },
   {
+    src: "/images/gallery/first-pastor.jpg",
+    alt: "Crestview’s first pastor",
+    caption: "Our history, first pastor",
+  },
+  {
     src: "/images/ministries/senior-adults.jpg",
     alt: "Joyful Hearts senior adults",
     caption: "Events & celebrations, Joyful Hearts",
@@ -60,7 +95,7 @@ export default function PhotoGalleryPage() {
       <PageHero
         eyebrow="Photo Gallery"
         title="Glimpses of life at Crestview."
-        lead="Explore moments from worship, ministries, and God’s faithfulness through the years."
+        lead="Explore moments from worship, ministries, and God’s faithfulness through the years, plus recent photos from Facebook and YouTube."
       />
 
       <section className="bg-paper">
@@ -89,8 +124,25 @@ export default function PhotoGalleryPage() {
             <a href={`mailto:${site.email}`} className="font-semibold text-canopy">
               {site.email}
             </a>{" "}
-            or talk with the office about submitting photos. Additional ministry
-            photos (worship team, current kids/youth) are welcome when available.
+            or tag us on{" "}
+            <a
+              href={site.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-canopy"
+            >
+              Facebook
+            </a>{" "}
+            and{" "}
+            <a
+              href={site.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-canopy"
+            >
+              Instagram
+            </a>
+            .
           </p>
 
           <Link

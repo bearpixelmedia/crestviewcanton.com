@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
@@ -82,6 +83,15 @@ export default function PlanYourVisitPage() {
 
           <div className="mt-16 grid gap-12 border-t border-pine/10 pt-10 lg:grid-cols-2">
             <div>
+              <div className="relative mb-8 aspect-[16/10] overflow-hidden bg-fog">
+                <Image
+                  src="/images/social/campus-entrance.jpg"
+                  alt="Crestview Baptist Church entrance on Pisgah Drive"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-[center_40%]"
+                />
+              </div>
               <h2 className="font-display text-3xl text-pine">Find Us</h2>
               <p className="mt-3 text-ink/75">
                 {site.address.full}

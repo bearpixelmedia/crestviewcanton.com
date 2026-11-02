@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
@@ -62,6 +63,33 @@ export default function ServePage() {
         title="Ministry is love with work gloves on."
         lead="There are more ways than finances to help grow ministry, your time and gifts matter. We appreciate your willingness to serve."
       />
+
+      <section className="bg-fog">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-2 sm:px-8 lg:items-center">
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <Image
+              src="/images/social/fb-serve-5.jpg"
+              alt="Crestview members gathered in fellowship while serving together"
+              fill
+              sizes="(max-width: 640px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-leaf">
+              Hands and feet
+            </p>
+            <h2 className="mt-2 font-display text-3xl text-pine">
+              Serving neighbors in Jesus’ name
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-ink/75">
+              From fellowship breakfasts to Serve NC projects with God’s Mighty
+              Warriors, Crestview puts love into action. Find a team below and
+              tell us how you’d like to help.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">

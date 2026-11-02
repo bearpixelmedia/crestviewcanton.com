@@ -38,13 +38,13 @@ export default function AboutPage() {
                 know Christ personally and grow in a life that honors Him.
               </p>
             </div>
-            <div className="relative min-h-[300px] overflow-hidden">
+            <div className="relative min-h-[300px] overflow-hidden sm:min-h-[380px]">
               <Image
-                src="/staff/daniel-page.jpg"
-                alt="Dr. Daniel Page, Senior Pastor"
+                src="/images/social/campus-entrance.jpg"
+                alt="Crestview Baptist Church campus entrance in Canton, NC"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-top"
+                className="object-cover object-[center_40%]"
               />
             </div>
           </div>
