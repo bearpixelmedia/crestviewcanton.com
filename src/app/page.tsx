@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Hero } from "@/components/Hero";
 import { PageShell } from "@/components/PageShell";
+import { YoutubeLiveBanner } from "@/components/YoutubeLiveBanner";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -28,7 +29,7 @@ const pathways = [
   },
   {
     title: "Events",
-    body: "See our weekly rhythm, monthly groups, and Teachlife Radio — then join us for what’s happening this week.",
+    body: "See our weekly rhythm, monthly groups, and Teachlife Radio, then join us for what’s happening this week.",
     href: "/events",
     cta: "See Events",
   },
@@ -40,7 +41,7 @@ const pathways = [
   },
   {
     title: "Student Ministry",
-    body: "Connect with other young people through Crestview Youth — worship, evangelism, missions, and fellowship.",
+    body: "Connect with other young people through Crestview Youth, worship, evangelism, missions, and fellowship.",
     href: "/student-ministry",
     cta: "Join Us",
   },
@@ -76,6 +77,7 @@ const testimonials = [
 export default function HomePage() {
   return (
     <PageShell hero>
+      <YoutubeLiveBanner />
       <Hero />
 
       <section className="relative overflow-hidden bg-paper">
@@ -128,7 +130,7 @@ export default function HomePage() {
               Ways to grow with us
             </h2>
             <p className="mt-3 text-ink/75">
-              From gathered worship to serving neighbors—there’s a place for you
+              From gathered worship to serving neighbors, there’s a place for you
               at Crestview.
             </p>
           </div>

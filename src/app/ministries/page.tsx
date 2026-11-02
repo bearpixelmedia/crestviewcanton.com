@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Ministries",
   description:
-    "Find a ministry at Crestview Baptist Church — kids, students, adults, worship, and outreach.",
+    "Find a ministry at Crestview Baptist Church, kids, students, adults, worship, and outreach.",
 };
 
 export default function MinistriesPage() {
@@ -16,7 +16,7 @@ export default function MinistriesPage() {
       <PageHero
         eyebrow="Ministries"
         title="Find a ministry that’s a perfect fit for you."
-        lead="Ministry is our hands-on demonstration of Christ’s love to one another and to the community we serve. We offer many opportunities to get involved — and we’d love for you to join us."
+        lead="Ministry is our hands-on demonstration of Christ’s love to one another and to the community we serve. We offer many opportunities to get involved, and we’d love for you to join us."
       />
 
       <section className="bg-paper">
@@ -42,7 +42,7 @@ export default function MinistriesPage() {
           <p className="mt-4 max-w-2xl text-ink/80 leading-relaxed">
             Whatever your age, we have a class for you. Enter the main doors into
             the welcome center and greeters can help you find a class. Life
-            Groups Director — Josh Jamison.
+            Groups Director, Josh Jamison.
           </p>
           <Link
             href="/adult-ministry"
@@ -80,18 +80,18 @@ export default function MinistriesPage() {
               <ul className="mt-4 space-y-3 text-sm text-ink/80">
                 <li>
                   <strong className="text-canopy">Men’s Ministry</strong>{" "}
-                  (God’s Mighty Warriors) — Developing men to grow in Christ and
+                  (God’s Mighty Warriors), Developing men to grow in Christ and
                   serve others sacrificially. Men’s Prayer Time Saturdays in the
                   sanctuary at 9:00 AM.
                 </li>
                 <li>
                   <strong className="text-canopy">Revolve Women</strong>{" "}
-                  (formerly WMU) — Monthly gathering and women’s Bible study:
+                  (formerly WMU), Monthly gathering and women’s Bible study:
                   Reach, Equip, and Send.
                 </li>
                 <li>
                   <strong className="text-canopy">Senior Adults</strong> (Joyful
-                  Hearts) — Regular fellowship and luncheons.
+                  Hearts), Regular fellowship and luncheons.
                 </li>
               </ul>
               <p className="mt-4 text-sm text-ink/65">

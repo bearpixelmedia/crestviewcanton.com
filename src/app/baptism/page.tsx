@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Baptism",
   description:
-    "Baptism at Crestview Baptist Church — the believer’s obedient step of identifying with Jesus.",
+    "Baptism at Crestview Baptist Church, the believer’s obedient step of identifying with Jesus.",
 };
 
 export default function BaptismPage() {
@@ -25,7 +25,7 @@ export default function BaptismPage() {
             What baptism means
           </h2>
           <p className="mt-4 text-ink/80 leading-relaxed">
-            Baptism does not save us — salvation is by grace through faith in
+            Baptism does not save us, salvation is by grace through faith in
             Jesus Christ alone. Baptism is the believer’s obedient step of
             identifying with Jesus’ death, burial, and resurrection, and joining
             the fellowship of the church.
@@ -35,7 +35,7 @@ export default function BaptismPage() {
             The Lord’s Supper
           </h3>
           <p className="mt-3 text-ink/80 leading-relaxed">
-            Alongside baptism, we observe the Lord’s Supper — remembering Jesus’
+            Alongside baptism, we observe the Lord’s Supper, remembering Jesus’
             death and our accountability to walk in obedience to Him.
           </p>
 
@@ -44,8 +44,8 @@ export default function BaptismPage() {
           </h3>
           <p className="mt-3 text-ink/80 leading-relaxed">
             Those who have repented of sin and trusted Jesus Christ as Lord and
-            Savior. If you’ve never taken that step — or were baptized before
-            coming to faith — we’d love to talk with you.
+            Savior. If you’ve never taken that step, or were baptized before
+            coming to faith, we’d love to talk with you.
           </p>
 
           <h3 className="mt-10 font-display text-2xl text-pine">

@@ -17,7 +17,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Crestview"
         title="Get to know us before you visit."
-        lead="Welcome! We’re glad you’re here. If you are looking for a church home or simply exploring faith, we would love for you to learn more about us — who we are, what we believe, and how you can connect with our church family."
+        lead="Welcome! We’re glad you’re here. If you are looking for a church home or simply exploring faith, we would love for you to learn more about us, who we are, what we believe, and how you can connect with our church family."
       />
 
       <section className="bg-paper">
@@ -26,7 +26,7 @@ export default function AboutPage() {
             <div>
               <h2 className="font-display text-3xl text-pine">Who We Are</h2>
               <p className="mt-2 text-sm font-semibold uppercase tracking-[0.14em] text-leaf">
-                Don’t face life alone — face it together.
+                Don’t face life alone, face it together.
               </p>
               <p className="mt-5 text-ink/80 leading-relaxed">
                 We are a church family committed to following Jesus Christ and
@@ -94,7 +94,7 @@ export default function AboutPage() {
             Crestview began as a mission of the Haywood Baptist Association. The
             first service was held April 1, 1962. On September 25, 1965,
             Crestview Mission organized as Crestview Baptist Church with 87
-            charter members. God has faithfully provided through every season —
+            charter members. God has faithfully provided through every season , 
             from our first building, to the sanctuary, educational wing, and
             Youth Ministry Center.
           </p>
@@ -117,7 +117,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <h2 className="font-display text-3xl">Our Leadership</h2>
           <p className="mt-3 max-w-2xl text-mist/85">
-            Meet the team serving Crestview — a dedicated group of Christ
+            Meet the team serving Crestview, a dedicated group of Christ
             followers excited to connect with you.
           </p>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -136,7 +136,7 @@ export default function AboutPage() {
             Meet Our Staff
           </Link>
           <p className="mt-10 text-sm text-mist/70">
-            Join us this Sunday — Life Groups at 9:30 AM and Morning Worship at
+            Join us this Sunday, Life Groups at 9:30 AM and Morning Worship at
             10:45 AM. {site.address.full} · {site.phone}
           </p>
         </div>

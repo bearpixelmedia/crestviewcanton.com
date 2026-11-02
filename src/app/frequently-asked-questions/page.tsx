@@ -16,11 +16,11 @@ const faqs = [
   },
   {
     q: "What about my children?",
-    a: "Nursery (Birth–2) is available Sunday mornings. Crestview Kids classes meet at 9:30 AM, and Children’s Church classes — Nursery, PreK – 1st Grade, and 2nd–3rd Grade — meet during Morning Worship. Check in at the welcome center — tell us about allergies or special needs.",
+    a: "Nursery (Birth–2) is available Sunday mornings. Crestview Kids classes meet at 9:30 AM, and Children’s Church classes, Nursery, PreK – 1st Grade, and 2nd–3rd Grade, meet during Morning Worship. Check in at the welcome center, tell us about allergies or special needs.",
   },
   {
     q: "What should I wear? What do you believe?",
-    a: "Come as you are. We hold to the Baptist Faith and Message, 2000 — see Our Beliefs for a summary.",
+    a: "Come as you are. We hold to the Baptist Faith and Message, 2000, see Our Beliefs for a summary.",
   },
   {
     q: "How do I get connected?",

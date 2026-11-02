@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Prayer Requests",
   description:
-    "Share a prayer request with Crestview Baptist Church — we would be honored to pray with you.",
+    "Share a prayer request with Crestview Baptist Church, we would be honored to pray with you.",
 };
 
 export default function PrayerRequestsPage() {
@@ -17,7 +17,7 @@ export default function PrayerRequestsPage() {
       <PageHero
         eyebrow="Prayer Requests"
         title="We would be honored to pray with you and for you."
-        lead="Crestview as the body of Christ believes that God hears and answers prayer. Share a request with our church family and leadership — confidentially if you prefer."
+        lead="Crestview as the body of Christ believes that God hears and answers prayer. Share a request with our church family and leadership, confidentially if you prefer."
       />
 
       <section className="bg-paper">
@@ -42,14 +42,14 @@ export default function PrayerRequestsPage() {
               Men’s Prayer Time
             </h2>
             <p className="mt-3 text-sm text-ink/75">
-              Saturdays at 9:00 AM — men gather to pray and fellowship.
+              Saturdays at 9:00 AM, men gather to pray and fellowship.
             </p>
 
             <h2 className="mt-8 font-display text-2xl text-pine">
               You are not alone
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-ink/75">
-              Don’t face life alone — face it together. If you need pastoral
+              Don’t face life alone, face it together. If you need pastoral
               care, ask for Pastor Dan or the office when you call. We are here
               to serve our community.
             </p>

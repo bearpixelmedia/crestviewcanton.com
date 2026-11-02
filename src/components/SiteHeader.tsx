@@ -25,8 +25,8 @@ export function SiteHeader({ variant }: Props) {
     <header
       className={
         isHero
-          ? "absolute inset-x-0 top-0 z-30"
-          : "sticky top-0 z-30 border-b border-pine/10 bg-paper/95 backdrop-blur-md"
+          ? "absolute inset-x-0 z-30 top-[var(--yt-live-banner,0px)]"
+          : "sticky z-30 border-b border-pine/10 bg-paper/95 backdrop-blur-md top-[var(--yt-live-banner,0px)]"
       }
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 sm:px-8">

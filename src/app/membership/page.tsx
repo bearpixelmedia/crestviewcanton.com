@@ -7,13 +7,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Membership & Next Steps",
   description:
-    "Discover your place at Crestview Baptist Church — visit, grow, belong, and serve.",
+    "Discover your place at Crestview Baptist Church, visit, grow, belong, and serve.",
 };
 
 const steps = [
   {
     title: "Start by visiting",
-    body: "Join us Sunday for Life Groups (9:30 AM) and Morning Worship (10:45 AM). Check in at the welcome center — greeters can help you get settled.",
+    body: "Join us Sunday for Life Groups (9:30 AM) and Morning Worship (10:45 AM). Check in at the welcome center, greeters can help you get settled.",
     href: "/plan-your-visit",
     cta: "Plan Your Visit",
   },
@@ -83,7 +83,7 @@ export default function MembershipPage() {
             <a href={`tel:${site.phoneTel}`} className="font-semibold text-canopy">
               {site.phone}
             </a>{" "}
-            or use Contact Us — we’re saving you a seat.
+            or use Contact Us, we’re saving you a seat.
           </p>
         </div>
       </section>

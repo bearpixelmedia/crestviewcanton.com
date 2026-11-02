@@ -15,42 +15,42 @@ const photos = [
   {
     src: "/images/gallery/worship.jpg",
     alt: "Sunday worship at Crestview",
-    caption: "Church life — Sunday worship",
+    caption: "Church life, Sunday worship",
   },
   {
     src: "/images/gallery/march-1962.jpg",
     alt: "Crestview history, March 1962",
-    caption: "Our history — March 1962",
+    caption: "Our history, March 1962",
   },
   {
     src: "/images/gallery/first-building.jpg",
     alt: "Crestview’s first building",
-    caption: "Our history — first building",
+    caption: "Our history, first building",
   },
   {
     src: "/images/gallery/groundbreaking-1963.jpg",
     alt: "Groundbreaking, September 1963",
-    caption: "Our history — Sept 1963 groundbreaking",
+    caption: "Our history, Sept 1963 groundbreaking",
   },
   {
     src: "/images/gallery/sanctuary-1964.jpg",
     alt: "First sanctuary under construction, 1964",
-    caption: "Our history — sanctuary construction, 1964",
+    caption: "Our history, sanctuary construction, 1964",
   },
   {
     src: "/images/gallery/youth-1965.jpg",
     alt: "Crestview youth, 1965",
-    caption: "Kids & students — youth, 1965",
+    caption: "Kids & students, youth, 1965",
   },
   {
     src: "/images/gallery/vbs-1967.jpg",
     alt: "VBS at Crestview, 1967",
-    caption: "Kids & students — VBS, 1967",
+    caption: "Kids & students, VBS, 1967",
   },
   {
     src: "/images/ministries/senior-adults.jpg",
     alt: "Joyful Hearts senior adults",
-    caption: "Events & celebrations — Joyful Hearts",
+    caption: "Events & celebrations, Joyful Hearts",
   },
 ] as const;
 

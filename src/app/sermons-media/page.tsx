@@ -57,7 +57,7 @@ export default function SermonsMediaPage() {
                 the latest teaching and archived messages.
               </p>
               <p className="mt-4 text-sm text-ink/60">
-                Audio options are linked from our media channels — or ask the
+                Audio options are linked from our media channels, or ask the
                 office for help finding a message.
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function SermonsMediaPage() {
         <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8">
           <h2 className="font-display text-3xl text-pine">We Welcome You</h2>
           <p className="mt-4 text-ink/75">
-            We’re saving you a seat — join us Sunday at 10:45 AM, or catch the
+            We’re saving you a seat, join us Sunday at 10:45 AM, or catch the
             message online.
           </p>
           <Link

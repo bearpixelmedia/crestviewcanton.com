@@ -95,7 +95,7 @@ export default function ResourcesPage() {
             <article className="border-t border-pine/15 pt-6">
               <h2 className="font-display text-2xl text-pine">Teachlife Radio</h2>
               <p className="mt-3 text-sm leading-relaxed text-ink/75">
-                Fridays at 10:00 AM with Pastor Dan Page — WPTL 101.7 FM / 920 AM.
+                Fridays at 10:00 AM with Pastor Dan Page, WPTL 101.7 FM / 920 AM.
               </p>
             </article>
             <article className="border-t border-pine/15 pt-6">
@@ -117,7 +117,7 @@ export default function ResourcesPage() {
               Need Something Specific?
             </h2>
             <p className="mt-3 text-ink/75">
-              Call the church office — we&apos;re happy to help you find class
+              Call the church office, we&apos;re happy to help you find class
               materials, links, or next steps.
             </p>
             <Link

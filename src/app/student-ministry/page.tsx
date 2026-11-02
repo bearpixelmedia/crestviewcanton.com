@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Student Ministry",
   description:
-    "Crestview Youth — 6th–12th grade worship, evangelism, missions, and fellowship in Canton, NC.",
+    "Crestview Youth, 6th–12th grade worship, evangelism, missions, and fellowship in Canton, NC.",
 };
 
 export default function StudentMinistryPage() {
@@ -15,7 +15,7 @@ export default function StudentMinistryPage() {
     <PageShell>
       <PageHero
         eyebrow="Crestview Youth"
-        title="Hey guys — welcome!"
+        title="Hey guys, welcome!"
         lead="We’re glad you’re here. We hope this ministry is a place you can plug in and help us REACH the whole world with the gospel of Jesus Christ. We love worship, evangelism, missions, and having a great time as a group!"
       />
 
@@ -25,24 +25,24 @@ export default function StudentMinistryPage() {
             6th grade through 12th grade
           </p>
           <h2 className="mt-3 font-display text-3xl text-pine">
-            Fellowship &amp; Fun — Weekly Gatherings
+            Fellowship &amp; Fun, Weekly Gatherings
           </h2>
           <ul className="mt-6 max-w-xl space-y-3 text-sm text-ink/80">
             <li className="border-b border-pine/10 pb-3">
-              <strong className="text-canopy">Wednesday evenings</strong> —
+              <strong className="text-canopy">Wednesday evenings</strong> , 
               7:00–8:00 PM in the Youth Center (doors open at 6:30)
             </li>
             <li className="border-b border-pine/10 pb-3">
-              <strong className="text-canopy">Sunday mornings</strong> — 9:30 AM
+              <strong className="text-canopy">Sunday mornings</strong>, 9:30 AM
             </li>
             <li>
-              <strong className="text-canopy">Sunday evenings</strong> —
+              <strong className="text-canopy">Sunday evenings</strong> , 
               6:00–7:30 PM in the Youth Center
             </li>
           </ul>
           <p className="mt-8 max-w-2xl text-ink/80 leading-relaxed">
             It is our mission that each student at Crestview builds a strong
-            foundation of faith based on biblical truth — becoming disciples for
+            foundation of faith based on biblical truth, becoming disciples for
             Christ and making an impact for the kingdom of God.
           </p>
         </div>
@@ -80,13 +80,13 @@ export default function StudentMinistryPage() {
             Youth apparel
           </h3>
           <p className="mt-3 text-sm text-ink/75">
-            Youth t-shirts — suggested donation $15. Sweatshirts — suggested
+            Youth t-shirts, suggested donation $15. Sweatshirts, suggested
             donation $25. See Jarred if you’d like one.
           </p>
 
           <blockquote className="mt-10 max-w-2xl border-l-2 border-gold pl-5 text-sm italic text-ink/70">
             “…not forsaking the assembling of ourselves together, as is the
-            manner of some, but exhorting one another…” — Hebrews 10:25
+            manner of some, but exhorting one another…”, Hebrews 10:25
           </blockquote>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -107,7 +107,7 @@ export default function StudentMinistryPage() {
           </div>
           <p className="mt-6 text-xs text-ink/50">
             Naming note: page title uses “Student Ministry” from the content
-            scaffold; Jarred may prefer “Youth Ministry” — confirm with the
+            scaffold; Jarred may prefer “Youth Ministry”, confirm with the
             office if needed.
           </p>
         </div>

@@ -16,7 +16,7 @@ export default function LivestreamPage() {
       <PageHero
         eyebrow="Livestream"
         title="Join us online when you can’t be in the room."
-        lead="Watch Crestview Baptist Church live on Sunday mornings via Facebook — then catch archives on YouTube."
+        lead="Watch Crestview Baptist Church live on Sunday mornings via Facebook, then catch archives on YouTube."
       />
 
       <section className="bg-paper">
@@ -68,7 +68,7 @@ export default function LivestreamPage() {
             We’d still love to meet you
           </h3>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink/75">
-            Online is a blessing — in-person fellowship is even better. Join us
+            Online is a blessing, in-person fellowship is even better. Join us
             at {site.address.full}.
           </p>
 

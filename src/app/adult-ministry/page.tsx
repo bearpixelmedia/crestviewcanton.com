@@ -34,7 +34,7 @@ const lifeGroups = [
   },
   {
     name: "Pathways Young Adult Class (Co-ed)",
-    body: "For young single adults — meets Wednesday at 7:00 PM.",
+    body: "For young single adults, meets Wednesday at 7:00 PM.",
   },
 ] as const;
 
@@ -43,17 +43,17 @@ export default function AdultMinistryPage() {
     <PageShell>
       <PageHero
         eyebrow="Adult Ministry & Small Groups"
-        title="Grow in God’s Word — together."
+        title="Grow in God’s Word, together."
         lead="Life Groups meet Sundays at 9:30 AM. Spiritual Formation University (SFU) offers discipling opportunities Sunday evenings at 6:00 PM for all ages."
       />
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <h2 className="font-display text-3xl text-pine">
-            Life Groups — Sundays 9:30 AM
+            Life Groups, Sundays 9:30 AM
           </h2>
           <p className="mt-3 text-sm text-ink/70">
-            Life Groups Director — Josh Jamison. Enter the welcome center and
+            Life Groups Director, Josh Jamison. Enter the welcome center and
             greeters can help you find a class.
           </p>
           <div className="mt-10 grid gap-8 sm:grid-cols-2">
@@ -90,8 +90,8 @@ export default function AdultMinistryPage() {
           <div>
             <h2 className="font-display text-2xl text-pine">Men’s Ministry</h2>
             <p className="mt-3 text-sm leading-relaxed text-ink/75">
-              Men’s Prayer Time — Saturdays at 9:00 AM. We desire to encourage
-              each other in brotherly love to grow in Christ — prayer followed by
+              Men’s Prayer Time, Saturdays at 9:00 AM. We desire to encourage
+              each other in brotherly love to grow in Christ, prayer followed by
               fellowship.
             </p>
           </div>
@@ -99,18 +99,18 @@ export default function AdultMinistryPage() {
             <h2 className="font-display text-2xl text-pine">Revolve Women</h2>
             <p className="mt-3 text-sm leading-relaxed text-ink/75">
               Under the direction of Rhonda Beck. Mission: revolving around
-              Christ — to Reach, Equip, and Send. Revolve Women / WMU — first
-              Monday of each month at 6:30 PM. Ladies Bible Study — check the
+              Christ, to Reach, Equip, and Send. Revolve Women / WMU, first
+              Monday of each month at 6:30 PM. Ladies Bible Study, check the
               current bulletin for day/time ({site.phone}).
             </p>
           </div>
           <div>
             <h2 className="font-display text-2xl text-pine">
-              Senior Adults — Joyful Hearts
+              Senior Adults, Joyful Hearts
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-ink/75">
               Our seniors meet regularly, continue to work and serve, and enjoy
-              fellowship together. Joyful Hearts Luncheon — first Tuesday of each
+              fellowship together. Joyful Hearts Luncheon, first Tuesday of each
               month at 11:30 AM.
             </p>
             <p className="mt-3 text-sm text-ink/65">
@@ -150,7 +150,7 @@ export default function AdultMinistryPage() {
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="font-display text-3xl">Find your group</h2>
           <p className="mt-3 max-w-xl text-mist/85">
-            Visit the welcome center this Sunday at 9:30 AM — or call the office
+            Visit the welcome center this Sunday at 9:30 AM, or call the office
             and we’ll help you connect.
           </p>
           <Link

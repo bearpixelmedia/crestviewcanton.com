@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-forest text-fog">
+    <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-forest text-fog pt-[var(--yt-live-banner,0px)]">
       <div className="absolute inset-0">
         <Image
           src="/images/hero.jpg"
@@ -27,11 +27,11 @@ export function Hero() {
           {site.name}
         </p>
         <h1 className="animate-rise-delay-1 mt-6 max-w-2xl font-display text-2xl font-medium leading-snug text-mist sm:text-3xl">
-          Welcome to Our Church Family—Join Us in Faith!
+          Welcome to Our Church Family. Join Us in Faith!
         </h1>
         <p className="animate-rise-delay-2 mt-4 max-w-xl text-base leading-relaxed text-mist/85 sm:text-lg">
           We’re so glad you’re here. Together we grow in our relationship with
-          Jesus and serve others with love—whether you’re new to faith or have
+          Jesus and serve others with love, whether you’re new to faith or have
           been on this journey for years.
         </p>
         <div className="animate-rise-delay-3 mt-8 flex flex-wrap items-center gap-3">

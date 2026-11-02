@@ -16,7 +16,7 @@ export default function NewsPage() {
       <PageHero
         eyebrow="News & Announcements"
         title="Stay connected with Crestview."
-        lead="Dated campaigns and one-off announcements change week to week. For the latest, check the Sunday bulletin, Facebook, and Church Center — then reach out to the office if you have something to share."
+        lead="Dated campaigns and one-off announcements change week to week. For the latest, check the Sunday bulletin, Facebook, and Church Center, then reach out to the office if you have something to share."
       />
 
       <section className="bg-paper">
@@ -81,7 +81,7 @@ export default function NewsPage() {
           </div>
           <p className="mt-12 text-xs text-ink/50">
             Featured dated announcements are intentionally omitted here until the
-            office supplies current copy — we won’t invent campaigns or event
+            office supplies current copy, we won’t invent campaigns or event
             dates.
           </p>
         </div>

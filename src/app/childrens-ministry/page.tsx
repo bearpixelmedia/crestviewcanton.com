@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Children’s Ministry",
   description:
-    "Crestview Kids — planting seeds for Jesus at Crestview Baptist Church in Canton, NC.",
+    "Crestview Kids, planting seeds for Jesus at Crestview Baptist Church in Canton, NC.",
 };
 
 const sundayKids = [
@@ -53,7 +53,7 @@ export default function ChildrensMinistryPage() {
             </ul>
             <blockquote className="mt-8 border-l-2 border-gold pl-5 text-sm italic text-ink/70">
               “And the seed that fell on good soil represents those who hear and
-              accept God’s word…” — Mark 4:20 NLT
+              accept God’s word…”, Mark 4:20 NLT
             </blockquote>
           </div>
           <div className="relative min-h-[280px] overflow-hidden">
@@ -91,13 +91,13 @@ export default function ChildrensMinistryPage() {
             <ul className="mt-5 space-y-3 text-sm text-ink/80">
               <li className="border-b border-pine/10 pb-3">
                 <span className="font-semibold text-canopy">God’s Kidz</span>{" "}
-                (Pre-K–Grade 5) — 7:00–8:00 PM
+                (Pre-K–Grade 5), 7:00–8:00 PM
               </li>
               <li>
                 <span className="font-semibold text-canopy">
                   Vacation Bible School
                 </span>{" "}
-                — one week during July (Age 2–Grade 12)
+               , one week during July (Age 2–Grade 12)
               </li>
             </ul>
             <h3 className="mt-10 font-display text-xl text-pine">

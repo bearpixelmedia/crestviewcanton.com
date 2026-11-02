@@ -35,12 +35,12 @@ export function ContactForm({
 
     const subject =
       intent === "newsletter"
-        ? `Crestview mailing list — ${email}`
+        ? `Crestview mailing list, ${email}`
         : intent === "visit"
-          ? `Plan a visit — ${name || email}`
+          ? `Plan a visit, ${name || email}`
           : intent === "prayer"
-            ? `Prayer request — ${name || email}`
-            : `Website contact — ${name || email}`;
+            ? `Prayer request, ${name || email}`
+            : `Website contact, ${name || email}`;
 
     setStatus("sending");
     setErrorMsg("");
@@ -86,7 +86,7 @@ export function ContactForm({
       `Email: ${email}`,
       phone ? `Phone: ${phone}` : null,
       message ? `\n${message}` : null,
-      `\n— Sent from crestviewcanton.com (${intent})`,
+      `\n,  Sent from crestviewcanton.com (${intent})`,
     ]
       .filter(Boolean)
       .join("\n");

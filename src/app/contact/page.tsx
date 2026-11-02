@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Reach Crestview Baptist Church in Canton, NC — office phone, email, and ministry contacts.",
+    "Reach Crestview Baptist Church in Canton, NC, office phone, email, and ministry contacts.",
 };
 
 const ministryContacts = [
@@ -39,7 +39,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact Us"
         title="Got questions? We have answers."
-        lead="We’d love to hear from you. Reach out anytime — or join us this Sunday."
+        lead="We’d love to hear from you. Reach out anytime, or join us this Sunday."
       />
 
       <section className="bg-paper">

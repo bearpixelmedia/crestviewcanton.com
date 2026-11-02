@@ -4,7 +4,7 @@ export const site = {
   tagline: "A welcoming, Christ-centered community in Canton, NC",
   url: "https://crestviewcanton.com",
   description:
-    "Crestview Baptist Church — a welcoming, Christ-centered community in Canton, NC, dedicated to worship, discipleship, and service.",
+    "Crestview Baptist Church, a welcoming, Christ-centered community in Canton, NC, dedicated to worship, discipleship, and service.",
   address: {
     street: "3258 Pisgah Drive",
     city: "Canton",
@@ -37,7 +37,7 @@ export const site = {
     ],
   },
   social: {
-    /** Verified: facebook.com/crestviewcanton — address/phone match church NAP */
+    /** Verified: facebook.com/crestviewcanton, address/phone match church NAP */
     facebook: "https://www.facebook.com/crestviewcanton/",
     /** Verified: live crestviewcanton.com embeds use this channel (@CrestviewCanton) */
     youtube: "https://www.youtube.com/@CrestviewCanton",
@@ -84,7 +84,7 @@ export const ministryLinks = [
   {
     href: "/childrens-ministry",
     title: "Children’s Ministry",
-    body: "Planting seeds for Jesus — nursery through grade 5, VBS, God’s Kidz, and more.",
+    body: "Planting seeds for Jesus, nursery through grade 5, VBS, God’s Kidz, and more.",
   },
   {
     href: "/student-ministry",
@@ -99,12 +99,12 @@ export const ministryLinks = [
   {
     href: "/missions",
     title: "Missions & Outreach",
-    body: "Local compassion and partners across the nations — Reach, Equip, Send.",
+    body: "Local compassion and partners across the nations, Reach, Equip, Send.",
   },
   {
     href: "/serve",
     title: "Serve / Volunteer",
-    body: "Worship, kids, students, greeting, and more — find a place to use your gifts.",
+    body: "Worship, kids, students, greeting, and more, find a place to use your gifts.",
   },
 ] as const;
 
@@ -114,7 +114,7 @@ export const staff = [
     name: "Dr. Daniel Page",
     role: "Senior Pastor",
     photo: "/staff/daniel-page.jpg",
-    bio: "Dr. Daniel Page has developed a growing love for God’s Word through years of preaching and teaching. His goal is to communicate God’s powerful Word with relevant application for today’s world. Dan grew up in Cherryville, NC, trusted Christ at age 10, and studied music at Appalachian State University (B.M.E. 1987, M.M.E. 1989). After serving churches in worship, youth, and children’s ministry — including a mission year in France — he entered pastoral ministry in 2001 and completed an M.Div. from Southeastern Baptist Theological Seminary. Crestview called him in 2009; he and his family relocated from Raleigh to begin as Senior Pastor in June 2009. He completed a D.Min. in Evangelism and Discipleship from North Greenville University in 2017.",
+    bio: "Dr. Daniel Page has developed a growing love for God’s Word through years of preaching and teaching. His goal is to communicate God’s powerful Word with relevant application for today’s world. Dan grew up in Cherryville, NC, trusted Christ at age 10, and studied music at Appalachian State University (B.M.E. 1987, M.M.E. 1989). After serving churches in worship, youth, and children’s ministry, including a mission year in France, he entered pastoral ministry in 2001 and completed an M.Div. from Southeastern Baptist Theological Seminary. Crestview called him in 2009; he and his family relocated from Raleigh to begin as Senior Pastor in June 2009. He completed a D.Min. in Evangelism and Discipleship from North Greenville University in 2017.",
     contact: "pagebypage8@gmail.com",
   },
   {
@@ -138,7 +138,7 @@ export const staff = [
     name: "Anita Diaz",
     role: "Music Director / Worship Leader",
     photo: "/staff/anita-diaz.jpg",
-    bio: "Anita Diaz is a native of Balsam, N.C. She started playing piano and singing at age three and is a Western Carolina University graduate (Music major, Theatre minor). After performing as a jazz pianist/vocalist in Atlanta, she was selected for the United States Air Force Band program — serving at Robins AFB and later with The United States Air Force Band in Washington, D.C., including White House performances. She has performed with artists including Keiko Matsui and Randy Brecker, opened for Roy Clark, Restless Heart, Gary Morris, and Jamie O’Neal, and sung backup for CeCe Winans, Amy Grant, and Vince Gill. Anita has performed the National Anthem for major sports and NASCAR events. She has served as worship leader, music director, and pianist in Haywood County churches for many years (including worship teams at Biltmore Church). She and her husband Luis continue to look for ways to serve and reach people for Christ.",
+    bio: "Anita Diaz is a native of Balsam, N.C. She started playing piano and singing at age three and is a Western Carolina University graduate (Music major, Theatre minor). After performing as a jazz pianist/vocalist in Atlanta, she was selected for the United States Air Force Band program, serving at Robins AFB and later with The United States Air Force Band in Washington, D.C., including White House performances. She has performed with artists including Keiko Matsui and Randy Brecker, opened for Roy Clark, Restless Heart, Gary Morris, and Jamie O’Neal, and sung backup for CeCe Winans, Amy Grant, and Vince Gill. Anita has performed the National Anthem for major sports and NASCAR events. She has served as worship leader, music director, and pianist in Haywood County churches for many years (including worship teams at Biltmore Church). She and her husband Luis continue to look for ways to serve and reach people for Christ.",
     contact: "crestviewworship2@gmail.com",
   },
   {
@@ -146,7 +146,7 @@ export const staff = [
     name: "Sharon Bryson",
     role: "Administrative Assistant",
     photo: "/staff/sharon-bryson.jpg",
-    bio: "Sharon Bryson serves as Crestview’s Administrative Assistant. A Haywood County native and long-term church member, she earned degrees and certificates from A-B Tech, UNC Asheville, and Haywood Community College. After 20 years as an Application Developer with Duke Energy Business Services (Nantahala area), she was called to serve at Crestview in 2011. Her favorite life verse is Philippians 4:13 — “I can do all things through Christ who strengthens me.”",
+    bio: "Sharon Bryson serves as Crestview’s Administrative Assistant. A Haywood County native and long-term church member, she earned degrees and certificates from A-B Tech, UNC Asheville, and Haywood Community College. After 20 years as an Application Developer with Duke Energy Business Services (Nantahala area), she was called to serve at Crestview in 2011. Her favorite life verse is Philippians 4:13, “I can do all things through Christ who strengthens me.”",
     contact: "crestviewcanton@gmail.com · 828-648-1110",
   },
   {
@@ -155,7 +155,7 @@ export const staff = [
     role: "Custodian",
     photo: "/staff/tammie-beck.jpg",
     // Longer tenure/family details still pending church office (NEW-STAFF-BIOS.md).
-    bio: "Tammie Beck of Canton serves as Crestview Baptist Church’s Custodian, keeping our facilities welcoming and ready for worship and ministry. She and her husband, Eddie, serve Crestview’s campus together — Tammie indoors and Eddie on the grounds.",
+    bio: "Tammie Beck of Canton serves as Crestview Baptist Church’s Custodian, keeping our facilities welcoming and ready for worship and ministry. She and her husband, Eddie, serve Crestview’s campus together, Tammie indoors and Eddie on the grounds.",
   },
   {
     slug: "eddie-beck",
@@ -163,6 +163,6 @@ export const staff = [
     role: "Lawn Management",
     photo: "/staff/eddie-beck.jpg",
     // Longer tenure/family details still pending church office (NEW-STAFF-BIOS.md).
-    bio: "Eddie Beck of Canton cares for the Crestview Baptist Church grounds as Lawn Management lead — helping our property reflect the care we want for everyone who visits. He serves alongside his wife, Tammie, who is Crestview’s Custodian.",
+    bio: "Eddie Beck of Canton cares for the Crestview Baptist Church grounds as Lawn Management lead, helping our property reflect the care we want for everyone who visits. He serves alongside his wife, Tammie, who is Crestview’s Custodian.",
   },
 ] as const;

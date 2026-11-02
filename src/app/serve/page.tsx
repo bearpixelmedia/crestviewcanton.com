@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Serve / Volunteer",
   description:
-    "Serve with Crestview Baptist Church — worship, kids, students, greeting, and more.",
+    "Serve with Crestview Baptist Church, worship, kids, students, greeting, and more.",
 };
 
 const opportunities = [
@@ -60,7 +60,7 @@ export default function ServePage() {
       <PageHero
         eyebrow="Serve / Volunteer"
         title="Ministry is love with work gloves on."
-        lead="There are more ways than finances to help grow ministry — your time and gifts matter. We appreciate your willingness to serve."
+        lead="There are more ways than finances to help grow ministry, your time and gifts matter. We appreciate your willingness to serve."
       />
 
       <section className="bg-paper">

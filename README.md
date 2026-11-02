@@ -1,8 +1,8 @@
 # Crestview Baptist Church
 
-Custom website for **Crestview Baptist Church** (Canton, NC) — built outside WordPress/Elementor.
+Custom website for **Crestview Baptist Church** (Canton, NC), built outside WordPress/Elementor.
 
-**Stack** (matched to today’s sibling builds — especially [Paul’s Pallet Walls](https://github.com/bearpixelmedia/pauls-pallet-walls)):
+**Stack** (matched to today’s sibling builds, especially [Paul’s Pallet Walls](https://github.com/bearpixelmedia/pauls-pallet-walls)):
 
 - Next.js 16 (App Router) + React 19 + TypeScript
 - Tailwind CSS v4
@@ -19,15 +19,16 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) (or the next free port printed by `next dev`).
 
-## Forms (env vars Byron must set)
-
-Contact, Plan Your Visit, Prayer Requests, Serve interest, and home newsletter share `src/components/ContactForm.tsx`.
+## Env vars Byron must set
 
 | Variable | Required? | Purpose |
 |----------|-----------|---------|
-| `NEXT_PUBLIC_FORMSPREE_ID` | Optional | Formspree form ID (`https://formspree.io/f/<ID>`). When set, submissions POST to Formspree. |
+| `NEXT_PUBLIC_FORMSPREE_ID` | Optional | Formspree form ID (`https://formspree.io/f/<ID>`). When set, form submissions POST to Formspree. |
+| `YOUTUBE_DATA_API_KEY` | Optional (recommended) | YouTube Data API v3 key so the home-page live banner can detect streams reliably. |
 
-**Without Formspree:** forms still work via a prefilled `mailto:crestviewcanton@gmail.com` (no secrets needed for local/preview).
+**Without Formspree:** forms still work via a prefilled `mailto:crestviewcanton@gmail.com`.
+
+**Without YouTube key:** `/api/youtube-live` still tries an HTML check (less reliable). Banner only appears above the hero when the channel is actually live.
 
 See `.env.example`.
 

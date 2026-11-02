@@ -7,15 +7,15 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Missions & Outreach",
   description:
-    "Local compassion and global partners — Reach, Equip, Send at Crestview Baptist Church.",
+    "Local compassion and global partners, Reach, Equip, Send at Crestview Baptist Church.",
 };
 
 const partners = [
-  "Mike and Kathy Shipman — International Mission Board",
-  "Lyandon and Kim Warren — Vermont",
-  "Matt and Caroline Gandy — Cardiff, Wales",
-  "Renee Peoples — Slovenija",
-  "Anthony and April Shelton — Africa",
+  "Mike and Kathy Shipman, International Mission Board",
+  "Lyandon and Kim Warren, Vermont",
+  "Matt and Caroline Gandy, Cardiff, Wales",
+  "Renee Peoples, Slovenija",
+  "Anthony and April Shelton, Africa",
 ] as const;
 
 export default function MissionsPage() {
@@ -30,7 +30,7 @@ export default function MissionsPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <p className="text-sm text-ink/70">
-            Outreach Coordinators — Jason &amp; Holly Haley ·{" "}
+            Outreach Coordinators, Jason &amp; Holly Haley ·{" "}
             <a
               href="mailto:hoddiewells86@gmail.com"
               className="font-semibold text-canopy"
@@ -48,7 +48,7 @@ export default function MissionsPage() {
           <p className="mt-4 max-w-3xl text-ink/80 leading-relaxed">
             We encourage and send disciples into their homes, workplaces,
             neighborhoods, and all the way to the nations to make other disciples
-            — becoming multiplying disciples in obedience to Jesus’ command
+           , becoming multiplying disciples in obedience to Jesus’ command
             (Matthew 28:19).
           </p>
 
@@ -86,12 +86,12 @@ export default function MissionsPage() {
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink/75">
             Crestview participates in Southern Baptist mission offerings that
             support church planting and kingdom ministry across North America and
-            to the nations — including the Lottie Moon Christmas Offering
+            to the nations, including the Lottie Moon Christmas Offering
             (international / IMB) and the Annie Armstrong Easter Offering (North
             American / NAMB). 100% of designated gifts support those missionaries.
           </p>
           <p className="mt-6 text-sm text-ink/75">
-            Women on mission: Revolve Women emphasizes missions and service —
+            Women on mission: Revolve Women emphasizes missions and service , 
             beginning in personal lives and extending through church, community,
             nation, and world.
           </p>

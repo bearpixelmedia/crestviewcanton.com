@@ -61,19 +61,19 @@ export default function EventsPage() {
             </h2>
             <ul className="mt-5 space-y-3 text-sm text-ink/80">
               <li className="border-b border-pine/10 pb-3">
-                Joyful Hearts (Senior Adults) Luncheon — first Tuesday @ 11:30 AM
+                Joyful Hearts (Senior Adults) Luncheon, first Tuesday @ 11:30 AM
               </li>
               <li className="border-b border-pine/10 pb-3">
-                Revolve Women — first Monday @ 6:30 PM
+                Revolve Women, first Monday @ 6:30 PM
               </li>
               <li className="border-b border-pine/10 pb-3">
-                Women’s Bible Study — see current bulletin / office
+                Women’s Bible Study, see current bulletin / office
               </li>
               <li className="border-b border-pine/10 pb-3">
-                Men’s Prayer — Saturdays 9:00 AM
+                Men’s Prayer, Saturdays 9:00 AM
               </li>
               <li>
-                Men’s Bible Study — Mondays 7:00 PM
+                Men’s Bible Study, Mondays 7:00 PM
               </li>
             </ul>
 
@@ -81,7 +81,7 @@ export default function EventsPage() {
               Teachlife Radio
             </h3>
             <p className="mt-3 text-sm text-ink/75">
-              Every Friday at 10:00 AM — hear Teachlife Radio with Sr. Pastor Dan
+              Every Friday at 10:00 AM, hear Teachlife Radio with Sr. Pastor Dan
               Page on WPTL 101.7 FM / 920 AM.
             </p>
           </div>

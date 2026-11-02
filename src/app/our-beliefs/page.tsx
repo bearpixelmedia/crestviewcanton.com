@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 const beliefs = [
   {
     title: "The Bible & God",
-    body: "We believe the Bible to be God’s inspired Word to man — authoritative and useful for daily life. It is perfect and free of any mistakes. We believe that there is one true God, who exists in three persons. He is the creator of all things and the redeemer of mankind. He exists as God the Father, God the Son in the person of Jesus Christ, and God the Spirit.",
+    body: "We believe the Bible to be God’s inspired Word to man, authoritative and useful for daily life. It is perfect and free of any mistakes. We believe that there is one true God, who exists in three persons. He is the creator of all things and the redeemer of mankind. He exists as God the Father, God the Son in the person of Jesus Christ, and God the Spirit.",
   },
   {
     title: "Humanity & Salvation",
-    body: "We believe God created man as male and female. Man fell into sin by his own will and is completely dependent on God for life and salvation. We believe that salvation is from the Lord and is offered freely to all mankind. It comes only through faith in Jesus Christ. Salvation includes repentance, faith, justification, sanctification, and glorification — all of God’s work and none of man’s.",
+    body: "We believe God created man as male and female. Man fell into sin by his own will and is completely dependent on God for life and salvation. We believe that salvation is from the Lord and is offered freely to all mankind. It comes only through faith in Jesus Christ. Salvation includes repentance, faith, justification, sanctification, and glorification, all of God’s work and none of man’s.",
   },
   {
     title: "The Church",
@@ -45,7 +45,7 @@ export default function OurBeliefsPage() {
           </h2>
           <p className="mt-4 text-ink/80 leading-relaxed">
             Crestview Baptist Church holds to the doctrinal confession of the
-            Southern Baptist Convention — the Baptist Faith and Message, 2000
+            Southern Baptist Convention, the Baptist Faith and Message, 2000
             (SBC materials updated August 2024). We center our faith on the love
             of Jesus Christ, believing in His grace and the truth of His
             teachings.

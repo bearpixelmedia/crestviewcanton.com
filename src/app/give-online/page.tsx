@@ -15,7 +15,7 @@ export default function GiveOnlinePage() {
       <PageHero
         eyebrow="Give Online"
         title="Because of you, we get to reach more people for Jesus."
-        lead="Thank you for everything you do! Because of you, we are blessed with opportunities to reach more people for Jesus. Below are ways you can contribute — and there are more ways than finances to help grow our ministry."
+        lead="Thank you for everything you do! Because of you, we are blessed with opportunities to reach more people for Jesus. Below are ways you can contribute, and there are more ways than finances to help grow our ministry."
       />
 
       <section className="bg-paper">
@@ -89,7 +89,7 @@ export default function GiveOnlinePage() {
           </div>
 
           <p className="mt-14 text-sm text-ink/60">
-            Your partnership helps Crestview Reach, Equip, and Send — for the
+            Your partnership helps Crestview Reach, Equip, and Send, for the
             glory of Jesus Christ.
           </p>
         </div>
