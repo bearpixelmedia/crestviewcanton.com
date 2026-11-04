@@ -35,7 +35,7 @@ export default function OurBeliefsPage() {
       <PageHero
         eyebrow="Our Beliefs"
         title="Who We Are"
-        lead="Welcome to our church! We are a Southern Baptist community in Canton, North Carolina, committed to helping everyone know Jesus Christ. Our mission is to guide you in growing your faith, connecting with fellow believers, and encouraging you to serve others."
+        lead="Welcome to our church! We are a Southern Baptist community in Canton, North Carolina, committed to the Great Commission of making disciples of the nations! We desire to reach our community so everyone may personally know Jesus Christ. Our mission is to guide you in discovering and growing in your faith, connecting with fellow believers, and equipping you to serve Jesus and others."
       />
 
       <section className="bg-paper">
