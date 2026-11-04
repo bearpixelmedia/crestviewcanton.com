@@ -55,6 +55,18 @@ export default function OurStaffPage() {
                         {person.contact}
                       </p>
                     ) : null}
+                    {"website" in person && person.website ? (
+                      <p className="mt-2 text-sm">
+                        <a
+                          href={person.website.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-dawn-deep underline-offset-2 hover:text-canopy hover:underline"
+                        >
+                          {person.website.label}
+                        </a>
+                      </p>
+                    ) : null}
                   </div>
                 </article>
               );

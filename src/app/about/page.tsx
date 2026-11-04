@@ -127,15 +127,38 @@ export default function AboutPage() {
                 <span className="font-semibold text-gold-soft">{person.name}</span>
                 <br />
                 {person.role}
+                {"website" in person && person.website ? (
+                  <>
+                    <br />
+                    <a
+                      href={person.website.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gold-soft/90 underline-offset-2 hover:text-fog hover:underline"
+                    >
+                      {person.website.label}
+                    </a>
+                  </>
+                ) : null}
               </li>
             ))}
           </ul>
-          <Link
-            href="/our-staff"
-            className="mt-8 inline-flex rounded-sm bg-dawn px-5 py-3 text-sm font-semibold text-forest"
-          >
-            Meet Our Staff
-          </Link>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link
+              href="/our-staff"
+              className="inline-flex rounded-sm bg-dawn px-5 py-3 text-sm font-semibold text-forest"
+            >
+              Meet Our Staff
+            </Link>
+            <a
+              href={site.pastorWebsite.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-gold-soft underline-offset-2 hover:text-fog hover:underline"
+            >
+              {site.pastorWebsite.label}
+            </a>
+          </div>
           <p className="mt-10 text-sm text-mist/70">
             Join us this Sunday, Life Groups at 9:30 AM and Morning Worship at
             10:45 AM. {site.address.full} · {site.phone}

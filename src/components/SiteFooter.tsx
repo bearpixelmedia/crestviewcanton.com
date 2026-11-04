@@ -61,6 +61,14 @@ export function SiteFooter() {
               >
                 Kids on Facebook
               </a>
+              <a
+                href={site.pastorWebsite.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-fog"
+              >
+                {site.pastorWebsite.label}
+              </a>
             </li>
           </ul>
         </div>

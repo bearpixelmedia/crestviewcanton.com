@@ -16,6 +16,10 @@ export const site = {
   phoneTel: "+18286481110",
   email: "crestviewcanton@gmail.com",
   pastorEmail: "pagebypage8@gmail.com",
+  pastorWebsite: {
+    href: "https://danielmpage.com",
+    label: "Pastor Dan’s site",
+  },
   giveUrl: "https://secure.myvanco.com/L-ZB2Z/home",
   textToGive: "18285374412",
   textToGiveDisplay: "1 828 537 4412",
@@ -135,6 +139,10 @@ export const staff = [
     photo: "/staff/daniel-page.jpg",
     bio: "Dr. Daniel Page has developed a growing love for God’s Word through years of preaching and teaching. His goal is to communicate God’s powerful Word with relevant application for today’s world. Dan grew up in Cherryville, NC, trusted Christ at age 10, and studied music at Appalachian State University (B.M.E. 1987, M.M.E. 1989). After serving churches in worship, youth, and children’s ministry, including a mission year in France, he entered pastoral ministry in 2001 and completed an M.Div. from Southeastern Baptist Theological Seminary. Crestview called him in 2009; he and his family relocated from Raleigh to begin as Senior Pastor in June 2009. He completed a D.Min. in Evangelism and Discipleship from North Greenville University in 2017.",
     contact: "pagebypage8@gmail.com",
+    website: {
+      href: "https://danielmpage.com",
+      label: "Daniel M. Page",
+    },
   },
   {
     slug: "jarred-rathbone",
