@@ -17,9 +17,10 @@ export function SiteHeader({ variant }: Props) {
   const isHero = tone === "hero";
   const [open, setOpen] = useState(false);
 
+  // ~17% larger than 0.8125rem for older readers on desktop primary nav
   const linkClass = isHero
-    ? "text-[0.8125rem] tracking-wide transition-colors hover:text-fog"
-    : "text-[0.8125rem] tracking-wide text-ink/65 transition-colors hover:text-pine";
+    ? "text-[0.95rem] tracking-wide transition-colors hover:text-fog"
+    : "text-[0.95rem] tracking-wide text-ink/65 transition-colors hover:text-pine";
 
   const ctaClass = isHero
     ? "rounded-sm bg-dawn px-4 py-2.5 text-[0.8125rem] font-semibold tracking-wide text-forest transition-colors hover:bg-dawn-deep hover:text-fog"
