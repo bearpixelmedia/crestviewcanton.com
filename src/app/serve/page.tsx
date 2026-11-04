@@ -1,9 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
-import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -65,30 +63,20 @@ export default function ServePage() {
         lead="There are more ways than finances to help grow ministry, your time and gifts matter. We appreciate your willingness to serve."
       />
 
-      <section className="bg-fog">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-2 sm:px-8 lg:items-center">
-          <div className="relative aspect-[4/3] w-full overflow-hidden bg-fog">
-            <Image
-              src={photos.community.src}
-              alt={photos.community.alt}
-              fill
-              sizes="(max-width: 640px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-leaf">
-              Hands and feet
-            </p>
-            <h2 className="mt-2 font-display text-3xl text-pine">
-              Serving neighbors in Jesus’ name
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-ink/75">
-              From fellowship breakfasts to Serve NC projects with God’s Mighty
-              Warriors, Crestview puts love into action. Find a team below and
-              tell us how you’d like to help.
-            </p>
-          </div>
+      <section className="relative overflow-hidden bg-fog">
+        <div aria-hidden className="absolute inset-0 ridge opacity-60" />
+        <div className="relative mx-auto max-w-3xl px-5 py-16 text-center sm:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-leaf">
+            Hands and feet
+          </p>
+          <h2 className="mt-3 font-display text-3xl text-pine sm:text-4xl">
+            Serving neighbors in Jesus’ name
+          </h2>
+          <p className="mt-5 text-sm leading-relaxed text-ink/75 sm:text-base">
+            From fellowship breakfasts to Serve NC projects with God’s Mighty
+            Warriors, Crestview puts love into action. Find a team below and
+            tell us how you’d like to help.
+          </p>
         </div>
       </section>
 

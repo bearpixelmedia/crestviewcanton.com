@@ -23,7 +23,7 @@ Open [http://localhost:3000](http://localhost:3000) (or the next free port print
 
 | Variable | Required? | Purpose |
 |----------|-----------|---------|
-| `NEXT_PUBLIC_FORMSPREE_ID` | Optional | Formspree form ID (`https://formspree.io/f/<ID>`). When set, form submissions POST to Formspree. |
+| `NEXT_PUBLIC_FORMSPREE_ID` | Optional | Formspree form ID (`https://formspree.io/f/<ID>`). When set, form submissions POST to Formspree and the mailto notice hides. |
 | `YOUTUBE_DATA_API_KEY` | Optional (recommended) | YouTube Data API v3 key so the home-page live banner can detect streams reliably. |
 
 **Without Formspree:** forms still work via a prefilled `mailto:crestviewcanton@gmail.com`.
@@ -31,6 +31,22 @@ Open [http://localhost:3000](http://localhost:3000) (or the next free port print
 **Without YouTube key:** `/api/youtube-live` still tries an HTML check (less reliable). Banner only appears above the hero when the channel is actually live.
 
 See `.env.example`.
+
+### Formspree setup (exact click-path)
+
+Agent CLI/browser could not finish OAuth for Formspree. Byron must create the form once:
+
+1. Open [https://formspree.io/login](https://formspree.io/login) and sign in (Google is fine; use an inbox you control).
+2. Click **New Form**.
+3. Name it `Crestview Baptist website`.
+4. Set the recipient to **`crestviewcanton@gmail.com`** (church contact).
+5. Create the form, then open it and copy the Form ID from the endpoint URL: `https://formspree.io/f/XXXXXXX` → copy **`XXXXXXX`** only.
+6. Local: add to `.env.local`  
+   `NEXT_PUBLIC_FORMSPREE_ID=XXXXXXX`  
+   then restart `npm run dev`.
+7. Vercel: Project **crestviewcanton-com** → **Settings** → **Environment Variables** → add `NEXT_PUBLIC_FORMSPREE_ID` = `XXXXXXX` for Production, Preview, and Development → **Save** → redeploy (or push again).
+
+After the ID is set, the developer mailto notice on forms disappears automatically.
 
 ## Pages
 

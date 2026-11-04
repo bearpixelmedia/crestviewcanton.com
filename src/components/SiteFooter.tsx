@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { moreNav, primaryNav, secondaryNav, site } from "@/lib/site";
 
@@ -11,14 +10,16 @@ export function SiteFooter() {
       />
       <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1.1fr] sm:px-8">
         <div>
-          <Link href="/" className="inline-flex items-center gap-3">
+          <Link href="/" className="inline-flex items-center gap-3" aria-label={`${site.name} home`}>
             <span className="relative h-12 w-12 overflow-hidden rounded-full ring-1 ring-white/15">
-              <Image
-                src="/brand/logo.jpg"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/crestview-mark.svg"
                 alt=""
-                fill
-                sizes="48px"
-                className="object-cover"
+                width={48}
+                height={48}
+                className="h-full w-full"
+                aria-hidden
               />
             </span>
             <span>

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CampusMap } from "@/components/CampusMap";
 import { ContactForm } from "@/components/ContactForm";
 import { Hero } from "@/components/Hero";
-import { PageShell } from "@/components/PageShell";
 import { HomeBanner } from "@/components/HomeBanner";
+import { PageShell } from "@/components/PageShell";
 import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
@@ -21,54 +22,42 @@ const pathways = [
     body: "Join us for uplifting worship services every Sunday. Experience the love of Christ as we come together in faith and fellowship.",
     href: "/plan-your-visit",
     cta: "Plan Your Visit",
+    photo: photos.pathwayWorship,
   },
   {
     title: "Life Groups & SFU",
     body: "Deepen your understanding of the Word in Life Groups and Spiritual Formation University. Everyone is welcome.",
     href: "/adult-ministry",
     cta: "Adult Ministry",
+    photo: photos.pathwayLifeGroups,
   },
   {
     title: "Events",
     body: "See our weekly rhythm, monthly groups, and Teachlife Radio, then join us for what’s happening this week.",
     href: "/events",
     cta: "See Events",
+    photo: photos.pathwayEvents,
   },
   {
     title: "Serve / Volunteer",
     body: "Give your time to help others in our church and community. Volunteering is a beautiful way to serve while growing in faith.",
     href: "/serve",
     cta: "Get Started",
+    photo: photos.pathwayServe,
   },
   {
     title: "Student Ministry",
     body: "Connect with other young people through Crestview Youth, worship, evangelism, missions, and fellowship.",
     href: "/student-ministry",
     cta: "Join Us",
+    photo: photos.pathwayStudent,
   },
   {
     title: "Prayer",
     body: "Come together in prayer to support one another and seek God’s guidance. Share a request anytime.",
     href: "/prayer-requests",
     cta: "Prayer Requests",
-  },
-] as const;
-
-const lifePhotos = [
-  {
-    src: photos.breakfast.src,
-    alt: photos.breakfast.alt,
-    caption: "Shared meals, shared life",
-  },
-  {
-    src: photos.buffet.src,
-    alt: photos.buffet.alt,
-    caption: "Gathered around the table",
-  },
-  {
-    src: photos.kitchen.src,
-    alt: photos.kitchen.alt,
-    caption: "Serving with glad hearts",
+    photo: photos.pathwayPrayer,
   },
 ] as const;
 
@@ -132,13 +121,22 @@ export default function HomePage() {
               at Crestview.
             </p>
           </div>
-          <div className="mt-14 grid gap-x-12 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {pathways.map((item) => (
-              <div key={item.title} className="border-t border-pine/12 pt-7">
+              <article key={item.title} className="group flex flex-col">
+                <div className="relative mb-5 aspect-[16/10] w-full overflow-hidden bg-paper">
+                  <Image
+                    src={item.photo.src}
+                    alt={item.photo.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                </div>
                 <h3 className="font-display text-[1.65rem] leading-snug text-pine">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink/70">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/70">
                   {item.body}
                 </p>
                 <Link
@@ -147,7 +145,7 @@ export default function HomePage() {
                 >
                   {item.cta}
                 </Link>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -190,30 +188,12 @@ export default function HomePage() {
             Life at Crestview
           </p>
           <h2 className="mt-4 max-w-2xl font-display text-[clamp(2rem,4vw,2.75rem)] leading-[1.08] tracking-[-0.02em]">
-            Real moments from our church family
+            Stay connected with our church family
           </h2>
           <p className="mt-4 max-w-xl text-mist/80">
-            Photos from our Facebook community: fellowship around the table and
-            serving neighbors together.
+            Follow along on social for recent fellowship, Serve NC days, and
+            Sunday gatherings, or browse our historical photo gallery.
           </p>
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {lifePhotos.map((p) => (
-              <figure key={p.src} className="group">
-                <div className="relative aspect-[4/5] overflow-hidden bg-forest/40 sm:aspect-[3/4]">
-                  <Image
-                    src={p.src}
-                    alt={p.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                  />
-                </div>
-                <figcaption className="mt-3 text-sm text-mist/75">
-                  {p.caption}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
           <div className="mt-10 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <a
               href={site.social.facebook}
@@ -250,7 +230,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mx-auto grid max-w-6xl gap-14 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:items-start">
           <div>
             <h2 className="font-display text-3xl text-pine sm:text-4xl">
               Stay Updated with Our Community
@@ -272,42 +252,47 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div>
-            <h2 className="font-display text-3xl text-pine">Get in Touch</h2>
-            <dl className="mt-6 space-y-5 text-sm">
+          <div className="overflow-hidden rounded-sm bg-[color-mix(in_srgb,var(--color-fog)_88%,#9ec0d8)] ring-1 ring-pine/15 lg:grid lg:grid-cols-[minmax(14rem,0.85fr)_minmax(0,1.15fr)] lg:items-stretch">
+            <div className="flex flex-col justify-between p-6 sm:p-8">
               <div>
-                <dt className="font-semibold text-canopy">Our Address</dt>
-                <dd className="mt-1 text-ink/75">{site.address.full}</dd>
+                <h2 className="font-display text-3xl text-pine">Get in Touch</h2>
+                <dl className="mt-6 space-y-4 text-sm">
+                  <div>
+                    <dt className="font-semibold text-canopy">Our Address</dt>
+                    <dd className="mt-1 text-ink/75">{site.address.full}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-canopy">Phone Number</dt>
+                    <dd className="mt-1">
+                      <a
+                        href={`tel:${site.phoneTel}`}
+                        className="text-ink/75 hover:text-pine"
+                      >
+                        {site.phone}
+                      </a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-canopy">Email Us</dt>
+                    <dd className="mt-1">
+                      <a
+                        href={`mailto:${site.email}`}
+                        className="text-ink/75 hover:text-pine"
+                      >
+                        {site.email}
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
               </div>
-              <div>
-                <dt className="font-semibold text-canopy">Phone Number</dt>
-                <dd className="mt-1">
-                  <a
-                    href={`tel:${site.phoneTel}`}
-                    className="text-ink/75 hover:text-pine"
-                  >
-                    {site.phone}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-canopy">Email Us</dt>
-                <dd className="mt-1">
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="text-ink/75 hover:text-pine"
-                  >
-                    {site.email}
-                  </a>
-                </dd>
-              </div>
-            </dl>
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
-            >
-              Contact page
-            </Link>
+              <Link
+                href="/contact"
+                className="mt-8 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
+              >
+                Contact page
+              </Link>
+            </div>
+            <CampusMap className="min-h-[280px] border-t border-pine/10 sm:min-h-[320px] lg:min-h-full lg:border-t-0 lg:border-l" />
           </div>
         </div>
       </section>

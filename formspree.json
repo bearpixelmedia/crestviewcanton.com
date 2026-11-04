@@ -1,0 +1,13 @@
+{
+  "forms": {
+    "crestview": {
+      "name": "Crestview Baptist Church website",
+      "actions": [
+        {
+          "type": "email",
+          "to": "crestviewcanton@gmail.com"
+        }
+      ]
+    }
+  }
+}

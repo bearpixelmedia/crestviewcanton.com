@@ -125,22 +125,13 @@ export default function AdultMinistryPage() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-6xl gap-4 px-5 pb-16 sm:grid-cols-2 sm:px-8">
-          <div className="relative aspect-[16/10] w-full overflow-hidden bg-fog">
-            <Image
-              src={photos.seniors.src}
-              alt={photos.seniors.alt}
-              fill
-              sizes="(max-width: 640px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="relative aspect-[16/10] w-full overflow-hidden bg-fog">
+        <div className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
+          <div className="relative aspect-[21/9] w-full overflow-hidden bg-fog">
             <Image
               src={photos.seniors2.src}
               alt={photos.seniors2.alt}
               fill
-              sizes="(max-width: 640px) 100vw, 50vw"
+              sizes="100vw"
               className="object-cover"
             />
           </div>

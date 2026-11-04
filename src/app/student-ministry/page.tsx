@@ -1,8 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
-import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -22,42 +20,31 @@ export default function StudentMinistryPage() {
       />
 
       <section className="bg-paper">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
-              6th grade through 12th grade
-            </p>
-            <h2 className="mt-4 font-display text-[clamp(1.85rem,3.5vw,2.5rem)] leading-[1.08] tracking-[-0.02em] text-pine">
-              Fellowship &amp; Fun, Weekly Gatherings
-            </h2>
-            <ul className="mt-8 max-w-xl space-y-3 text-sm text-ink/80">
-              <li className="border-b border-pine/10 pb-3">
-                <strong className="text-canopy">Wednesday evenings</strong>,
-                7:00–8:00 PM in the Youth Center (doors open at 6:30)
-              </li>
-              <li className="border-b border-pine/10 pb-3">
-                <strong className="text-canopy">Sunday mornings</strong>, 9:30 AM
-              </li>
-              <li>
-                <strong className="text-canopy">Sunday evenings</strong>,
-                6:00–7:30 PM in the Youth Center
-              </li>
-            </ul>
-            <p className="mt-8 max-w-2xl text-ink/75 leading-relaxed">
-              It is our mission that each student at Crestview builds a strong
-              foundation of faith based on biblical truth, becoming disciples for
-              Christ and making an impact for the kingdom of God.
-            </p>
-          </div>
-          <div className="relative aspect-[4/3] w-full overflow-hidden bg-fog">
-            <Image
-              src={photos.youthHeritage.src}
-              alt={photos.youthHeritage.alt}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
+            6th grade through 12th grade
+          </p>
+          <h2 className="mt-4 font-display text-[clamp(1.85rem,3.5vw,2.5rem)] leading-[1.08] tracking-[-0.02em] text-pine">
+            Fellowship &amp; Fun, Weekly Gatherings
+          </h2>
+          <ul className="mt-8 max-w-xl space-y-3 text-sm text-ink/80">
+            <li className="border-b border-pine/10 pb-3">
+              <strong className="text-canopy">Wednesday evenings</strong>,
+              7:00–8:00 PM in the Youth Center (doors open at 6:30)
+            </li>
+            <li className="border-b border-pine/10 pb-3">
+              <strong className="text-canopy">Sunday mornings</strong>, 9:30 AM
+            </li>
+            <li>
+              <strong className="text-canopy">Sunday evenings</strong>,
+              6:00–7:30 PM in the Youth Center
+            </li>
+          </ul>
+          <p className="mt-8 max-w-2xl text-ink/75 leading-relaxed">
+            It is our mission that each student at Crestview builds a strong
+            foundation of faith based on biblical truth, becoming disciples for
+            Christ and making an impact for the kingdom of God.
+          </p>
         </div>
       </section>
 

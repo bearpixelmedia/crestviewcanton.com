@@ -1,8 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
-import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -23,15 +21,6 @@ export default function SermonsMediaPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-          <div className="relative mb-14 aspect-[21/9] w-full overflow-hidden bg-fog">
-            <Image
-              src={photos.worship.src}
-              alt={photos.worship.alt}
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <h2 className="font-display text-3xl text-pine">Watch Live</h2>

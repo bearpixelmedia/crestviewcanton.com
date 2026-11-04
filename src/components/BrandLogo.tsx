@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
@@ -10,14 +9,24 @@ export function BrandLogo({ tone = "solid" }: Props) {
   const isHero = tone === "hero";
 
   return (
-    <Link href="/" className="group flex items-center gap-3">
-      <span className="relative h-11 w-11 overflow-hidden rounded-full ring-1 ring-white/20 sm:h-12 sm:w-12">
-        <Image
-          src="/brand/logo.jpg"
+    <Link
+      href="/"
+      className="group flex items-center gap-3"
+      aria-label={`${site.name} home`}
+    >
+      <span
+        className={`relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full sm:h-12 sm:w-12 ${
+          isHero ? "ring-1 ring-white/25" : "ring-1 ring-pine/15"
+        }`}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/brand/crestview-mark.svg"
           alt=""
-          fill
-          sizes="48px"
-          className="object-cover"
+          width={48}
+          height={48}
+          className="h-full w-full"
+          aria-hidden
         />
       </span>
       <span className="leading-tight">

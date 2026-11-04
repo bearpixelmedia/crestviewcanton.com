@@ -118,10 +118,9 @@ export function ContactForm({
   return (
     <form onSubmit={handleSubmit} className={`space-y-4 ${className}`}>
       {!FORMSPREE_ID ? (
-        <p className="rounded-sm border border-gold/30 bg-fog px-3 py-2 text-xs text-ink/65">
-          Form delivery uses your email app until{" "}
-          <code className="text-canopy">NEXT_PUBLIC_FORMSPREE_ID</code> is set
-          (see README).
+        <p className="rounded-sm border border-pine/10 bg-fog/80 px-3 py-2 text-xs text-ink/60">
+          Submissions open your email app until Formspree is connected for{" "}
+          {site.email}.
         </p>
       ) : null}
 

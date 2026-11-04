@@ -1,7 +1,8 @@
 /**
  * Unique photo registry for Crestview.
  * Rule: each `src` appears on exactly one page/placement. Never reuse.
- * Prefer a non-photo PageHero over repeating an asset.
+ * Prefer a non-photo treatment over repeating an asset.
+ * Home pathways grid uses social assets only (FB / campus scrapes).
  */
 
 export type PhotoAsset = {
@@ -12,68 +13,60 @@ export type PhotoAsset = {
 };
 
 export const photos = {
-  /** Home hero only */
+  /** Home hero */
   campus: {
-    src: "/images/social/campus-entrance.jpg",
-    alt: "Crestview Baptist Church entrance and sign on Pisgah Drive",
+    src: "/images/gallery/worship.jpg",
+    alt: "Sunday worship at Crestview Baptist Church",
     owner: "home-hero",
   },
   /** Home welcome section */
   fellowship: {
-    src: "/images/social/fb-serve-5.jpg",
-    alt: "Crestview church family gathered in fellowship",
+    src: "/images/ministries/senior-adults.jpg",
+    alt: "Adults gathered in fellowship at Crestview",
     owner: "home-welcome",
   },
-  /** Home life grid */
-  breakfast: {
+  /** Home pathways grid (6 unique social cells) */
+  pathwayWorship: {
+    src: "/images/social/campus-entrance.jpg",
+    alt: "Crestview Baptist Church entrance and sign on Pisgah Drive",
+    owner: "home-pathway-worship",
+  },
+  pathwayLifeGroups: {
+    src: "/images/social/fb-serve-5.jpg",
+    alt: "Crestview church family gathered in fellowship",
+    owner: "home-pathway-life-groups",
+  },
+  pathwayEvents: {
     src: "/images/social/fb-serve-2.jpg",
-    alt: "Fellowship breakfast at Crestview Baptist Church",
-    owner: "home-life-1",
+    alt: "Fellowship breakfast during a Crestview gathering",
+    owner: "home-pathway-events",
   },
-  buffet: {
-    src: "/images/social/fb-serve-3.jpg",
-    alt: "Breakfast buffet prepared for a Crestview gathering",
-    owner: "home-life-2",
+  pathwayServe: {
+    src: "/images/social/fb-serve-1.jpg",
+    alt: "Crestview members serving in the community",
+    owner: "home-pathway-serve",
   },
-  kitchen: {
+  pathwayStudent: {
     src: "/images/social/fb-serve-4.jpg",
     alt: "Volunteers preparing food in the Crestview kitchen",
-    owner: "home-life-3",
+    owner: "home-pathway-student",
   },
-  /** Serve page */
-  community: {
-    src: "/images/social/fb-serve-1.jpg",
-    alt: "Crestview members connecting in the community",
-    owner: "serve",
+  pathwayPrayer: {
+    src: "/images/social/fb-serve-3.jpg",
+    alt: "Shared table fellowship at Crestview",
+    owner: "home-pathway-prayer",
   },
-  /** Sermons & Media */
-  worship: {
-    src: "/images/gallery/worship.jpg",
-    alt: "Sunday worship at Crestview Baptist Church",
-    owner: "sermons-media",
-  },
-  /** Student ministry */
-  youthHeritage: {
-    src: "/images/gallery/youth-1965.jpg",
-    alt: "Crestview youth through the years",
-    owner: "student-ministry",
+  /** Adult ministry */
+  seniors2: {
+    src: "/images/ministries/senior-adults-2.jpg",
+    alt: "Senior adult fellowship at Crestview",
+    owner: "adult-ministry",
   },
   /** Children’s ministry */
   kidsHeritage: {
     src: "/images/gallery/vbs-1967.jpg",
     alt: "Crestview children’s ministry heritage",
     owner: "childrens-ministry",
-  },
-  /** Adult ministry */
-  seniors: {
-    src: "/images/ministries/senior-adults.jpg",
-    alt: "Joyful Hearts senior adults at Crestview",
-    owner: "adult-ministry-1",
-  },
-  seniors2: {
-    src: "/images/ministries/senior-adults-2.jpg",
-    alt: "Senior adult fellowship at Crestview",
-    owner: "adult-ministry-2",
   },
   /** About */
   history: {
@@ -122,5 +115,10 @@ export const galleryOnly = [
     src: "/images/gallery/osborne-farm-1946.jpg",
     alt: "Osborne farm, 1946",
     caption: "Osborne farm, 1946",
+  },
+  {
+    src: "/images/gallery/youth-1965.jpg",
+    alt: "Crestview youth through the years",
+    caption: "Youth, 1965",
   },
 ] as const;
