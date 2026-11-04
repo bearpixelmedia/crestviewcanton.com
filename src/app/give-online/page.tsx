@@ -2,12 +2,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Give Online",
   description:
     "Partner with Crestview Baptist Church through online giving, text-to-give, and in-person offerings.",
-};
+  path: "/give-online",
+});
 
 export default function GiveOnlinePage() {
   return (

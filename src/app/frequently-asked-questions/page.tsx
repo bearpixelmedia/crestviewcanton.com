@@ -3,11 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Frequently Asked Questions",
-  description: "Common questions about visiting Crestview Baptist Church.",
-};
+  description:
+    "Common questions about visiting Crestview Baptist Church.",
+  path: "/frequently-asked-questions",
+});
 
 const faqs = [
   {

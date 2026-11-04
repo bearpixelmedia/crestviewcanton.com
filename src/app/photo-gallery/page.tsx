@@ -5,12 +5,14 @@ import { PageShell } from "@/components/PageShell";
 import { galleryOnly } from "@/lib/photos";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Photo Gallery",
   description:
     "Glimpses of Crestview Baptist Church history in Canton, NC.",
-};
+  path: "/photo-gallery",
+});
 
 export default function PhotoGalleryPage() {
   return (

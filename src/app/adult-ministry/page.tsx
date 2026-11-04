@@ -5,12 +5,14 @@ import { PageShell } from "@/components/PageShell";
 import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Adult Ministry & Small Groups",
   description:
     "Life Groups, SFU, Men’s Ministry, Revolve Women, and Joyful Hearts at Crestview Baptist Church.",
-};
+  path: "/adult-ministry",
+});
 
 const lifeGroups = [
   {

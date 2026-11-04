@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { ministryLinks, site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Ministries",
   description:
     "Find a ministry at Crestview Baptist Church, kids, students, adults, worship, and outreach.",
-};
+  path: "/ministries",
+});
 
 export default function MinistriesPage() {
   return (

@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "News & Announcements",
   description:
     "Happenings and announcements from Crestview Baptist Church in Canton, NC.",
-};
+  path: "/news",
+});
 
 export default function NewsPage() {
   return (

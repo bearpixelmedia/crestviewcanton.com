@@ -5,12 +5,14 @@ import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Children’s Ministry",
   description:
     "Crestview Kids, planting seeds for Jesus at Crestview Baptist Church in Canton, NC.",
-};
+  path: "/childrens-ministry",
+});
 
 const sundayKids = [
   { label: "Nursery (Birth–age 2)", time: "9:30–10:30 AM" },

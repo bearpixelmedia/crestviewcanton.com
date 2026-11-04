@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Plan Your Visit",
   description:
     "What to expect on Sunday at Crestview Baptist Church in Canton, NC.",
-};
+  path: "/plan-your-visit",
+});
 
 export default function PlanYourVisitPage() {
   return (

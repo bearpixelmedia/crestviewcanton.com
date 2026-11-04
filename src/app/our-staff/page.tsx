@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { staff } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Our Staff",
   description:
     "Meet the leadership team at Crestview Baptist Church, including Senior Pastor Dr. Daniel Page.",
-};
+  path: "/our-staff",
+});
 
 export default function OurStaffPage() {
   return (

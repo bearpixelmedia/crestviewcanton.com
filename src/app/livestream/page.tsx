@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Livestream",
   description:
     "Watch Crestview Baptist Church live on Facebook and catch archives on YouTube.",
-};
+  path: "/livestream",
+});
 
 export default function LivestreamPage() {
   return (

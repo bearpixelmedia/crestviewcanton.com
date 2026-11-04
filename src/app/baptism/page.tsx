@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Baptism",
   description:
     "Baptism at Crestview Baptist Church, the believer’s obedient step of identifying with Jesus.",
-};
+  path: "/baptism",
+});
 
 export default function BaptismPage() {
   return (

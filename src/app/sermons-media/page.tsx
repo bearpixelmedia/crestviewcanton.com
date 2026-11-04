@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Sermons & Media",
   description:
     "Watch and listen to Sunday sermons and messages from Crestview Baptist Church.",
-};
+  path: "/sermons-media",
+});
 
 export default function SermonsMediaPage() {
   return (

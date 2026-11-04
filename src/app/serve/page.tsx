@@ -4,12 +4,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Serve / Volunteer",
   description:
     "Serve with Crestview Baptist Church, worship, kids, students, greeting, and more.",
-};
+  path: "/serve",
+});
 
 const opportunities = [
   {

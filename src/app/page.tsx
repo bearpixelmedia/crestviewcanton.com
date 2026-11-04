@@ -8,13 +8,13 @@ import { PageShell } from "@/components/PageShell";
 import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: `${site.name} | Welcome to Our Church Family`,
-  },
+export const metadata: Metadata = pageMeta({
+  path: "/",
+  absoluteTitle: `${site.name} | Welcome to Our Church Family`,
   description: site.description,
-};
+});
 
 const pathways = [
   {

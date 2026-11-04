@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Our Beliefs",
   description:
     "Who we are and what we believe at Crestview Baptist Church in Canton, NC.",
-};
+  path: "/our-beliefs",
+});
 
 const beliefs = [
   {

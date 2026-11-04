@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Resources",
   description:
     "Discipleship tools, RightNow Media, SFU, sermons, and Teachlife Radio from Crestview Baptist Church.",
-};
+  path: "/resources",
+});
 
 export default function ResourcesPage() {
   return (

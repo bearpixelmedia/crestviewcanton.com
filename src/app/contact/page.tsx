@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Contact Us",
   description:
     "Reach Crestview Baptist Church in Canton, NC, office phone, email, and ministry contacts.",
-};
+  path: "/contact",
+});
 
 const ministryContacts = [
   {

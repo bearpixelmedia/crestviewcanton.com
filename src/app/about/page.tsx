@@ -5,12 +5,14 @@ import { PageShell } from "@/components/PageShell";
 import { staff, site } from "@/lib/site";
 import { photos } from "@/lib/photos";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "About Crestview",
   description:
     "Who we are, our mission, and our history at Crestview Baptist Church in Canton, NC.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

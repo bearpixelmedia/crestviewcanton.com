@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Events Calendar",
   description:
     "Weekly rhythm and ongoing groups at Crestview Baptist Church in Canton, NC.",
-};
+  path: "/events",
+});
 
 export default function EventsPage() {
   return (

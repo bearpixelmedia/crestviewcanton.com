@@ -3,12 +3,14 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Membership & Next Steps",
   description:
     "Visit, grow, belong, and serve at Crestview Baptist Church. Take your next step toward membership and life together in Christ.",
-};
+  path: "/membership",
+});
 
 const steps = [
   {

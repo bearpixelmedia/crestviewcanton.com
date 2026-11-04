@@ -5,12 +5,14 @@ import { PageShell } from "@/components/PageShell";
 import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Missions & Outreach",
   description:
     "Local compassion and global partners, Reach, Equip, Send at Crestview Baptist Church.",
-};
+  path: "/missions",
+});
 
 const partners = [
   "Mike and Kathy Shipman, International Mission Board",
