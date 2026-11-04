@@ -10,6 +10,8 @@ export type PhotoAsset = {
   alt: string;
   /** Single owner page path or placement id */
   owner: string;
+  /** Optional Tailwind object-position class when object-cover would crop the subject */
+  objectClass?: string;
 };
 
 export const photos = {
@@ -30,6 +32,8 @@ export const photos = {
     src: "/images/gallery/worship.jpg",
     alt: "Sunday worship at Crestview Baptist Church",
     owner: "home-pathway-worship",
+    // Tall portrait; keep the pastor’s head in the 16/10 card crop
+    objectClass: "object-top origin-top",
   },
   pathwayLifeGroups: {
     src: "/images/social/fb-serve-5.jpg",
