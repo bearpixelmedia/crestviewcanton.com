@@ -50,35 +50,53 @@ export const site = {
   officeHours: "Monday–Friday, 9:00 AM – 6:00 PM",
 } as const;
 
-/** Primary nav */
-export const primaryNav = [
-  { href: "/ministries", label: "Ministries" },
-  { href: "/sermons-media", label: "Sermons & Media" },
-  { href: "/events", label: "Events" },
-  { href: "/resources", label: "Resources" },
-] as const;
-
-export const secondaryNav = [
-  { href: "/plan-your-visit", label: "Plan Your Visit" },
-  { href: "/about", label: "About" },
-  { href: "/our-staff", label: "Our Staff" },
-  { href: "/our-beliefs", label: "Our Beliefs" },
-  { href: "/contact", label: "Contact" },
-] as const;
-
-export const moreNav = [
-  { href: "/childrens-ministry", label: "Children’s Ministry" },
-  { href: "/student-ministry", label: "Student Ministry" },
-  { href: "/adult-ministry", label: "Adult Ministry & Small Groups" },
-  { href: "/missions", label: "Missions & Outreach" },
-  { href: "/serve", label: "Serve / Volunteer" },
-  { href: "/prayer-requests", label: "Prayer Requests" },
-  { href: "/membership", label: "Membership & Next Steps" },
-  { href: "/baptism", label: "Baptism" },
-  { href: "/livestream", label: "Livestream" },
-  { href: "/news", label: "News & Announcements" },
-  { href: "/photo-gallery", label: "Photo Gallery" },
-  { href: "/frequently-asked-questions", label: "FAQ" },
+/** Full site map for header mega menu + mobile drawer (Give Online is CTA-only). */
+export const navGroups = [
+  {
+    id: "about",
+    label: "About",
+    links: [
+      { href: "/plan-your-visit", label: "Plan Your Visit" },
+      { href: "/about", label: "About Crestview" },
+      { href: "/our-staff", label: "Our Staff" },
+      { href: "/our-beliefs", label: "Our Beliefs" },
+      { href: "/frequently-asked-questions", label: "FAQ" },
+    ],
+  },
+  {
+    id: "ministries",
+    label: "Ministries",
+    links: [
+      { href: "/ministries", label: "Ministries Overview" },
+      { href: "/childrens-ministry", label: "Children’s Ministry" },
+      { href: "/student-ministry", label: "Student Ministry" },
+      { href: "/adult-ministry", label: "Adult Ministry & Small Groups" },
+      { href: "/missions", label: "Missions & Outreach" },
+      { href: "/serve", label: "Serve / Volunteer" },
+    ],
+  },
+  {
+    id: "connect",
+    label: "Connect",
+    links: [
+      { href: "/events", label: "Events" },
+      { href: "/prayer-requests", label: "Prayer Requests" },
+      { href: "/membership", label: "Membership & Next Steps" },
+      { href: "/baptism", label: "Baptism" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
+  {
+    id: "media",
+    label: "Media & Resources",
+    links: [
+      { href: "/sermons-media", label: "Sermons & Media" },
+      { href: "/livestream", label: "Livestream" },
+      { href: "/news", label: "News & Announcements" },
+      { href: "/photo-gallery", label: "Photo Gallery" },
+      { href: "/resources", label: "Resources" },
+    ],
+  },
 ] as const;
 
 export const ministryLinks = [

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
-import { moreNav, primaryNav, secondaryNav, site } from "@/lib/site";
+import { navGroups, site } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -9,43 +9,15 @@ export function SiteFooter() {
         aria-hidden
         className="pointer-events-none absolute inset-0 grain opacity-[0.12] mix-blend-overlay"
       />
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1.1fr] sm:px-8">
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-[1.15fr_repeat(4,1fr)] sm:px-8">
         <div>
           <BrandLogo tone="hero" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-mist/75">
             {site.tagline}. Join us Sundays for worship, Life Groups, and
             fellowship.
           </p>
-        </div>
-
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-soft">
-            Explore
-          </p>
-          <ul className="mt-3 space-y-2 text-sm">
-            {primaryNav.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="hover:text-fog">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-soft">
-            Visit &amp; connect
-          </p>
-          <ul className="mt-3 space-y-2 text-sm text-mist/80">
-            {secondaryNav.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="hover:text-fog">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-            <li className="pt-2">
+          <ul className="mt-5 space-y-1.5 text-sm text-mist/80">
+            <li>
               <a href={`tel:${site.phoneTel}`} className="hover:text-fog">
                 {site.phone}
               </a>
@@ -93,20 +65,22 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-soft">
-            More
-          </p>
-          <ul className="mt-3 columns-1 gap-x-6 space-y-2 text-sm text-mist/80 sm:columns-2 lg:columns-1">
-            {moreNav.map((item) => (
-              <li key={item.href} className="break-inside-avoid">
-                <Link href={item.href} className="hover:text-fog">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {navGroups.map((group) => (
+          <div key={group.id}>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold-soft">
+              {group.label}
+            </p>
+            <ul className="mt-3 space-y-2 text-sm text-mist/80">
+              {group.links.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-fog">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
       <div className="relative border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-mist/50 sm:flex-row sm:items-center sm:justify-between sm:px-8">

@@ -39,26 +39,31 @@ export const photos = {
     src: "/images/social/fb-serve-5.jpg",
     alt: "Crestview church family gathered in fellowship",
     owner: "home-pathway-life-groups",
+    objectClass: "",
   },
   pathwayEvents: {
     src: "/images/social/fb-serve-2.jpg",
     alt: "Fellowship breakfast during a Crestview gathering",
     owner: "home-pathway-events",
+    objectClass: "",
   },
   pathwayServe: {
     src: "/images/social/fb-serve-1.jpg",
     alt: "Crestview members serving in the community",
     owner: "home-pathway-serve",
+    objectClass: "",
   },
   pathwayStudent: {
     src: "/images/social/fb-serve-4.jpg",
     alt: "Volunteers preparing food in the Crestview kitchen",
     owner: "home-pathway-student",
+    objectClass: "",
   },
   pathwayPrayer: {
     src: "/images/social/fb-serve-3.jpg",
     alt: "Shared table fellowship at Crestview",
     owner: "home-pathway-prayer",
+    objectClass: "",
   },
   /** Adult ministry */
   seniors2: {
