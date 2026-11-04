@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { JsonLd } from "@/components/JsonLd";
 import { churchJsonLd, defaultOgImage } from "@/lib/seo";
@@ -83,6 +84,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-paper text-ink antialiased">
         <JsonLd data={churchJsonLd()} />
         {children}
+        <GoogleAnalytics gaId={site.googleAnalyticsId} />
       </body>
     </html>
   );

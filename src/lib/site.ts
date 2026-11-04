@@ -16,6 +16,8 @@ export const site = {
   phoneTel: "+18286481110",
   email: "crestviewcanton@gmail.com",
   pastorEmail: "pagebypage8@gmail.com",
+  /** From Wayback Machine archives of crestviewcanton.com (analytics.js). No G- ID found. */
+  googleAnalyticsId: "UA-166605328-1",
   pastorWebsite: {
     href: "https://danielmpage.com",
     label: "Pastor Dan’s site",
