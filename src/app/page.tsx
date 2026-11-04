@@ -71,24 +71,29 @@ export default function HomePage() {
         <div aria-hidden className="absolute inset-0 ridge" />
         <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:grid-cols-2 sm:px-8 lg:gap-20 lg:items-center">
           <div>
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
-              Find Your Community
-            </p>
-            <h2 className="mt-4 font-display text-[clamp(2rem,4vw,2.75rem)] leading-[1.08] tracking-[-0.02em] text-pine">
+            <h2 className="font-display text-[clamp(2rem,4vw,2.75rem)] leading-[1.08] tracking-[-0.02em] text-pine">
               Our Mission and Values
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink/80">
               At Crestview Baptist Church, we are devoted to helping you walk
               with Jesus and grow in your faith. Our community values grace,
               truth, and discipleship, creating a place where everyone is
-              welcomed and encouraged to explore their spiritual journey.
+              welcomed and encouraged to deepen their spiritual journey with
+              Christ.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink/80">
               We aim to foster strong connections, not only with God but among
-              each other. Our mission is to serve others, reflecting the love of
-              Christ in every action we take. Whether you’re seeking guidance,
-              community, or simply a place to belong, you’ll find it here with
-              us.
+              each other. Our community mission is to REACH-EQUIP-SEND. We are a
+              church that seeks to reach others with the gospel bringing them to
+              faith in Jesus Christ...then equips them in the Scriptures as
+              multiplying disciples of Jesus...then sends them back out to
+              reproduce other disciples.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-ink/80">
+              At the heart of our mission is to serve others, reflecting the
+              love of Christ in every action we take. Whether you’re seeking
+              guidance, community, or simply a place to belong, you’ll find it
+              here with us.
             </p>
             <Link
               href="/our-beliefs"
