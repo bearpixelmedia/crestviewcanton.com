@@ -12,7 +12,7 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
   path: "/",
-  absoluteTitle: `${site.name} | Welcome to Our Church Family`,
+  absoluteTitle: `${site.name} | Canton, NC`,
   description: site.description,
 });
 

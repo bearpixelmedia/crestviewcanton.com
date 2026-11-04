@@ -1,9 +1,8 @@
 import { site } from "@/lib/site";
 
 const MAP_QUERY = encodeURIComponent(site.address.full);
-/** Approximate church coordinates (Pisgah Drive, Canton NC) */
-const LAT = 35.5242342;
-const LON = -82.8372875;
+const LAT = site.geo.latitude;
+const LON = site.geo.longitude;
 const DELTA = 0.01;
 
 /**

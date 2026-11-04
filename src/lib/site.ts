@@ -4,7 +4,7 @@ export const site = {
   tagline: "A welcoming, Christ-centered community in Canton, NC",
   url: "https://crestviewcanton.com",
   description:
-    "Crestview Baptist Church, a welcoming, Christ-centered community in Canton, NC, dedicated to worship, discipleship, and service.",
+    "Crestview Baptist Church in Canton, NC. Sunday worship at 10:45 AM on Pisgah Drive, with Life Groups, kids and student ministry, and a welcoming church family.",
   address: {
     street: "3258 Pisgah Drive",
     city: "Canton",
@@ -12,6 +12,13 @@ export const site = {
     postalCode: "28716",
     full: "3258 Pisgah Drive, Canton, NC 28716",
   },
+  /** Campus pin used for map embed + Church JSON-LD */
+  geo: {
+    latitude: 35.5242342,
+    longitude: -82.8372875,
+  },
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=3258+Pisgah+Drive,+Canton,+NC+28716",
   phone: "(828) 648-1110",
   phoneTel: "+18286481110",
   email: "crestviewcanton@gmail.com",

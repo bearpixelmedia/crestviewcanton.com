@@ -8,7 +8,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Ministries",
   description:
-    "Find a ministry at Crestview Baptist Church, kids, students, adults, worship, and outreach.",
+    "Kids, students, adults, worship, and outreach ministries at Crestview Baptist Church in Canton, NC.",
   path: "/ministries",
 });
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { JsonLd } from "@/components/JsonLd";
-import { churchJsonLd, defaultOgImage } from "@/lib/seo";
+import { churchJsonLd, defaultOgImage, websiteJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -82,7 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-paper text-ink antialiased">
-        <JsonLd data={churchJsonLd()} />
+        <JsonLd data={[websiteJsonLd(), churchJsonLd()]} />
         {children}
         <GoogleAnalytics gaId={site.googleAnalyticsId} />
       </body>

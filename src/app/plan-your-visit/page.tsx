@@ -8,7 +8,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Plan Your Visit",
   description:
-    "What to expect on Sunday at Crestview Baptist Church in Canton, NC.",
+    "Plan your Sunday visit to Crestview Baptist Church in Canton, NC. Life Groups at 9:30 AM, Morning Worship at 10:45 AM on Pisgah Drive.",
   path: "/plan-your-visit",
 });
 

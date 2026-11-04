@@ -8,7 +8,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Events Calendar",
   description:
-    "Weekly rhythm and ongoing groups at Crestview Baptist Church in Canton, NC.",
+    "Sunday schedule, midweek groups, and church events at Crestview Baptist Church in Canton, NC.",
   path: "/events",
 });
 

@@ -8,7 +8,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Sermons & Media",
   description:
-    "Watch and listen to Sunday sermons and messages from Crestview Baptist Church.",
+    "Watch and listen to Sunday sermons from Crestview Baptist Church in Canton, NC, on YouTube and Facebook.",
   path: "/sermons-media",
 });
 

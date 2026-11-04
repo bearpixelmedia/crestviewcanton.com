@@ -8,7 +8,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Contact Us",
   description:
-    "Reach Crestview Baptist Church in Canton, NC, office phone, email, and ministry contacts.",
+    "Contact Crestview Baptist Church at 3258 Pisgah Drive, Canton, NC 28716. Call (828) 648-1110 or email the church office.",
   path: "/contact",
 });
 

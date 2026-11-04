@@ -10,7 +10,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "About Crestview",
   description:
-    "Who we are, our mission, and our history at Crestview Baptist Church in Canton, NC.",
+    "Meet Crestview Baptist Church in Canton, NC: our mission, history, and Christ-centered church family on Pisgah Drive.",
   path: "/about",
 });
 

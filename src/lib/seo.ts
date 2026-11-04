@@ -216,6 +216,24 @@ export function churchJsonLd() {
       postalCode: site.address.postalCode,
       addressCountry: "US",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: site.geo.latitude,
+      longitude: site.geo.longitude,
+    },
+    hasMap: site.mapsUrl,
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Canton",
+        containedInPlace: {
+          "@type": "AdministrativeArea",
+          name: "Haywood County, NC",
+        },
+      },
+      { "@type": "City", name: "Waynesville" },
+      { "@type": "City", name: "Clyde" },
+    ],
     sameAs: [
       site.social.facebook,
       site.social.instagram,
@@ -223,6 +241,27 @@ export function churchJsonLd() {
       site.pastorWebsite.href,
     ],
     openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Sunday",
+        opens: "09:30",
+        closes: "12:00",
+        description: "Life Groups and Morning Worship",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Sunday",
+        opens: "18:00",
+        closes: "19:30",
+        description: "SFU Groups for All Ages",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Wednesday",
+        opens: "19:00",
+        closes: "20:30",
+        description: "Midweek Prayer, God’s Kidz, and Youth",
+      },
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: [
@@ -234,7 +273,40 @@ export function churchJsonLd() {
         ],
         opens: "09:00",
         closes: "18:00",
+        description: "Church office hours",
       },
     ],
+  };
+}
+
+/** WebSite JSON-LD (homepage / brand entity). */
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    name: site.name,
+    url: site.url,
+    description: site.description,
+    publisher: { "@id": `${site.url}/#church` },
+    inLanguage: "en-US",
+  };
+}
+
+/** FAQPage JSON-LD for the FAQ route. */
+export function faqPageJsonLd(
+  items: readonly { q: string; a: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
   };
 }
