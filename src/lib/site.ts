@@ -55,7 +55,6 @@ export const primaryNav = [
   { href: "/ministries", label: "Ministries" },
   { href: "/sermons-media", label: "Sermons & Media" },
   { href: "/events", label: "Events" },
-  { href: "/give-online", label: "Give Online" },
   { href: "/resources", label: "Resources" },
 ] as const;
 

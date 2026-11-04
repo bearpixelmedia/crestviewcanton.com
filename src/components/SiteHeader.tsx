@@ -21,6 +21,10 @@ export function SiteHeader({ variant }: Props) {
     ? "text-[0.8125rem] tracking-wide transition-colors hover:text-fog"
     : "text-[0.8125rem] tracking-wide text-ink/65 transition-colors hover:text-pine";
 
+  const ctaClass = isHero
+    ? "rounded-sm bg-dawn px-4 py-2.5 text-[0.8125rem] font-semibold tracking-wide text-forest transition-colors hover:bg-dawn-deep hover:text-fog"
+    : "rounded-sm bg-pine px-4 py-2.5 text-[0.8125rem] font-semibold tracking-wide text-fog transition-colors hover:bg-canopy";
+
   return (
     <header
       className={
@@ -42,15 +46,8 @@ export function SiteHeader({ variant }: Props) {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/plan-your-visit"
-            className={
-              isHero
-                ? "rounded-sm bg-dawn px-4 py-2.5 text-[0.8125rem] font-semibold tracking-wide text-forest transition-colors hover:bg-dawn-deep hover:text-fog"
-                : "rounded-sm bg-pine px-4 py-2.5 text-[0.8125rem] font-semibold tracking-wide text-fog transition-colors hover:bg-canopy"
-            }
-          >
-            Plan Your Visit
+          <Link href="/give-online" className={ctaClass}>
+            Give Online
           </Link>
         </nav>
 
@@ -86,24 +83,22 @@ export function SiteHeader({ variant }: Props) {
               </Link>
             ))}
             <Link
-              href="/plan-your-visit"
+              href="/give-online"
               onClick={() => setOpen(false)}
               className="mt-1 inline-flex w-fit rounded-sm bg-dawn px-4 py-2.5 text-sm font-semibold text-forest"
             >
-              Plan Your Visit
+              Give Online
             </Link>
-            {secondaryNav
-              .filter((item) => item.href !== "/plan-your-visit")
-              .map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="py-1 text-sm text-mist"
-                >
-                  {item.label}
-                </Link>
-              ))}
+            {secondaryNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="py-1 text-sm text-mist"
+              >
+                {item.label}
+              </Link>
+            ))}
             <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gold-soft">
               More
             </p>
