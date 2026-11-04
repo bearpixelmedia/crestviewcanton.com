@@ -68,16 +68,26 @@ export function SiteHeader({ variant }: Props) {
     setMobileOpen(false);
   }, [pathname]);
 
+  // Match mobile drawer (bg-pine); keep logo/Close readable on that fill
+  const menuPainted = mobileOpen;
+  const logoTone = isHero || menuPainted ? "hero" : "solid";
+
   return (
     <header
       className={
         isHero
-          ? "absolute inset-x-0 z-30 top-[var(--yt-live-banner,0px)]"
-          : "sticky z-30 border-b border-pine/8 bg-paper/90 backdrop-blur-md top-[var(--yt-live-banner,0px)]"
+          ? `absolute inset-x-0 z-30 top-[var(--yt-live-banner,0px)] transition-colors duration-300 ease-out ${
+              menuPainted ? "bg-pine" : "bg-transparent"
+            }`
+          : `sticky z-30 top-[var(--yt-live-banner,0px)] transition-colors duration-300 ease-out ${
+              menuPainted
+                ? "border-b border-white/10 bg-pine"
+                : "border-b border-pine/8 bg-paper/90 backdrop-blur-md"
+            }`
       }
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
-        <BrandLogo tone={isHero ? "hero" : "solid"} />
+        <BrandLogo tone={logoTone} />
 
         <div
           ref={desktopNavRef}
@@ -147,8 +157,8 @@ export function SiteHeader({ variant }: Props) {
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
           onClick={() => setMobileOpen((v) => !v)}
-          className={`inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-sm lg:hidden ${
-            isHero
+          className={`inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-sm transition-colors duration-300 lg:hidden ${
+            isHero || menuPainted
               ? "border-mist/30 text-fog"
               : "border-pine/20 text-pine"
           }`}
