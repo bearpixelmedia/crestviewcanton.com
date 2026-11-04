@@ -81,12 +81,20 @@ export function HomeBanner() {
             Watch now
           </a>
         ) : (
-          <Link
-            href="/give-online"
-            className="inline-flex shrink-0 rounded-sm bg-pine px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-fog hover:bg-canopy"
-          >
-            Give Online
-          </Link>
+          <>
+            <Link
+              href="/give-online"
+              className="inline-flex shrink-0 rounded-sm bg-pine px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-fog hover:bg-canopy sm:hidden"
+            >
+              Give Online
+            </Link>
+            <a
+              href="/about"
+              className="hidden shrink-0 text-xs font-semibold uppercase tracking-wide text-forest/80 underline-offset-2 hover:text-forest hover:underline sm:inline"
+            >
+              Our mission
+            </a>
+          </>
         )}
       </div>
       {isLive ? (
