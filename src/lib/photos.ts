@@ -13,10 +13,10 @@ export type PhotoAsset = {
 };
 
 export const photos = {
-  /** Home hero only (high-res sanctuary, full-bleed) */
+  /** Home hero only (YouTube campus exterior still, full-bleed) */
   campus: {
-    src: "/images/hero.jpg",
-    alt: "Crestview Baptist Church sanctuary aisle and stained glass",
+    src: "/images/social/campus-hero.jpg",
+    alt: "Crestview Baptist Church entrance and sign on Pisgah Drive",
     owner: "home-hero",
   },
   /** Home welcome section */
@@ -25,10 +25,10 @@ export const photos = {
     alt: "Adults gathered in fellowship at Crestview",
     owner: "home-welcome",
   },
-  /** Home pathways grid (6 unique social cells) */
+  /** Home pathways grid (unique cells; social preferred) */
   pathwayWorship: {
-    src: "/images/social/campus-entrance.jpg",
-    alt: "Crestview Baptist Church entrance and sign on Pisgah Drive",
+    src: "/images/gallery/worship.jpg",
+    alt: "Sunday worship at Crestview Baptist Church",
     owner: "home-pathway-worship",
   },
   pathwayLifeGroups: {

@@ -39,6 +39,8 @@
 
 @layer base {
   html {
+    /* ~10% larger base type for older readers; rem-based Tailwind scales with this */
+    font-size: 110%;
     scroll-behavior: smooth;
   }
 

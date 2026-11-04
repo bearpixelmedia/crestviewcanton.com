@@ -14,13 +14,13 @@ export function Hero() {
           priority
           sizes="100vw"
           quality={90}
-          className="object-cover object-[center_38%] animate-hero-ken"
+          className="object-cover object-[center_45%] animate-hero-ken"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest/95 via-forest/55 to-forest/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/25 to-forest/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest/90 via-forest/45 to-forest/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/20 to-forest/35" />
         <div
           aria-hidden
-          className="absolute inset-0 grain opacity-[0.08] mix-blend-overlay"
+          className="absolute inset-0 grain opacity-[0.06] mix-blend-overlay"
         />
       </div>
 
