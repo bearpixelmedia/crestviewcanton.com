@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import { moreNav, primaryNav, secondaryNav, site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -10,27 +11,7 @@ export function SiteFooter() {
       />
       <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1.1fr] sm:px-8">
         <div>
-          <Link href="/" className="inline-flex items-center gap-3" aria-label={`${site.name} home`}>
-            <span className="relative h-12 w-12 overflow-hidden rounded-full ring-1 ring-white/15">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brand/crestview-mark.svg"
-                alt=""
-                width={48}
-                height={48}
-                className="h-full w-full"
-                aria-hidden
-              />
-            </span>
-            <span>
-              <span className="block font-display text-xl text-fog">
-                {site.name}
-              </span>
-              <span className="block text-xs tracking-wide text-mist/70">
-                Canton, North Carolina
-              </span>
-            </span>
-          </Link>
+          <BrandLogo tone="hero" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-mist/75">
             {site.tagline}. Join us Sundays for worship, Life Groups, and
             fellowship.

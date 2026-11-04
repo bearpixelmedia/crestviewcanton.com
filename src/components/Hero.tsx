@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-forest text-fog pt-[var(--yt-live-banner,0px)]">
+    <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-forest text-fog">
       <div className="absolute inset-0">
         <Image
           src={photos.campus.src}
@@ -13,18 +13,19 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_42%] animate-hero-ken"
+          quality={90}
+          className="object-cover object-[center_38%] animate-hero-ken"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/80 to-forest/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/20 to-forest/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest/95 via-forest/55 to-forest/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/25 to-forest/40" />
         <div
           aria-hidden
-          className="absolute inset-0 grain opacity-[0.14] mix-blend-overlay"
+          className="absolute inset-0 grain opacity-[0.08] mix-blend-overlay"
         />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-16 pt-36 sm:px-8 sm:pb-28">
-        <p className="animate-rise font-display text-[clamp(2.85rem,9vw,5.75rem)] leading-[0.92] tracking-[-0.035em] text-fog">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-16 pt-[calc(var(--yt-live-banner,2.75rem)+5.75rem)] sm:px-8 sm:pb-28">
+        <p className="animate-rise font-display text-[clamp(2.85rem,9vw,5.75rem)] leading-[0.95] tracking-[-0.035em] text-fog">
           {site.name}
         </p>
         <h1 className="animate-rise-delay-1 mt-7 max-w-2xl font-display text-[1.55rem] font-medium leading-snug tracking-[-0.01em] text-mist sm:text-[1.85rem]">

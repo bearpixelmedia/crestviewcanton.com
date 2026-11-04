@@ -13,10 +13,10 @@ export type PhotoAsset = {
 };
 
 export const photos = {
-  /** Home hero */
+  /** Home hero only (high-res sanctuary, full-bleed) */
   campus: {
-    src: "/images/gallery/worship.jpg",
-    alt: "Sunday worship at Crestview Baptist Church",
+    src: "/images/hero.jpg",
+    alt: "Crestview Baptist Church sanctuary aisle and stained glass",
     owner: "home-hero",
   },
   /** Home welcome section */

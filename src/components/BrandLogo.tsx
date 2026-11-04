@@ -11,12 +11,12 @@ export function BrandLogo({ tone = "solid" }: Props) {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-3"
+      className="group flex items-center gap-3 sm:gap-3.5"
       aria-label={`${site.name} home`}
     >
       <span
-        className={`relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full sm:h-12 sm:w-12 ${
-          isHero ? "ring-1 ring-white/25" : "ring-1 ring-pine/15"
+        className={`relative h-11 w-11 shrink-0 overflow-hidden rounded-full sm:h-12 sm:w-12 ${
+          isHero ? "ring-1 ring-white/20" : "ring-1 ring-pine/12 shadow-sm"
         }`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -29,17 +29,17 @@ export function BrandLogo({ tone = "solid" }: Props) {
           aria-hidden
         />
       </span>
-      <span className="leading-tight">
+      <span className="min-w-0 leading-none">
         <span
-          className={`block font-display text-lg tracking-tight sm:text-xl ${
+          className={`block font-display text-[1.35rem] font-semibold tracking-[-0.01em] sm:text-[1.55rem] ${
             isHero ? "text-fog" : "text-pine"
           }`}
         >
-          {site.shortName}
+          Crestview
         </span>
         <span
-          className={`block text-[0.65rem] font-medium uppercase tracking-[0.18em] ${
-            isHero ? "text-mist/80" : "text-canopy/70"
+          className={`mt-1 block text-[0.62rem] font-semibold uppercase tracking-[0.22em] sm:text-[0.68rem] sm:tracking-[0.24em] ${
+            isHero ? "text-mist/85" : "text-canopy/75"
           }`}
         >
           Baptist Church
