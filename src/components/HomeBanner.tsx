@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 
@@ -80,12 +81,12 @@ export function HomeBanner() {
             Watch now
           </a>
         ) : (
-          <a
-            href="/about"
-            className="hidden shrink-0 text-xs font-semibold uppercase tracking-wide text-forest/80 underline-offset-2 hover:text-forest hover:underline sm:inline"
+          <Link
+            href="/give-online"
+            className="inline-flex shrink-0 rounded-sm bg-pine px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-fog hover:bg-canopy"
           >
-            Our mission
-          </a>
+            Give Online
+          </Link>
         )}
       </div>
       {isLive ? (
