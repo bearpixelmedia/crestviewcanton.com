@@ -21,7 +21,7 @@ const lifeGroups = [
   },
   {
     name: "Joy Class (Co-ed, Age 45+)",
-    body: "Married or single; Jesus first, others second, ourselves last (Matthew 22:37–39).",
+    body: "Married or single; Jesus first, others second, yourself last (Matthew 22:37–39).",
   },
   {
     name: "Agape Class (Co-ed, Age 40+)",
