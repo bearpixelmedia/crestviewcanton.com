@@ -81,6 +81,7 @@ export const navGroups = [
     label: "Ministries",
     links: [
       { href: "/ministries", label: "Ministries Overview" },
+      { href: "/worship-ministry", label: "Worship Ministry" },
       { href: "/childrens-ministry", label: "Children’s Ministry" },
       { href: "/student-ministry", label: "Student Ministry" },
       { href: "/adult-ministry", label: "Adult Ministry & Small Groups" },
@@ -113,6 +114,11 @@ export const navGroups = [
 ] as const;
 
 export const ministryLinks = [
+  {
+    href: "/worship-ministry",
+    title: "Worship Ministry",
+    body: "Crestview Worship leads music, prayer, and production so the church can respond to God together.",
+  },
   {
     href: "/childrens-ministry",
     title: "Children’s Ministry",

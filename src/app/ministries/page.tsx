@@ -109,8 +109,14 @@ export default function MinistriesPage() {
               <p className="mt-5 text-sm leading-relaxed text-ink/75">
                 Crestview Worship exists to lead worshippers into authentic
                 worship through music, prayer, and technology. Interested in
-                serving through music or production? Contact Anita about
-                auditions:{" "}
+                serving through music or production?{" "}
+                <Link
+                  href="/worship-ministry"
+                  className="font-semibold text-canopy"
+                >
+                  Visit Worship Ministry
+                </Link>{" "}
+                or contact Anita about auditions:{" "}
                 <a
                   href="mailto:crestviewworship2@gmail.com"
                   className="font-semibold text-canopy"

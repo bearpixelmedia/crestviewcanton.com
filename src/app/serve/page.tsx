@@ -17,7 +17,7 @@ const opportunities = [
   {
     area: "Crestview Worship",
     contact: "Anita · crestviewworship2@gmail.com",
-    href: "mailto:crestviewworship2@gmail.com",
+    href: "/worship-ministry",
   },
   {
     area: "Children’s Ministry / VBS / TeamKid / God’s Kidz",
