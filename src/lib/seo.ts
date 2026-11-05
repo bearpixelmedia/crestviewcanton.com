@@ -278,7 +278,7 @@ export function churchJsonLd() {
           "Friday",
         ],
         opens: "09:00",
-        closes: "18:00",
+        closes: "17:00",
         description: "Church office hours",
       },
     ],

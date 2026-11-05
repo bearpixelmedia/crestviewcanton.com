@@ -60,7 +60,7 @@ export const site = {
     /** Verified: Instagram @crestviewcanton */
     instagram: "https://www.instagram.com/crestviewcanton/",
   },
-  officeHours: "Monday–Friday, 9:00 AM – 6:00 PM",
+  officeHours: "Monday–Friday, 9:00 AM – 5:00 PM",
 } as const;
 
 /** Full site map for header mega menu + mobile drawer (Give Online is CTA-only). */
