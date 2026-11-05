@@ -151,6 +151,7 @@ export const staff = [
     slug: "daniel-page",
     name: "Dr. Daniel Page",
     role: "Senior Pastor",
+    team: "ministry" as const,
     photo: "/staff/daniel-page.jpg",
     bio: "Dr. Daniel Page has developed a growing love for God’s Word through years of preaching and teaching. His goal is to communicate God’s powerful Word with relevant application for today’s world. Dan grew up in Cherryville, NC, trusted Christ at age 10, and studied music at Appalachian State University (B.M.E. 1987, M.M.E. 1989). After serving churches in worship, youth, and children’s ministry, including a mission year in France, he entered pastoral ministry in 2001 and completed an M.Div. from Southeastern Baptist Theological Seminary. Crestview called him in 2009; he and his family relocated from Raleigh to begin as Senior Pastor in June 2009. He completed a D.Min. in Evangelism and Discipleship from North Greenville University in 2017.",
     contact: "pagebypage8@gmail.com",
@@ -163,6 +164,7 @@ export const staff = [
     slug: "jarred-rathbone",
     name: "Jarred Rathbone",
     role: "Youth Pastor",
+    team: "ministry" as const,
     photo: "/staff/jarred-rathbone.jpg",
     bio: "Jarred Rathbone is the Youth Pastor at Crestview Baptist Church. He is married to Amanda, and they have two sons, Jackson and Levi.",
     contact: "crestviewyouth3258@gmail.com · 828-371-1235",
@@ -171,6 +173,7 @@ export const staff = [
     slug: "angie-watkins",
     name: "Angie Watkins",
     role: "Children’s Ministry Director",
+    team: "ministry" as const,
     photo: "/staff/angie-watkins.jpg",
     bio: "Angie Watkins has a big heart for children. She volunteered in Crestview’s Children’s Ministry and directed VBS for more than 20 years before becoming Children’s Ministry Director in August 2021. She leads a passionate team focused on sharing Christ’s love with children and families. Angie is married to Chris; they have two adult children, Samantha and Caleb. She is a 1991 graduate of Pisgah High School and a 1994 graduate of Cecil’s Business College.",
     contact: "crestview4kidz@gmail.com · 828-648-1110",
@@ -179,6 +182,7 @@ export const staff = [
     slug: "anita-diaz",
     name: "Anita Diaz",
     role: "Music Director / Worship Leader",
+    team: "ministry" as const,
     photo: "/staff/anita-diaz.jpg",
     bio: "Anita Diaz is a native of Balsam, N.C. She started playing piano and singing at age three and is a Western Carolina University graduate (Music major, Theatre minor). After performing as a jazz pianist/vocalist in Atlanta, she was selected for the United States Air Force Band program, serving at Robins AFB and later with The United States Air Force Band in Washington, D.C., including White House performances. She has performed with artists including Keiko Matsui and Randy Brecker, opened for Roy Clark, Restless Heart, Gary Morris, and Jamie O’Neal, and sung backup for CeCe Winans, Amy Grant, and Vince Gill. Anita has performed the National Anthem for major sports and NASCAR events. She has served as worship leader, music director, and pianist in Haywood County churches for many years (including worship teams at Biltmore Church). She and her husband Luis continue to look for ways to serve and reach people for Christ.",
     contact: "crestviewworship2@gmail.com",
@@ -187,6 +191,7 @@ export const staff = [
     slug: "sharon-bryson",
     name: "Sharon Bryson",
     role: "Administrative Assistant",
+    team: "ministry" as const,
     photo: "/staff/sharon-bryson.jpg",
     bio: "Sharon Bryson serves as Crestview’s Administrative Assistant. A Haywood County native and long-term church member, she earned degrees and certificates from A-B Tech, UNC Asheville, and Haywood Community College. After 20 years as an Application Developer with Duke Energy Business Services (Nantahala area), she was called to serve at Crestview in 2011. Her favorite life verse is Philippians 4:13, “I can do all things through Christ who strengthens me.”",
     contact: "crestviewcanton@gmail.com · 828-648-1110",
@@ -195,6 +200,7 @@ export const staff = [
     slug: "tammie-beck",
     name: "Tammie Beck",
     role: "Custodian",
+    team: "facility" as const,
     photo: "/staff/tammie-beck.jpg",
     // Longer tenure/family details still pending church office (NEW-STAFF-BIOS.md).
     bio: "Tammie Beck of Canton serves as Crestview Baptist Church’s Custodian, keeping our facilities welcoming and ready for worship and ministry. She and her husband, Eddie, serve Crestview’s campus together, Tammie indoors and Eddie on the grounds.",
@@ -203,8 +209,12 @@ export const staff = [
     slug: "eddie-beck",
     name: "Eddie Beck",
     role: "Lawn Management",
+    team: "facility" as const,
     photo: "/staff/eddie-beck.jpg",
     // Longer tenure/family details still pending church office (NEW-STAFF-BIOS.md).
     bio: "Eddie Beck of Canton cares for the Crestview Baptist Church grounds as Lawn Management lead, helping our property reflect the care we want for everyone who visits. He serves alongside his wife, Tammie, who is Crestview’s Custodian.",
   },
 ] as const;
+
+export const ministryStaff = staff.filter((person) => person.team === "ministry");
+export const facilityStaff = staff.filter((person) => person.team === "facility");
