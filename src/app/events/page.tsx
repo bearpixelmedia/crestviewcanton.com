@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
+import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
-import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
   title: "Events Calendar",
@@ -84,38 +83,6 @@ export default function EventsPage() {
               Page on WPTL 101.7 FM / 920 AM.
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-fog">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <h2 className="font-display text-3xl text-pine">Registrations</h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/75">
-            Special event registrations (when available) are listed on Church
-            Center. Confirm the current link with the office if anything looks
-            outdated.
-          </p>
-          <a
-            href={site.churchCenterRegistrations}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog hover:bg-canopy"
-          >
-            Open Church Center registrations
-          </a>
-          <p className="mt-8 text-sm text-ink/70">
-            Questions about an event? Call{" "}
-            <a href={`tel:${site.phoneTel}`} className="font-semibold text-canopy">
-              {site.phone}
-            </a>
-            .
-          </p>
-          <Link
-            href="/plan-your-visit"
-            className="mt-6 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
-          >
-            Plan your visit
-          </Link>
         </div>
       </section>
     </PageShell>
