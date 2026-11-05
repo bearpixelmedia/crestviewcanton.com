@@ -103,7 +103,7 @@ export default function AdultMinistryPage() {
             <p className="mt-3 text-sm leading-relaxed text-ink/75">
               Under the direction of Rhonda Beck. Mission: revolving around
               Christ, to Reach, Equip, and Send. Revolve Women / WMU, first
-              Monday of each month at 6:30 PM. Ladies Bible Study, check the
+              Monday of each month at 6:00 PM. Ladies Bible Study, check the
               current bulletin for day/time ({site.phone}).
             </p>
           </div>

@@ -66,16 +66,13 @@ export default function EventsPage() {
                 Joyful Hearts (Senior Adults) Luncheon, first Tuesday @ 11:30 AM
               </li>
               <li className="border-b border-pine/10 pb-3">
-                Revolve Women, first Monday @ 6:30 PM
+                Revolve Women, first Monday @ 6:00 PM
               </li>
               <li className="border-b border-pine/10 pb-3">
                 Women’s Bible Study, see current bulletin / office
               </li>
-              <li className="border-b border-pine/10 pb-3">
-                Men’s Prayer, Saturdays 9:00 AM
-              </li>
               <li>
-                Men’s Bible Study, Mondays 7:00 PM
+                Men’s Prayer, Saturdays 9:00 AM
               </li>
             </ul>
 
