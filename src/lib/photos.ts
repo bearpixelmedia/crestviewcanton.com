@@ -77,7 +77,7 @@ export const photos = {
    */
   anitaLeading: {
     src: "/staff/anita-diaz.jpg",
-    alt: "Anita Diaz, Music Director / Worship Leader",
+    alt: "Anita Diaz, Worship Leader",
     owner: "worship-ministry-leadership",
     objectClass: "object-top",
   },

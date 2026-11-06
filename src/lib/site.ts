@@ -183,7 +183,7 @@ export const staff = [
   {
     slug: "anita-diaz",
     name: "Anita Diaz",
-    role: "Music Director / Worship Leader",
+    role: "Worship Leader",
     team: "ministry" as const,
     photo: "/staff/anita-diaz.jpg",
     bio: "Anita Diaz is a native of Balsam, N.C. She started playing piano and singing at age three and is a Western Carolina University graduate (Music major, Theatre minor). After performing as a jazz pianist/vocalist in Atlanta, she was selected for the United States Air Force Band program, serving at Robins AFB and later with The United States Air Force Band in Washington, D.C., including White House performances. She has performed with artists including Keiko Matsui and Randy Brecker, opened for Roy Clark, Restless Heart, Gary Morris, and Jamie O’Neal, and sung backup for CeCe Winans, Amy Grant, and Vince Gill. Anita has performed the National Anthem for major sports and NASCAR events. She has served as worship leader, music director, and pianist in Haywood County churches for many years (including worship teams at Biltmore Church). She and her husband Luis continue to look for ways to serve and reach people for Christ.",

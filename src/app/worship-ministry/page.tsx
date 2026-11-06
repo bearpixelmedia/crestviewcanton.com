@@ -79,7 +79,7 @@ export default function WorshipMinistryPage() {
               Leadership
             </p>
             <h2 className="mt-4 font-display text-[clamp(1.85rem,3.5vw,2.5rem)] leading-[1.08] tracking-[-0.02em] text-pine">
-              Anita Diaz, Music Director / Worship Leader
+              Anita Diaz, Worship Leader
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink/75">
               Anita leads Crestview Worship and welcomes musicians and production
