@@ -141,12 +141,14 @@ export default function ServePage() {
               <p className="mt-4 text-sm text-ink/65">
                 Office: {site.phone} · {site.email}
               </p>
-              <Link
-                href="/give-online"
+              <a
+                href={site.giveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-6 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
               >
                 Also consider giving
-              </Link>
+              </a>
             </div>
             <div>
               <h3 className="font-display text-2xl text-pine">

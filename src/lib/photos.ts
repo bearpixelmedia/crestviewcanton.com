@@ -23,8 +23,8 @@ export const photos = {
   },
   /** Home welcome / mission section */
   fellowship: {
-    src: "/images/general/sanctuary-from-stage.jpg",
-    alt: "Worship team and congregation gathered in the Crestview sanctuary",
+    src: "/images/general/mission-values.jpg",
+    alt: "Crestview congregation gathered in the sanctuary",
     owner: "home-welcome",
   },
   /** Home pathways grid (unique cells) */

@@ -82,12 +82,14 @@ export function HomeBanner() {
           </a>
         ) : (
           <>
-            <Link
-              href="/give-online"
+            <a
+              href={site.giveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex shrink-0 rounded-sm bg-pine px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-fog hover:bg-canopy sm:hidden"
             >
               Give Online
-            </Link>
+            </a>
             <a
               href="/about"
               className="hidden shrink-0 text-xs font-semibold uppercase tracking-wide text-forest/80 underline-offset-2 hover:text-forest hover:underline sm:inline"

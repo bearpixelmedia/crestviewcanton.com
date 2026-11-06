@@ -110,12 +110,14 @@ export default function MissionsPage() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link
-              href="/give-online"
+            <a
+              href={site.giveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog"
             >
               Give Online
-            </Link>
+            </a>
             <Link
               href="/serve"
               className="rounded-sm border border-pine/25 px-5 py-3 text-sm font-semibold text-pine"

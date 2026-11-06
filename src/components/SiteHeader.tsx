@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { BrandLogo } from "@/components/BrandLogo";
-import { navGroups } from "@/lib/site";
+import { navGroups, site } from "@/lib/site";
 
 type Props = {
   variant?: "hero" | "solid";
@@ -113,9 +113,14 @@ export function SiteHeader({ variant }: Props) {
               </button>
             ))}
           </nav>
-          <Link href="/give-online" className={`${ctaClass} ml-3`}>
+          <a
+            href={site.giveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${ctaClass} ml-3`}
+          >
             Give Online
-          </Link>
+          </a>
 
           {megaOpen ? (
             <div
@@ -198,13 +203,15 @@ export function SiteHeader({ variant }: Props) {
           className="max-h-[min(78vh,40rem)] overflow-y-auto border-t border-white/10 bg-pine px-5 py-5 lg:hidden"
         >
           <nav className="flex flex-col text-fog" aria-label="Mobile">
-            <Link
-              href="/give-online"
+            <a
+              href={site.giveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="mb-5 inline-flex w-fit rounded-sm bg-dawn px-4 py-2.5 text-base font-semibold text-forest"
             >
               Give Online
-            </Link>
+            </a>
             {navGroups.map((group) => (
               <div key={group.id} className="mb-5 last:mb-0">
                 <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gold-soft">

@@ -21,7 +21,8 @@ export const site = {
     "https://www.google.com/maps/search/?api=1&query=3258+Pisgah+Drive,+Canton,+NC+28716",
   phone: "(828) 648-1110",
   phoneTel: "+18286481110",
-  email: "crestviewcanton@gmail.com",
+  /** Shared church inbox for website / office / social access */
+  email: "CrestviewBaptistChurchNC@gmail.com",
   pastorEmail: "pagebypage8@gmail.com",
   /** From Wayback Machine archives of crestviewcanton.com (analytics.js). No G- ID found. */
   googleAnalyticsId: "UA-166605328-1",
@@ -97,6 +98,7 @@ export const navGroups = [
       { href: "/prayer-requests", label: "Prayer Requests" },
       { href: "/membership", label: "Membership & Next Steps" },
       { href: "/baptism", label: "Baptism" },
+      { href: "/give-online", label: "Ways to Give" },
       { href: "/contact", label: "Contact" },
     ],
   },
@@ -194,7 +196,7 @@ export const staff = [
     team: "ministry" as const,
     photo: "/staff/sharon-bryson.jpg",
     bio: "Sharon Bryson serves as Crestview’s Administrative Assistant. A Haywood County native and long-term church member, she earned degrees and certificates from A-B Tech, UNC Asheville, and Haywood Community College. After 20 years as an Application Developer with Duke Energy Business Services (Nantahala area), she was called to serve at Crestview in 2011. Her favorite life verse is Philippians 4:13, “I can do all things through Christ who strengthens me.”",
-    contact: "crestviewcanton@gmail.com · 828-648-1110",
+    contact: "CrestviewBaptistChurchNC@gmail.com · 828-648-1110",
   },
   {
     slug: "tammie-beck",
