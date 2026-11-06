@@ -118,14 +118,24 @@ export default function ChildrensMinistryPage() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 md:grid-cols-2">
+          <div className="relative aspect-[4/5] w-full overflow-hidden bg-fog sm:aspect-[5/6]">
+            <Image
+              src="/staff/angie-watkins.jpg"
+              alt="Angie Watkins, Children’s Ministry Director"
+              fill
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className="object-cover object-top"
+            />
+          </div>
+          <div>
           <h2 className="font-display text-3xl text-pine">
             Meet Angie Watkins
           </h2>
           <p className="mt-2 text-sm font-semibold uppercase tracking-[0.14em] text-leaf">
             Children’s Ministry Director
           </p>
-          <p className="mt-4 max-w-3xl text-ink/80 leading-relaxed">
+          <p className="mt-4 text-ink/80 leading-relaxed">
             Angie volunteered in our children’s ministry and directed Vacation
             Bible School for more than 20 years before becoming our Children’s
             Ministry Director in August 2021. She leads a passionate team
@@ -159,6 +169,7 @@ export default function ChildrensMinistryPage() {
             >
               Kids on Facebook
             </a>
+          </div>
           </div>
         </div>
       </section>

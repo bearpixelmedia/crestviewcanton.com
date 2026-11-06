@@ -2,7 +2,7 @@
  * Unique photo registry for Crestview.
  * Rule: each `src` appears on exactly one page/placement. Never reuse.
  * Prefer a non-photo treatment over repeating an asset.
- * Home pathways grid uses social assets only (FB / campus scrapes).
+ * Home pathways grid uses ministry / campus photos from Downloads.
  */
 
 export type PhotoAsset = {
@@ -21,49 +21,83 @@ export const photos = {
     alt: "Crestview Baptist Church entrance and sign on Pisgah Drive",
     owner: "home-hero",
   },
-  /** Home welcome section */
+  /** Home welcome / mission section */
   fellowship: {
-    src: "/images/ministries/senior-adults.jpg",
-    alt: "Adults gathered in fellowship at Crestview",
+    src: "/images/general/sanctuary-from-stage.jpg",
+    alt: "Worship team and congregation gathered in the Crestview sanctuary",
     owner: "home-welcome",
   },
-  /** Home pathways grid (unique cells; social preferred) */
+  /** Home pathways grid (unique cells) */
   pathwayWorship: {
-    src: "/images/gallery/worship.jpg",
-    alt: "Sunday worship at Crestview Baptist Church",
+    src: "/images/worship/worship-team.jpg",
+    alt: "Crestview worship team singing together on Sunday",
     owner: "home-pathway-worship",
-    // Tall portrait; keep the pastor’s head in the 16/10 card crop
-    objectClass: "object-top origin-top",
+    objectClass: "object-center",
   },
   pathwayLifeGroups: {
-    src: "/images/social/fb-serve-5.jpg",
-    alt: "Crestview church family gathered in fellowship",
+    src: "/images/general/sanctuary-fellowship.jpg",
+    alt: "Crestview congregation gathered in the sanctuary before worship",
     owner: "home-pathway-life-groups",
     objectClass: "",
   },
   pathwayEvents: {
-    src: "/images/social/fb-serve-2.jpg",
-    alt: "Fellowship breakfast during a Crestview gathering",
+    src: "/images/general/kids-event.jpg",
+    alt: "Families gathered for a kids event in the Crestview sanctuary",
     owner: "home-pathway-events",
     objectClass: "",
   },
   pathwayServe: {
-    src: "/images/social/fb-serve-1.jpg",
-    alt: "Crestview members serving in the community",
+    src: "/images/general/labor-day-float.jpg",
+    alt: "Crestview Baptist Church Labor Day parade float with kids and leaders",
     owner: "home-pathway-serve",
-    objectClass: "",
+    objectClass: "object-center",
   },
   pathwayStudent: {
-    src: "/images/social/fb-serve-4.jpg",
-    alt: "Volunteers preparing food in the Crestview kitchen",
+    src: "/images/student/youth-group-neon.jpg",
+    alt: "Crestview Youth group together on stage in neon event shirts",
     owner: "home-pathway-student",
     objectClass: "",
   },
   pathwayPrayer: {
-    src: "/images/social/fb-serve-3.jpg",
-    alt: "Shared table fellowship at Crestview",
+    src: "/images/worship/worship-prayer-circle.jpg",
+    alt: "Crestview people praying together in a circle",
     owner: "home-pathway-prayer",
     objectClass: "",
+  },
+  /** Worship ministry feature (paper section side photo) */
+  worshipFeature: {
+    src: "/images/worship/worship-congregation.jpg",
+    alt: "Crestview Worship leading Sunday morning from the stage",
+    owner: "worship-ministry-feature",
+    objectClass: "object-center",
+  },
+  /** Worship leadership (Anita) */
+  anitaLeading: {
+    src: "/images/worship/anita-leading.jpg",
+    alt: "Anita Diaz leading worship at Crestview",
+    owner: "worship-ministry-leadership",
+    objectClass: "object-top",
+  },
+  /** Student ministry gallery */
+  studentColorRun: {
+    src: "/images/student/youth-color-run.jpg",
+    alt: "Crestview Youth at a color run event",
+    owner: "student-ministry-gallery-1",
+  },
+  studentWorship: {
+    src: "/images/student/youth-worship.jpg",
+    alt: "Crestview Youth worshiping together",
+    owner: "student-ministry-gallery-2",
+  },
+  studentBibleStudy: {
+    src: "/images/student/youth-bible-study.jpg",
+    alt: "Crestview Youth gathered for Bible study",
+    owner: "student-ministry-gallery-3",
+  },
+  studentFriends: {
+    src: "/images/student/youth-friends.jpg",
+    alt: "Crestview Youth friends hanging out together",
+    owner: "student-ministry-gallery-4",
   },
   /** Adult ministry */
   seniors2: {

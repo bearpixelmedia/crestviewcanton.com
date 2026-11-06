@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
+import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
@@ -11,6 +13,13 @@ export const metadata: Metadata = pageMeta({
     "Crestview Youth, 6th–12th grade worship, evangelism, missions, and fellowship in Canton, NC.",
   path: "/student-ministry",
 });
+
+const studentGallery = [
+  photos.studentColorRun,
+  photos.studentWorship,
+  photos.studentBibleStudy,
+  photos.studentFriends,
+] as const;
 
 export default function StudentMinistryPage() {
   return (
@@ -47,65 +56,90 @@ export default function StudentMinistryPage() {
             foundation of faith based on biblical truth, becoming disciples for
             Christ and making an impact for the kingdom of God.
           </p>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2">
+            {studentGallery.map((photo) => (
+              <div
+                key={photo.src}
+                className="relative aspect-[16/10] w-full overflow-hidden bg-fog"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="bg-fog">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-          <h2 className="font-display text-[clamp(1.85rem,3.5vw,2.5rem)] leading-[1.08] text-pine">
-            Meet Jarred Rathbone
-          </h2>
-          <p className="mt-2 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
-            Youth Pastor
-          </p>
-          <p className="mt-5 max-w-2xl text-ink/75 leading-relaxed">
-            Jarred is married to Amanda; they have two sons, Jackson and Levi.
-            Contact anytime with questions, prayer requests, or concerns. See
-            his photo on our{" "}
-            <Link href="/our-staff" className="font-semibold text-canopy underline-offset-2 hover:underline">
-              staff page
-            </Link>
-            .
-          </p>
-          <p className="mt-4 text-sm text-ink/70">
-            <a href="tel:+18283711235" className="font-semibold text-canopy">
-              828-371-1235
-            </a>{" "}
-            ·{" "}
-            <a
-              href="mailto:crestviewyouth3258@gmail.com"
-              className="font-semibold text-canopy"
-            >
-              crestviewyouth3258@gmail.com
-            </a>
-          </p>
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 sm:px-8 md:grid-cols-2">
+          <div className="relative aspect-[4/5] w-full overflow-hidden bg-paper sm:aspect-[5/6]">
+            <Image
+              src="/staff/jarred-rathbone.jpg"
+              alt="Jarred Rathbone, Youth Pastor"
+              fill
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className="object-cover object-top"
+            />
+          </div>
+          <div>
+            <h2 className="font-display text-[clamp(1.85rem,3.5vw,2.5rem)] leading-[1.08] text-pine">
+              Meet Jarred Rathbone
+            </h2>
+            <p className="mt-2 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
+              Youth Pastor
+            </p>
+            <p className="mt-5 text-ink/75 leading-relaxed">
+              Jarred is married to Amanda; they have two sons, Jackson and Levi.
+              Contact anytime with questions, prayer requests, or concerns.
+            </p>
+            <p className="mt-4 text-sm text-ink/70">
+              <a href="tel:+18283711235" className="font-semibold text-canopy">
+                828-371-1235
+              </a>{" "}
+              ·{" "}
+              <a
+                href="mailto:crestviewyouth3258@gmail.com"
+                className="font-semibold text-canopy"
+              >
+                crestviewyouth3258@gmail.com
+              </a>
+            </p>
 
-          <h3 className="mt-14 font-display text-2xl text-pine">Youth apparel</h3>
-          <p className="mt-3 max-w-xl text-sm text-ink/70">
-            Youth t-shirts, suggested donation $15. Sweatshirts, suggested
-            donation $25. See Jarred if you’d like one.
-          </p>
+            <h3 className="mt-14 font-display text-2xl text-pine">
+              Youth apparel
+            </h3>
+            <p className="mt-3 max-w-xl text-sm text-ink/70">
+              Youth t-shirts, suggested donation $15. Sweatshirts, suggested
+              donation $25. See Jarred if you’d like one.
+            </p>
 
-          <blockquote className="mt-12 max-w-2xl border-l-2 border-gold pl-5 text-sm italic text-ink/65">
-            “…not forsaking the assembling of ourselves together, as is the
-            manner of some, but exhorting one another…”, Hebrews 10:25
-          </blockquote>
+            <blockquote className="mt-12 max-w-2xl border-l-2 border-gold pl-5 text-sm italic text-ink/65">
+              “…not forsaking the assembling of ourselves together, as is the
+              manner of some, but exhorting one another…”, Hebrews 10:25
+            </blockquote>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="rounded-sm bg-pine px-6 py-3.5 text-sm font-semibold text-fog hover:bg-canopy"
-            >
-              Reach out
-            </Link>
-            <a
-              href={site.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-sm border border-pine/25 px-6 py-3.5 text-sm font-semibold text-pine hover:bg-paper"
-            >
-              Connect on Facebook
-            </a>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="rounded-sm bg-pine px-6 py-3.5 text-sm font-semibold text-fog hover:bg-canopy"
+              >
+                Reach out
+              </Link>
+              <a
+                href={site.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-sm border border-pine/25 px-6 py-3.5 text-sm font-semibold text-pine hover:bg-paper"
+              >
+                Connect on Facebook
+              </a>
+            </div>
           </div>
         </div>
       </section>

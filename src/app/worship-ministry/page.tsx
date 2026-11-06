@@ -53,52 +53,63 @@ export default function WorshipMinistryPage() {
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden bg-fog">
             <Image
-              src={photos.pathwayWorship.src}
-              alt={photos.pathwayWorship.alt}
+              src={photos.worshipFeature.src}
+              alt={photos.worshipFeature.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className={`object-cover ${photos.pathwayWorship.objectClass ?? ""}`}
+              className={`object-cover ${photos.worshipFeature.objectClass ?? ""}`}
             />
           </div>
         </div>
       </section>
 
       <section className="bg-fog">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
-            Leadership
-          </p>
-          <h2 className="mt-4 font-display text-[clamp(1.85rem,3.5vw,2.5rem)] leading-[1.08] tracking-[-0.02em] text-pine">
-            Anita Diaz, Music Director / Worship Leader
-          </h2>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-ink/75">
-            Anita leads Crestview Worship and welcomes musicians and production
-            volunteers who want to serve. Interested in auditions or joining the
-            team? Reach out by email.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="mailto:crestviewworship2@gmail.com"
-              className="rounded-sm bg-pine px-6 py-3.5 text-sm font-semibold text-fog transition-colors hover:bg-canopy"
-            >
-              Email Crestview Worship
-            </a>
-            <Link
-              href="/our-staff"
-              className="rounded-sm border border-pine/25 px-6 py-3.5 text-sm font-semibold text-pine transition-colors hover:bg-paper"
-            >
-              Meet our staff
-            </Link>
-            <Link
-              href="/livestream"
-              className="rounded-sm border border-pine/25 px-6 py-3.5 text-sm font-semibold text-pine transition-colors hover:bg-paper"
-            >
-              Watch livestream
-            </Link>
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 md:grid-cols-2">
+          <div className="relative aspect-[4/5] w-full overflow-hidden bg-paper sm:aspect-[5/6]">
+            <Image
+              src={photos.anitaLeading.src}
+              alt={photos.anitaLeading.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className={`object-cover ${photos.anitaLeading.objectClass ?? "object-top"}`}
+            />
           </div>
-          <p className="mt-6 text-sm text-ink/55">
-            {site.phone} · crestviewworship2@gmail.com
-          </p>
+          <div>
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-leaf">
+              Leadership
+            </p>
+            <h2 className="mt-4 font-display text-[clamp(1.85rem,3.5vw,2.5rem)] leading-[1.08] tracking-[-0.02em] text-pine">
+              Anita Diaz, Music Director / Worship Leader
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-ink/75">
+              Anita leads Crestview Worship and welcomes musicians and production
+              volunteers who want to serve. Interested in auditions or joining the
+              team? Reach out by email.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="mailto:crestviewworship2@gmail.com"
+                className="rounded-sm bg-pine px-6 py-3.5 text-sm font-semibold text-fog transition-colors hover:bg-canopy"
+              >
+                Email Crestview Worship
+              </a>
+              <Link
+                href="/our-staff"
+                className="rounded-sm border border-pine/25 px-6 py-3.5 text-sm font-semibold text-pine transition-colors hover:bg-paper"
+              >
+                Meet our staff
+              </Link>
+              <Link
+                href="/livestream"
+                className="rounded-sm border border-pine/25 px-6 py-3.5 text-sm font-semibold text-pine transition-colors hover:bg-paper"
+              >
+                Watch livestream
+              </Link>
+            </div>
+            <p className="mt-6 text-sm text-ink/55">
+              {site.phone} · crestviewworship2@gmail.com
+            </p>
+          </div>
         </div>
       </section>
 
