@@ -71,10 +71,13 @@ export const photos = {
     owner: "worship-ministry-feature",
     objectClass: "object-center",
   },
-  /** Worship leadership (Anita) */
+  /**
+   * Worship leadership (Anita).
+   * Intentional reuse of her Our Staff headshot so her identity matches /our-staff.
+   */
   anitaLeading: {
-    src: "/images/worship/anita-leading.jpg",
-    alt: "Anita Diaz leading worship at Crestview",
+    src: "/staff/anita-diaz.jpg",
+    alt: "Anita Diaz, Music Director / Worship Leader",
     owner: "worship-ministry-leadership",
     objectClass: "object-top",
   },
