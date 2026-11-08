@@ -4,6 +4,9 @@ import { site } from "@/lib/site";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+// YouTube search.list costs 100 quota units per call; cache for 30 minutes
+// to remain under the default 10,000-unit daily allocation.
+
 type YouTubeSearchResponse = {
   items?: Array<{ id?: { videoId?: string }; snippet?: { title?: string } }>;
 };
@@ -28,7 +31,7 @@ export async function GET() {
   try {
     const response = await fetch(
       `https://www.googleapis.com/youtube/v3/search?${params}`,
-      { next: { revalidate: 60 } },
+      { next: { revalidate: 1800 } },
     );
     if (!response.ok) {
       console.error("YouTube livestream lookup failed:", response.status);
