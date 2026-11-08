@@ -4,6 +4,7 @@ import { CampusMap } from "@/components/CampusMap";
 import { ContactForm } from "@/components/ContactForm";
 import { Hero } from "@/components/Hero";
 import { HomeBanner } from "@/components/HomeBanner";
+import { LiveStreamBanner } from "@/components/LiveStreamBanner";
 import { PageShell } from "@/components/PageShell";
 import { photos } from "@/lib/photos";
 import { site } from "@/lib/site";
@@ -64,6 +65,7 @@ const pathways = [
 export default function HomePage() {
   return (
     <PageShell hero>
+      <LiveStreamBanner />
       <HomeBanner />
       <Hero />
 
