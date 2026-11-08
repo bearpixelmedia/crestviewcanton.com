@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { LiveStreamBanner } from "@/components/LiveStreamBanner";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
@@ -8,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata: Metadata = pageMeta({
   title: "Livestream",
   description:
-    "Watch Crestview Baptist Church live on Facebook and catch archives on YouTube.",
+    "Watch Crestview Baptist Church live on YouTube when broadcasting, or join on Facebook.",
   path: "/livestream",
 });
 
@@ -18,8 +19,10 @@ export default function LivestreamPage() {
       <PageHero
         eyebrow="Livestream"
         title="Join us online when you can’t be in the room."
-        lead="Watch Crestview Baptist Church live on Sunday mornings via Facebook, then catch archives on YouTube."
+        lead="Join our Sunday morning worship online. When Crestview broadcasts live on YouTube, the video appears below automatically."
       />
+
+      <LiveStreamBanner />
 
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
