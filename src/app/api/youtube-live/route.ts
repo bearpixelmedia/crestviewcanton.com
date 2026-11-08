@@ -120,7 +120,7 @@ async function checkWithHtml(): Promise<LivePayload> {
 export async function GET() {
   await connection();
   try {
-    const apiKey = process.env.YOUTUBE_DATA_API_KEY;
+    const apiKey = process.env.YOUTUBE_API_KEY ?? process.env.YOUTUBE_DATA_API_KEY;
     if (apiKey) {
       const fromApi = await checkWithDataApi(apiKey);
       if (fromApi) {
