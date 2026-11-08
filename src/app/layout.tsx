@@ -84,7 +84,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-paper text-ink antialiased">
         <JsonLd data={[websiteJsonLd(), churchJsonLd()]} />
         {children}
-        <GoogleAnalytics gaId={site.googleAnalyticsId} />
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        ) : null}
       </body>
     </html>
   );
