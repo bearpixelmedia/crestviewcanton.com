@@ -103,6 +103,7 @@ export function SiteFooter() {
             >
               Bear Pixel Media
             </a>
+            {" · Site v0.1.1"}
           </p>
         </div>
       </div>
