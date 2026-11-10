@@ -12,6 +12,7 @@ type Props = {
 };
 
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+const LEAD_TO = "leads@bearpixelmedia.com";
 
 export function ContactForm({
   intent = "contact",
@@ -33,14 +34,15 @@ export function ContactForm({
     const phone = String(data.get("phone") || "");
     const message = String(data.get("message") || "");
 
-    const subject =
+    const formName =
       intent === "newsletter"
-        ? `Crestview mailing list, ${email}`
+        ? "Newsletter"
         : intent === "visit"
-          ? `Plan a visit, ${name || email}`
+          ? "Plan a visit"
           : intent === "prayer"
-            ? `Prayer request, ${name || email}`
-            : `Website contact, ${name || email}`;
+            ? "Prayer request"
+            : "Contact";
+    const subject = `[Lead] Crestview – ${formName}`;
 
     setStatus("sending");
     setErrorMsg("");
@@ -91,7 +93,7 @@ export function ContactForm({
       .filter(Boolean)
       .join("\n");
 
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${LEAD_TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setStatus("sent");
   }
 
@@ -102,7 +104,7 @@ export function ContactForm({
         <p className="mt-2 text-sm text-ink/70">
           {FORMSPREE_ID
             ? "Your message is on its way to the church office."
-            : `Your email app should open with a message to ${site.email}. If it didn’t, call ${site.phone} or email us directly.`}
+            : `Your email app should open with a message to ${LEAD_TO}. If it didn’t, call ${site.phone} or email us directly.`}
         </p>
         <button
           type="button"
@@ -120,7 +122,7 @@ export function ContactForm({
       {!FORMSPREE_ID ? (
         <p className="rounded-sm border border-pine/10 bg-fog/80 px-3 py-2 text-xs text-ink/60">
           Submissions open your email app until Formspree is connected for{" "}
-          {site.email}.
+          {LEAD_TO}.
         </p>
       ) : null}
 
