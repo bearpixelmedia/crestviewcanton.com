@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
+import { GiveOnlineCta } from "@/components/GiveOnlineCta";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
@@ -145,9 +145,9 @@ export default function ServePage() {
                 href={site.giveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
+                className="mt-6 inline-flex rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog transition-colors hover:bg-canopy"
               >
-                Also consider giving
+                Give Online
               </a>
             </div>
             <div>
@@ -166,6 +166,11 @@ export default function ServePage() {
           </div>
         </div>
       </section>
+
+      <GiveOnlineCta
+        tone="fog"
+        lead="Time and gifts both matter. If you are ready to give financially, start here."
+      />
     </PageShell>
   );
 }

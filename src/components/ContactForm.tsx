@@ -4,15 +4,17 @@ import { FormEvent, useState } from "react";
 import { site } from "@/lib/site";
 
 type Props = {
-  /** Used in Formspree _subject and mailto subject */
+  /** Used in Formspree _subject */
   intent?: "contact" | "visit" | "newsletter" | "prayer";
   fields?: ("name" | "email" | "phone" | "message")[];
   submitLabel?: string;
   className?: string;
 };
 
-const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-const LEAD_TO = "leads@bearpixelmedia.com";
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID?.trim();
+
+/** Sharon / church office inbox (same address on staff + contact). */
+const OFFICE_EMAIL = site.email;
 
 export function ContactForm({
   intent = "contact",
@@ -42,59 +44,49 @@ export function ContactForm({
           : intent === "prayer"
             ? "Prayer request"
             : "Contact";
-    const subject = `[Lead] Crestview – ${formName}`;
+    const subject = `[Crestview] ${formName}`;
 
     setStatus("sending");
     setErrorMsg("");
 
-    // Preferred: Formspree (set NEXT_PUBLIC_FORMSPREE_ID)
-    if (FORMSPREE_ID) {
-      try {
-        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            phone,
-            message,
-            intent,
-            _subject: subject,
-          }),
-        });
-        if (!res.ok) {
-          throw new Error("Formspree rejected the submission.");
-        }
-        setStatus("sent");
-        form.reset();
-        return;
-      } catch (err) {
-        setStatus("error");
-        setErrorMsg(
-          err instanceof Error
-            ? err.message
-            : "Could not send. Try email or phone instead.",
-        );
-        return;
-      }
+    if (!FORMSPREE_ID) {
+      setStatus("error");
+      setErrorMsg(
+        `Form delivery is not connected yet. Set NEXT_PUBLIC_FORMSPREE_ID on Vercel (notification email: ${OFFICE_EMAIL}). Or call ${site.phone}.`,
+      );
+      return;
     }
 
-    // Fallback that works with no secrets: open a prefilled mailto
-    const body = [
-      intent !== "newsletter" ? `Name: ${name}` : null,
-      `Email: ${email}`,
-      phone ? `Phone: ${phone}` : null,
-      message ? `\n${message}` : null,
-      `\n,  Sent from crestviewcanton.com (${intent})`,
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    window.location.href = `mailto:${LEAD_TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setStatus("sent");
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          message,
+          intent,
+          _replyto: email,
+          _subject: subject,
+        }),
+      });
+      if (!res.ok) {
+        throw new Error("Formspree rejected the submission.");
+      }
+      setStatus("sent");
+      form.reset();
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg(
+        err instanceof Error
+          ? err.message
+          : `Could not send. Email ${OFFICE_EMAIL} or call ${site.phone}.`,
+      );
+    }
   }
 
   if (status === "sent") {
@@ -102,9 +94,7 @@ export function ContactForm({
       <div className={`py-6 ${className}`}>
         <p className="font-display text-2xl text-pine">Thank you!</p>
         <p className="mt-2 text-sm text-ink/70">
-          {FORMSPREE_ID
-            ? "Your message is on its way to the church office."
-            : `Your email app should open with a message to ${LEAD_TO}. If it didn’t, call ${site.phone} or email us directly.`}
+          Your message is on its way to the church office.
         </p>
         <button
           type="button"
@@ -119,13 +109,6 @@ export function ContactForm({
 
   return (
     <form onSubmit={handleSubmit} className={`space-y-4 ${className}`}>
-      {!FORMSPREE_ID ? (
-        <p className="rounded-sm border border-pine/10 bg-fog/80 px-3 py-2 text-xs text-ink/60">
-          Submissions open your email app until Formspree is connected for{" "}
-          {LEAD_TO}.
-        </p>
-      ) : null}
-
       {fields.includes("name") ? (
         <div>
           <label

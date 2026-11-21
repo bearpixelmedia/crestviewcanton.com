@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { GiveOnlineCta } from "@/components/GiveOnlineCta";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
@@ -118,6 +119,11 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <GiveOnlineCta
+        tone="fog"
+        lead="Prefer to give online? Use our secure giving page anytime."
+      />
     </PageShell>
   );
 }
