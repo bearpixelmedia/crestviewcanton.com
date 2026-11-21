@@ -92,10 +92,25 @@ git push origin cursor/crestview-baptist-site-c141
 
 Set `NEXT_PUBLIC_FORMSPREE_ID` in the Vercel project env before relying on Formspree in production.
 
+## Mobile app (Expo)
+
+Staff-first + class signup shell lives in **`apps/crestview-mobile/`**. Backend is Planning Center Church Center (WebViews), not a custom API. Website `npm` scripts are unchanged.
+
+```bash
+cd apps/crestview-mobile
+npm install
+cp .env.example .env
+npx expo start
+```
+
+See [`apps/crestview-mobile/README.md`](apps/crestview-mobile/README.md).
+
 ## Notes
 
 - Giving: `https://secure.myvanco.com/L-ZB2Z/home`
+- Church Center registrations: `https://crestviewbaptist.churchcenter.com/registrations`
 - Office: 3258 Pisgah Drive, Canton, NC 28716 · (828) 648-1110
 - Reference content in `Website/` (gitignored)
 - Tammie / Eddie Beck: longer bios still pending church office
 - Dated news campaigns intentionally omitted until the office supplies current copy
+
