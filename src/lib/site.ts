@@ -22,7 +22,7 @@ export const site = {
   phone: "(828) 648-1110",
   phoneTel: "+18286481110",
   /** Shared church inbox for website / office / social access */
-  email: "CrestviewBaptistChurchNC@gmail.com",
+  email: "crestviewcanton@gmail.com",
   pastorEmail: "pagebypage8@gmail.com",
   /** From Wayback Machine archives of crestviewcanton.com (analytics.js). No G- ID found. */
   googleAnalyticsId: "UA-166605328-1",
@@ -196,7 +196,7 @@ export const staff = [
     team: "ministry" as const,
     photo: "/staff/sharon-bryson.jpg",
     bio: "Sharon Bryson serves as Crestview’s Administrative Assistant. A Haywood County native and long-term church member, she earned degrees and certificates from A-B Tech, UNC Asheville, and Haywood Community College. After 20 years as an Application Developer with Duke Energy Business Services (Nantahala area), she was called to serve at Crestview in 2011. Her favorite life verse is Philippians 4:13, “I can do all things through Christ who strengthens me.”",
-    contact: "CrestviewBaptistChurchNC@gmail.com · 828-648-1110",
+    contact: "crestviewcanton@gmail.com · 828-648-1110",
   },
   {
     slug: "tammie-beck",
