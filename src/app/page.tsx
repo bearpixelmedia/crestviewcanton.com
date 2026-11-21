@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CampusMap } from "@/components/CampusMap";
 import { ContactForm } from "@/components/ContactForm";
+import { GiveOnlineCta } from "@/components/GiveOnlineCta";
 import { Hero } from "@/components/Hero";
 import { HomeBanner } from "@/components/HomeBanner";
 import { LiveStreamBanner } from "@/components/LiveStreamBanner";
@@ -179,12 +180,14 @@ export default function HomePage() {
             >
               Plan Your Visit
             </Link>
-            <Link
-              href="/about"
+            <a
+              href={site.giveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex rounded-sm border border-mist/40 px-6 py-3.5 text-sm font-medium text-fog transition-colors hover:bg-white/5"
             >
-              Learn More
-            </Link>
+              Give Online
+            </a>
           </div>
         </div>
       </section>
@@ -303,6 +306,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <GiveOnlineCta
+        tone="fog"
+        lead="Partner with Crestview through secure online giving. Every gift helps us Reach, Equip, and Send."
+      />
     </PageShell>
   );
 }

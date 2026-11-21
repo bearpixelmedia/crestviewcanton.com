@@ -1,3 +1,4 @@
+import { GiveOnlineCta } from "@/components/GiveOnlineCta";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { pageMeta } from "@/lib/seo";
@@ -85,6 +86,11 @@ export default function EventsPage() {
           </div>
         </div>
       </section>
+
+      <GiveOnlineCta
+        tone="fog"
+        lead="Support the ministries and gatherings that keep our church family connected."
+      />
     </PageShell>
   );
 }

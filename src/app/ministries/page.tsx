@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { GiveOnlineCta } from "@/components/GiveOnlineCta";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { ministryLinks, site } from "@/lib/site";
@@ -139,6 +140,14 @@ export default function MinistriesPage() {
             >
               Serve / Volunteer
             </Link>
+            <a
+              href={site.giveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-sm border border-pine/25 px-6 py-3.5 text-sm font-semibold text-pine transition-colors hover:bg-fog"
+            >
+              Give Online
+            </a>
             <Link
               href="/contact"
               className="rounded-sm border border-pine/25 px-6 py-3.5 text-sm font-semibold text-pine transition-colors hover:bg-fog"
@@ -148,6 +157,11 @@ export default function MinistriesPage() {
           </div>
         </div>
       </section>
+
+      <GiveOnlineCta
+        tone="canopy"
+        lead="Ministry thrives when the church family partners together. Give securely online anytime."
+      />
     </PageShell>
   );
 }

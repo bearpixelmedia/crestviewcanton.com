@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { GiveOnlineCta } from "@/components/GiveOnlineCta";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { staff, site } from "@/lib/site";
@@ -167,6 +168,11 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      <GiveOnlineCta
+        tone="fog"
+        lead="Your generosity helps Crestview share Christ’s love in Haywood County and beyond."
+      />
     </PageShell>
   );
 }

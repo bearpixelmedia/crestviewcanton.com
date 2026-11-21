@@ -71,6 +71,14 @@ export function SiteFooter() {
               </a>
             </li>
           </ul>
+          <a
+            href={site.giveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex rounded-sm bg-dawn px-4 py-2.5 text-sm font-semibold text-forest transition-colors hover:bg-dawn-deep hover:text-fog"
+          >
+            Give Online
+          </a>
         </div>
 
         {navGroups.map((group) => (
