@@ -39,9 +39,9 @@ Agent CLI/browser cannot finish OAuth for Formspree. Byron creates the form once
 1. Open [https://formspree.io/login](https://formspree.io/login) and sign in (Google is fine).
 2. Click **New Form**.
 3. Name it `Crestview Baptist website`.
-4. Set the notification / recipient email to **`CrestviewBaptistChurchNC@gmail.com`** (Sharon Bryson, Administrative Assistant; same address on Contact and Our Staff).
+4. Set the notification / recipient email to **`crestviewcanton@gmail.com`** (Sharon Bryson, Administrative Assistant; same address on Contact and Our Staff).
 5. Create the form, then open it and copy the Form ID from the endpoint URL: `https://formspree.io/f/XXXXXXX` → copy **`XXXXXXX`** only.
-6. Confirm Formspree email verification for `CrestviewBaptistChurchNC@gmail.com` if prompted.
+6. Confirm Formspree email verification for `crestviewcanton@gmail.com` if prompted.
 7. Local: add to `.env.local`  
    `NEXT_PUBLIC_FORMSPREE_ID=XXXXXXX`  
    then restart `npm run dev`.
@@ -91,7 +91,7 @@ vercel --scope byronmccluney link   # once
 git push origin cursor/crestview-baptist-site-c141
 ```
 
-Set `NEXT_PUBLIC_FORMSPREE_ID` in the Vercel project env (recipient: CrestviewBaptistChurchNC@gmail.com / Sharon) before relying on forms in production.
+Set `NEXT_PUBLIC_FORMSPREE_ID` in the Vercel project env (recipient: crestviewcanton@gmail.com / Sharon) before relying on forms in production.
 
 ## Notes
 
