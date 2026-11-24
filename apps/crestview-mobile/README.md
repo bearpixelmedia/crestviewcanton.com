@@ -100,9 +100,94 @@ Church Center link either.
 Because of that, the app has no default org. When
 `EXPO_PUBLIC_CHURCH_CENTER_URL` is unset, the WebView screens render "Church
 Center is not set up" with the variable name, and the app never loads the
-Griffin org. The church office needs to confirm the Canton Planning Center
-organization. Once confirmed, set the variable in `.env`, restart Expo or
-rebuild, and every tab follows it with no code change.
+Griffin org. The Canton organization is now confirmed at
+`https://crestviewbaptistchurch.churchcenter.com`. The app still has no
+hardcoded default, so every environment must set the variable. For a new
+organization, follow the runbook below. Once the variable is set in `.env`,
+restart Expo or rebuild, and every tab follows it with no code change.
+
+## Planning Center org setup runbook
+
+Use this when the church does not already have a Planning Center organization.
+The church office or an authorized staff member must own the account. The person
+who creates it becomes the first organization administrator, so use a
+church-owned email and keep the recovery details with the office.
+
+### Before starting
+
+- Confirm the church does not already have a Planning Center account. Planning
+  Center cannot merge duplicate organizations. If one exists, ask its
+  organization administrator to invite you and add the needed products instead.
+  Signing up with an email already tied to an organization shows a warning.
+- Do not use `crestviewbaptist.churchcenter.com`. It is Crestview Baptist Church
+  in Griffin, GA, not the Canton church.
+
+### 1. Create the account
+
+1. Open https://accounts.planningcenteronline.com/sign_up. The Sign up button on
+   the Planning Center pricing page goes to the same place.
+2. Leave every product on its free plan. Current free limits: People unlimited,
+   Groups 15 members, Calendar 1 room, Services 5 team members, Registrations 5
+   attendees, Giving 10 donations per month, Check-Ins 10 per day, Church Center
+   unlimited, and Publishing Essential. The monthly total is $0. Paid plans can
+   be added later without creating a new account.
+3. Enter the church email and a password for the administrator. This is a
+   personal administrator login, not a shared church login.
+4. Verify the mobile number with the one-time code. Use a number the church
+   controls.
+5. Enter the organization details: Crestview Baptist Church, 3258 Pisgah Drive,
+   Canton, NC 28716, https://crestviewcanton.com. Accept the terms and follow the
+   trial prompt. With free plans the total is $0.
+6. Turn on two-step verification for the administrator account.
+
+### 2. Claim the Church Center URL
+
+1. In Planning Center, open the product menu in the top left and choose Account
+   settings.
+2. Go to Organization, then the Church Center tab.
+3. Enter the subdomain and choose Save Church Center URL. This church claimed
+   `crestviewbaptistchurch` on November 24, 2026, so its URL is
+   `https://crestviewbaptistchurch.churchcenter.com`.
+   - Setting up again from scratch: `crestviewcanton` is the shortest match for
+     crestviewcanton.com, with `crestviewcantonnc` as the fallback.
+   - Availability is only final when the URL saves.
+4. Copy the full URL and send it to whoever builds the app.
+5. Changing this URL later breaks bookmarks, printed QR codes, and shared links,
+   so settle it before announcing Church Center.
+
+### 3. Publish the pages the app opens
+
+Church Center web is on by default, but a product page appears only after its
+product is subscribed (the free plan counts) and the page is published.
+
+- Groups: `/groups` for the group list. Joining a group and "My groups" need a
+  login.
+- Calendar: `/calendar` for events. Event registration needs a login.
+- Registrations: `/registrations/events` for class signup.
+- Directory: `/directory`, visible to signed-in people according to the church's
+  directory settings.
+- Giving: optional. The app links to Vanco unless `EXPO_PUBLIC_GIVE_URL` is set.
+
+Publishing Essential is free and enables the Church Center mobile app listing.
+This repo's app is separate and reads the same Church Center site.
+
+### 4. Connect the app
+
+1. Put the confirmed URL in `.env`:
+   `EXPO_PUBLIC_CHURCH_CENTER_URL=https://crestviewbaptistchurch.churchcenter.com`
+2. Restart Expo. The Groups, Calendar, and Classes tabs should load and the setup
+   message should disappear.
+3. For EAS builds, set the same value in the EAS environment, or in the `preview`
+   and `production` profiles. A local `.env` is not uploaded with the build.
+4. Sign in with a member test account, not the administrator, and confirm the
+   directory, group join, event registration, and that the session survives an
+   app restart.
+5. Run the device smoke test above before capturing store screenshots.
+
+Reference: Planning Center help, "Brand new to Planning Center" at
+https://help.planningcenter.com/en/179947-brand-new-to-planning-center-and-chms-guide.html
+and "Set up Church Center and Publishing" at
+https://help.planningcenter.com/en/179950-set-up-church-center-and-publishing.html.
 
 ## Local development
 
