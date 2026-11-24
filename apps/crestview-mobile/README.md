@@ -141,9 +141,14 @@ in `.env` here.
 ## Checks
 
 ```bash
+npm test
 npx tsc --noEmit
 npx expo-doctor
 ```
+
+`npm test` runs Jest through the `jest-expo` preset. The suite covers
+`constants/config.ts`: no org configured, whitespace-only values, path building,
+and trailing-slash trimming. Device behavior still needs the smoke test above.
 
 ## EAS builds for TestFlight and Play internal testing
 
