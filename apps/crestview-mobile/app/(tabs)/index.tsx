@@ -38,8 +38,11 @@ const quickLinks: QuickLink[] = [
 
 export default function HomeScreen() {
   return (
-    <Screen subtitle={config.tagline}>
-      <BrandLockup />
+    <Screen>
+      <View style={styles.header}>
+        <BrandLockup />
+        <Text style={styles.tagline}>{config.tagline}</Text>
+      </View>
 
       <View style={styles.heroBand}>
         <Text style={styles.heroEyebrow}>REACH · EQUIP · SEND</Text>
@@ -112,6 +115,15 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  header: {
+    gap: 8,
+  },
+  tagline: {
+    fontFamily: 'Manrope_400Regular',
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#4a5c54',
+  },
   heroBand: {
     backgroundColor: brand.pine,
     padding: 20,
