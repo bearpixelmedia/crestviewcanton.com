@@ -157,7 +157,32 @@ behavior still needs the smoke test above.
 The code is finished without any Apple or Google credentials. Credentials are
 only needed when a build is uploaded to a store account.
 
-1. Create an [Expo](https://expo.dev) account, then from this folder:
+### Create the Expo account and EAS access token
+
+Do this once, with the church Gmail, before the first EAS build. The Expo
+account should belong to the church or to Bear Pixel Media, not to a personal
+address that may leave with whoever set it up.
+
+1. Open https://expo.dev/signup and create the account with the church Gmail.
+   Use a shared username such as `crestview-canton`, verify the email, and keep
+   the recovery details with the church office.
+2. Sign in, open Account settings, then Access tokens, and choose Create token.
+   Name it `eas-cli`, keep the default scope, and copy the value once. Expo does
+   not show it again.
+3. Store the token outside the repository:
+   - On this computer: export it in the shell that runs EAS
+     (`export EXPO_TOKEN=...`) or let `eas-cli` prompt for it. Never put it in
+     `.env`, `.env.example`, `.env.local`, or any tracked file.
+   - In automation: add it as a repository secret named `EXPO_TOKEN` under
+     Settings, Secrets and variables, Actions.
+4. Confirm which account the token belongs to without printing it:
+   `npx eas-cli@latest whoami`. Any EAS command then runs with `EXPO_TOKEN` set.
+5. If the token is ever pasted into chat, a ticket, or a log, delete it in
+   Access tokens and create a new one. It is a credential for the whole account.
+
+Paste the token into the prompt or the secret field, never into a message.
+
+1. With the account ready, from this folder:
 
    ```bash
    npx eas-cli@latest login
