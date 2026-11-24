@@ -100,7 +100,15 @@ export function SiteFooter() {
       </div>
       <div className="relative border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-mist/50 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p>© 2026 {site.name}</p>
+          <p>
+            © 2026 {site.name} ·{" "}
+            <Link
+              href="/privacy"
+              className="underline-offset-2 hover:text-fog hover:underline"
+            >
+              Privacy Policy
+            </Link>
+          </p>
           <p>
             Built by{" "}
             <a

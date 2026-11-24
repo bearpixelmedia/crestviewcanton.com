@@ -155,50 +155,47 @@ behavior still needs the smoke test above.
 ## EAS builds for TestFlight and Play internal testing
 
 The code is finished without any Apple or Google credentials. Credentials are
-only needed when a build is uploaded to a store account.
+only needed when a build is uploaded to a store account. Work through these in
+order: steps 1 to 4 set up the account and project, steps 5 to 8 cover bundle
+IDs, builds, and updates.
 
-### Create the Expo account and EAS access token
-
-Do this once, with the church Gmail, before the first EAS build. The Expo
-account should belong to the church or to Bear Pixel Media, not to a personal
-address that may leave with whoever set it up.
-
-1. Open https://expo.dev/signup and create the account with the church Gmail.
+1. Create the Expo account at https://expo.dev/signup with the church Gmail.
    Use a shared username such as `crestview-canton`, verify the email, and keep
-   the recovery details with the church office.
-2. Sign in, open Account settings, then Access tokens, and choose Create token.
-   Name it `eas-cli`, keep the default scope, and copy the value once. Expo does
-   not show it again.
+   the recovery details with the church office. The account should belong to the
+   church or to Bear Pixel Media, not to a personal address that may leave with
+   whoever set it up.
+2. Create the EAS access token. Sign in, open Account settings, then Access
+   tokens, and choose Create token. Name it `eas-cli`, keep the default scope,
+   and copy the value once. Expo does not show it again.
 3. Store the token outside the repository:
    - On this computer: export it in the shell that runs EAS
      (`export EXPO_TOKEN=...`) or let `eas-cli` prompt for it. Never put it in
      `.env`, `.env.example`, `.env.local`, or any tracked file.
    - In automation: add it as a repository secret named `EXPO_TOKEN` under
      Settings, Secrets and variables, Actions.
-4. Confirm which account the token belongs to without printing it:
-   `npx eas-cli@latest whoami`. Any EAS command then runs with `EXPO_TOKEN` set.
-5. If the token is ever pasted into chat, a ticket, or a log, delete it in
-   Access tokens and create a new one. It is a credential for the whole account.
 
-Paste the token into the prompt or the secret field, never into a message.
-
-1. With the account ready, from this folder:
+   Paste the token into the prompt or the secret field, never into a message.
+4. Confirm the account, then link the project. With `EXPO_TOKEN` set, EAS
+   already knows the account; if you are signed out, run
+   `npx eas-cli@latest login` first. From this folder run:
 
    ```bash
-   npx eas-cli@latest login
+   npx eas-cli@latest whoami
    npx eas-cli@latest init
    ```
 
-   `init` writes `extra.eas.projectId` into `app.json`. Commit that change.
-
-2. Bundle IDs are already set in `app.json`:
+   `whoami` prints the account without printing the token. `init` writes
+   `extra.eas.projectId` into `app.json`; commit that change. If the token is
+   ever pasted into chat, a ticket, or a log, delete it in Access tokens and
+   create a new one.
+5. Bundle IDs are already set in `app.json`:
 
    - iOS: `com.crestviewcanton.mobile`
    - Android: `com.crestviewcanton.mobile`
 
    They can only change before the first store upload.
 
-3. Internal builds (TestFlight / Play internal track). `eas.json` defines a
+6. Internal builds (TestFlight / Play internal track). `eas.json` defines a
    `preview` profile that produces an installable build:
 
    ```bash
@@ -209,7 +206,7 @@ Paste the token into the prompt or the secret field, never into a message.
    iOS internal builds need each test device registered first
    (`npx eas-cli@latest device:create`). Android preview builds are APKs.
 
-4. Production builds and store upload:
+7. Production builds and store upload:
 
    ```bash
    npx eas-cli@latest build --profile production --platform all
@@ -227,7 +224,7 @@ Paste the token into the prompt or the secret field, never into a message.
    - The `production` profile auto-increments the build number. App version
      stays at `app.json` `version` until it is raised by hand.
 
-5. Over-the-air updates are not configured. Add `expo-updates` and an update
+8. Over-the-air updates are not configured. Add `expo-updates` and an update
    channel later if the church wants JS-only fixes without a store build.
 
 ### Store review notes
@@ -237,8 +234,10 @@ Paste the token into the prompt or the secret field, never into a message.
   shortcuts are the native value. Expect review questions and have the church's
   Planning Center plan ready.
 - Privacy: Church Center and Planning Center handle accounts and member data.
-  The app stores no member data itself. State that in both store listings, and
-  link `https://planning.center/privacy/`.
+  The app stores no member data itself. Use
+  `https://crestviewcanton.com/privacy` as the privacy policy URL in App Store
+  Connect and Play Console; the page also links Planning Center's policy. The
+  app description can say the app stores no member data.
 - Replace `assets/images/*` if the church supplies newer artwork. The current
   icons are generated from `public/brand/crestview-mark.png` in this repo.
 
