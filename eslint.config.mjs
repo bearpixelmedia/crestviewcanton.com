@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Expo web export output; generated bundles are not source.
+    "apps/crestview-mobile/dist/**",
   ]),
 ]);
 
