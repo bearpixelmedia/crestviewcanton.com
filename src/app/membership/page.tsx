@@ -46,20 +46,23 @@ const steps = [
         Explore ministries and volunteer opportunities as you find your place
         to serve. Membership at Crestview is a meaningful commitment to this
         church family as we REACH-EQUIP-SEND together. We offer an Exploratory
-        New Members class about every six weeks, taught by the Pastor. Contact
-        the church office to connect with Pastor Dan and{" "}
+        New Members class about every six weeks, taught by the Pastor.{" "}
+        <a
+          href={site.churchCenterRegistrations}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-canopy underline-offset-2 hover:underline"
+        >
+          Sign up on Church Center
+        </a>{" "}
+        or{" "}
         <Link
           href="/contact#new-members"
           className="font-semibold text-canopy underline-offset-2 hover:underline"
         >
-          sign up for the next New Members class
-        </Link>
-        .
-        <span className="mt-3 block text-ink/60">
-          Note: class signup currently goes through Contact Us (or a phone call
-          to the office). A dedicated Formspree or Church Center registration
-          can be wired when the church provides a preferred form or event link.
-        </span>
+          contact the office
+        </Link>{" "}
+        to connect with Pastor Dan about the next class.
       </>
     ),
     href: "/serve",

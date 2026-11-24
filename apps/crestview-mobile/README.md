@@ -27,7 +27,7 @@ The Next.js website at the repo root is separate. Do not run site scripts from t
 
 | Variable | Required? | Purpose |
 |----------|-----------|---------|
-| `EXPO_PUBLIC_CHURCH_CENTER_URL` | Recommended | Church Center org root, e.g. `https://crestviewbaptist.churchcenter.com`. Defaults to that slug (from the website registrations link). Byron should paste the real org URL if it differs. |
+| `EXPO_PUBLIC_CHURCH_CENTER_URL` | Recommended | Church Center org root, e.g. `https://crestviewbaptistchurch.churchcenter.com`. This is the confirmed org; only override it if the church's org ever changes. |
 | `EXPO_PUBLIC_GIVE_URL` | Optional | Overrides Give Online (defaults to MyVanco). |
 | `EXPO_PUBLIC_LIVE_URL` | Optional | Overrides livestream page. |
 | `EXPO_PUBLIC_STAFF_URL` | Optional | Overrides Our Staff page. |
@@ -37,9 +37,9 @@ Copy `.env.example` to `.env` for local work. Restart Expo after changing env va
 ### How staff find the Church Center URL + Planning Center admin
 
 1. Open [churchcenter.com](https://churchcenter.com) or the church’s published Church Center link (often `https://<org>.churchcenter.com`).
-2. Crestview’s website already points registrations at `https://crestviewbaptist.churchcenter.com/registrations`. Use the same host for calendar (`/calendar`) and groups (`/groups`) unless Planning Center shows a different subdomain.
+2. Crestview’s confirmed org is `https://crestviewbaptistchurch.churchcenter.com`, serving registrations at `/registrations`, calendar at `/calendar`, and groups at `/groups`.
 3. For **admin** (create events, groups, registrations, rosters): staff sign in at [planningcenter.com](https://planningcenter.com) with a Planning Center organization account. Church Center is the public / member-facing surface; Planning Center Online is where staff manage data.
-4. Paste the org root into `EXPO_PUBLIC_CHURCH_CENTER_URL` (no trailing slash). Example: `https://crestviewbaptist.churchcenter.com`.
+4. Paste the org root into `EXPO_PUBLIC_CHURCH_CENTER_URL` (no trailing slash). Example: `https://crestviewbaptistchurch.churchcenter.com`.
 
 ## App tabs
 

@@ -109,7 +109,7 @@ See [`apps/crestview-mobile/README.md`](apps/crestview-mobile/README.md).
 ## Notes
 
 - Giving: `https://secure.myvanco.com/L-ZB2Z/home`
-- Church Center registrations: `https://crestviewbaptist.churchcenter.com/registrations`
+- Church Center registrations: `https://crestviewbaptistchurch.churchcenter.com/registrations`
 - Office: 3258 Pisgah Drive, Canton, NC 28716 · (828) 648-1110
 - Reference content in `Website/` (gitignored)
 - Tammie / Eddie Beck: longer bios still pending church office

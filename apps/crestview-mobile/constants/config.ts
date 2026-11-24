@@ -3,13 +3,13 @@
  *
  * Backend is Planning Center Church Center (not a custom API).
  * Set EXPO_PUBLIC_CHURCH_CENTER_URL to the org root, e.g.
- * https://crestviewbaptist.churchcenter.com
+ * https://crestviewbaptistchurch.churchcenter.com
  *
- * The website already links registrations at crestviewbaptist.churchcenter.com.
- * Confirm with Byron if the calendar/groups slug differs.
+ * Confirmed Crestview org in Planning Center Church Center. The same host serves
+ * /calendar, /groups, and /registrations below.
  */
 const DEFAULT_CHURCH_CENTER_URL =
-  'https://crestviewbaptist.churchcenter.com';
+  'https://crestviewbaptistchurch.churchcenter.com';
 
 function trimSlash(url: string): string {
   return url.replace(/\/+$/, '');
