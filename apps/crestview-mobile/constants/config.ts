@@ -25,6 +25,7 @@ export const config = {
   shortName: 'Crestview',
   tagline: 'A welcoming, Christ-centered community in Canton, NC',
   websiteUrl: 'https://crestviewcanton.com',
+  privacyUrl: 'https://crestviewcanton.com/privacy',
   giveUrl:
     process.env.EXPO_PUBLIC_GIVE_URL?.trim() ||
     'https://secure.myvanco.com/L-ZB2Z/home',

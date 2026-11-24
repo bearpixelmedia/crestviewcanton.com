@@ -58,6 +58,20 @@ export default function AboutScreen() {
           build, confirm this org URL belongs to Crestview in Canton, NC.
         </Text>
 
+        <Text style={styles.section}>Privacy</Text>
+        <Pressable
+          accessibilityRole="link"
+          accessibilityLabel="Privacy Policy"
+          onPress={() => void Linking.openURL(config.privacyUrl)}
+        >
+          <Text style={styles.credit}>Privacy Policy</Text>
+        </Pressable>
+        <Text style={styles.muted}>{config.privacyUrl}</Text>
+        <Text style={styles.body}>
+          The app stores no member data. Church Center and Planning Center
+          handle accounts and member information.
+        </Text>
+
         <Text style={styles.section}>Built by</Text>
         <Pressable
           accessibilityRole="link"
