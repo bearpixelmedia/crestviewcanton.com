@@ -2,11 +2,14 @@
  * Church Center / website URLs for the Crestview mobile shell.
  *
  * Backend is Planning Center Church Center (not a custom API).
- * Set EXPO_PUBLIC_CHURCH_CENTER_URL to the org root, e.g.
- * https://crestviewbaptist.churchcenter.com
+ * Set EXPO_PUBLIC_CHURCH_CENTER_URL to the Canton org root.
  *
- * The website already links registrations at crestviewbaptist.churchcenter.com.
- * Confirm with Byron if the calendar/groups slug differs.
+ * IMPORTANT, CONFIRM BEFORE SHIPPING:
+ * https://crestviewbaptist.churchcenter.com currently belongs to a different
+ * church: Crestview Baptist Church in Griffin, GA (1670 North Expressway).
+ * The Canton, NC church does not have a publicly discoverable Church Center
+ * site yet. Point EXPO_PUBLIC_CHURCH_CENTER_URL at the Canton org once the
+ * church office confirms the Planning Center organization.
  */
 const DEFAULT_CHURCH_CENTER_URL =
   'https://crestviewbaptist.churchcenter.com';
@@ -35,10 +38,17 @@ export const config = {
     process.env.EXPO_PUBLIC_STAFF_URL?.trim() ||
     'https://crestviewcanton.com/our-staff',
   churchCenterRoot,
+  /**
+   * Paths are the ones Church Center serves for this org. `/registrations`
+   * redirects to `/registrations/events`, so link the final path directly.
+   */
   churchCenter: {
+    home: `${churchCenterRoot}/home`,
     calendar: `${churchCenterRoot}/calendar`,
     groups: `${churchCenterRoot}/groups`,
-    registrations: `${churchCenterRoot}/registrations`,
+    registrations: `${churchCenterRoot}/registrations/events`,
+    directory: `${churchCenterRoot}/directory`,
+    login: `${churchCenterRoot}/login`,
   },
   bearPixel: {
     name: 'Bear Pixel Media',

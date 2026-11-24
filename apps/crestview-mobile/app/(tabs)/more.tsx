@@ -35,7 +35,7 @@ export default function MoreScreen() {
       onPress: () => void Linking.openURL(config.staffUrl),
     },
     {
-      label: 'Open Church Center home',
+      label: 'Church Center in browser',
       onPress: () => void Linking.openURL(config.churchCenterRoot),
     },
     {
@@ -51,9 +51,26 @@ export default function MoreScreen() {
   return (
     <Screen
       title="More"
-      subtitle="Website links, contact, and app info."
+      subtitle="Church Center, website links, and contact."
     >
       <View style={styles.list}>
+        <Link href="/church-center" asChild>
+          <Pressable
+            style={({ pressed }) => [
+              styles.row,
+              pressed && styles.rowPressed,
+            ]}
+          >
+            <View style={styles.rowCopy}>
+              <Text style={styles.rowLabel}>Church Center</Text>
+              <Text style={styles.rowHint}>
+                Sign in, directory, and the rest of Church Center
+              </Text>
+            </View>
+            <Text style={styles.chevron}>›</Text>
+          </Pressable>
+        </Link>
+
         {rows.map((row) => (
           <Pressable
             key={row.label}
@@ -105,9 +122,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderBottomWidth: 1,
     borderBottomColor: brand.fog,
+    gap: 10,
   },
   rowPressed: {
     backgroundColor: brand.fog,
+  },
+  rowCopy: {
+    flex: 1,
+    gap: 2,
   },
   rowLabel: {
     flex: 1,
@@ -115,9 +137,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: brand.pine,
   },
+  rowHint: {
+    fontFamily: 'Manrope_400Regular',
+    fontSize: 13,
+    color: '#4a5c54',
+  },
   chevron: {
     fontSize: 24,
     color: brand.leaf,
+    lineHeight: 24,
   },
   address: {
     fontFamily: 'Manrope_400Regular',

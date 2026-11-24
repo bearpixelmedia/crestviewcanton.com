@@ -16,20 +16,32 @@ export default function AboutScreen() {
       <View style={styles.content}>
         <Text style={styles.brand}>{config.churchName}</Text>
         <Text style={styles.body}>
-          This app is a branded shell for staff and members. Calendar, groups,
-          and class signup open Planning Center Church Center inside the app.
-          Give, livestream, and staff pages open crestviewcanton.com (or the
-          linked giving provider).
+          This app is a branded shell for staff and class members. Calendar,
+          groups, class signup, and the directory open Planning Center Church
+          Center inside the app. Give, livestream, and staff pages open
+          crestviewcanton.com or the linked giving provider.
         </Text>
 
-        <Text style={styles.section}>Church Center</Text>
+        <Text style={styles.section}>Church Center paths</Text>
+        <Text style={styles.body}>Calendar: {config.churchCenter.calendar}</Text>
+        <Text style={styles.body}>Groups: {config.churchCenter.groups}</Text>
         <Text style={styles.body}>
-          Org URL in use: {config.churchCenterRoot}
+          Classes: {config.churchCenter.registrations}
         </Text>
         <Text style={styles.body}>
-          Staff: sign in at planningcenter.com for admin. Members use Church
-          Center with the same org URL. If calendar or groups look empty,
-          confirm the slug with Byron and set EXPO_PUBLIC_CHURCH_CENTER_URL.
+          The calendar, groups, and class listings are public. Signing in,
+          joining a group, registering, and the directory need a Church Center
+          login. The app keeps that cookie session across tabs.
+        </Text>
+
+        <Text style={styles.section}>Org URL in use</Text>
+        <Text style={styles.body}>{config.churchCenterRoot}</Text>
+        <Text style={styles.body}>
+          Church Center is the member facing side. Staff create events, groups,
+          and registrations in Planning Center Online. Before distributing a
+          build, confirm this org URL belongs to Crestview in Canton, NC and set
+          EXPO_PUBLIC_CHURCH_CENTER_URL if the church office uses a different
+          organization.
         </Text>
 
         <Text style={styles.section}>Built by</Text>
