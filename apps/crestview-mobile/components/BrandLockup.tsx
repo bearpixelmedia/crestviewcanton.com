@@ -11,6 +11,7 @@ export function BrandLockup() {
           source={mark}
           style={styles.mark}
           resizeMode="contain"
+          alt=""
           accessible={false}
         />
       </View>
