@@ -1,4 +1,4 @@
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import {
   Linking,
   Pressable,
@@ -37,6 +37,8 @@ const quickLinks: QuickLink[] = [
 ];
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   return (
     <Screen>
       <View style={styles.header}>
@@ -52,24 +54,23 @@ export default function HomeScreen() {
         </Text>
       </View>
 
-      <Link href="/church-center" asChild>
-        <Pressable
-          accessibilityRole="button"
-          style={({ pressed }) => [
-            styles.primaryCard,
-            pressed && styles.linkRowPressed,
-          ]}
-        >
-          <View style={styles.linkCopy}>
-            <Text style={styles.primaryTitle}>Church Center</Text>
-            <Text style={styles.primaryBody}>
-              Sign in once for groups, directory, and everything else Church
-              Center offers.
-            </Text>
-          </View>
-          <Text style={styles.primaryChevron}>›</Text>
-        </Pressable>
-      </Link>
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => router.push('/church-center')}
+        style={({ pressed }) => [
+          styles.primaryCard,
+          pressed && styles.linkRowPressed,
+        ]}
+      >
+        <View style={styles.linkCopy}>
+          <Text style={styles.primaryTitle}>Church Center</Text>
+          <Text style={styles.primaryBody}>
+            Sign in once for groups, directory, and everything else Church
+            Center offers.
+          </Text>
+        </View>
+        <Text style={styles.primaryChevron}>›</Text>
+      </Pressable>
 
       <Text style={styles.sectionLabel}>At Crestview</Text>
       {quickLinks.map((item) => (

@@ -1,4 +1,4 @@
-import { Link } from 'expo-router';
+import { useRouter } from 'expo-router';
 import {
   Linking,
   Pressable,
@@ -17,6 +17,7 @@ type Row = {
 };
 
 export default function MoreScreen() {
+  const router = useRouter();
   const rows: Row[] = [
     {
       label: 'Church website',
@@ -53,27 +54,23 @@ export default function MoreScreen() {
   ];
 
   return (
-    <Screen
-      title="More"
-      subtitle="Church Center, website links, and contact."
-    >
+    <Screen subtitle="Church Center, website links, and contact.">
       <View style={styles.list}>
-        <Link href="/church-center" asChild>
-          <Pressable
-            style={({ pressed }) => [
-              styles.row,
-              pressed && styles.rowPressed,
-            ]}
-          >
-            <View style={styles.rowCopy}>
-              <Text style={styles.rowLabel}>Church Center</Text>
-              <Text style={styles.rowHint}>
-                Sign in, directory, and the rest of Church Center
-              </Text>
-            </View>
-            <Text style={styles.chevron}>›</Text>
-          </Pressable>
-        </Link>
+        <Pressable
+          onPress={() => router.push('/church-center')}
+          style={({ pressed }) => [
+            styles.row,
+            pressed && styles.rowPressed,
+          ]}
+        >
+          <View style={styles.rowCopy}>
+            <Text style={styles.rowLabel}>Church Center</Text>
+            <Text style={styles.rowHint}>
+              Sign in, directory, and the rest of Church Center
+            </Text>
+          </View>
+          <Text style={styles.chevron}>›</Text>
+        </Pressable>
 
         {rows.map((row) => (
           <Pressable
@@ -90,17 +87,16 @@ export default function MoreScreen() {
           </Pressable>
         ))}
 
-        <Link href="/about" asChild>
-          <Pressable
-            style={({ pressed }) => [
-              styles.row,
-              pressed && styles.rowPressed,
-            ]}
-          >
-            <Text style={styles.rowLabel}>About this app</Text>
-            <Text style={styles.chevron}>›</Text>
-          </Pressable>
-        </Link>
+        <Pressable
+          onPress={() => router.push('/about')}
+          style={({ pressed }) => [
+            styles.row,
+            pressed && styles.rowPressed,
+          ]}
+        >
+          <Text style={styles.rowLabel}>About this app</Text>
+          <Text style={styles.chevron}>›</Text>
+        </Pressable>
       </View>
 
       <Text style={styles.address}>{config.address}</Text>
