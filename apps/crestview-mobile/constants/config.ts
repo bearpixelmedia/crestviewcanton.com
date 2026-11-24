@@ -52,7 +52,7 @@ export const config = {
     'https://www.google.com/maps/search/?api=1&query=3258+Pisgah+Drive,+Canton,+NC+28716',
   phone: '(828) 648-1110',
   phoneTel: '+18286481110',
-  email: 'CrestviewBaptistChurchNC@gmail.com',
+  email: 'crestviewcanton@gmail.com',
   schedule: [
     {
       day: 'Sunday',
