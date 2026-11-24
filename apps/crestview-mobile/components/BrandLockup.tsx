@@ -1,8 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 
+import mark from '../assets/images/crestview-mark.png';
 import { brand } from '@/constants/Colors';
-
-const mark = require('../assets/images/crestview-mark.png');
 
 export function BrandLockup() {
   return (
