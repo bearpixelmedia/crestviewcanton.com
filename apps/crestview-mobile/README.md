@@ -17,7 +17,9 @@ Built by [Bear Pixel Media](https://bearpixelmedia.com).
 ## Tabs and Church Center URL mapping
 
 The Church Center org root comes from `EXPO_PUBLIC_CHURCH_CENTER_URL`. Every
-path below is relative to that root.
+path below is relative to that root. There is no default org, so until the
+variable is set every Church Center screen shows a setup message instead of a
+WebView.
 
 | Tab | Opens | Login needed? |
 | --- | --- | --- |
@@ -57,18 +59,50 @@ it does not store member data.
 - iOS swipe back and Android hardware back walk WebView history before leaving
   the tab.
 
+### Device smoke test: login and directory
+
+Run this on a real iPhone and a real Android phone against a build pointed at
+the confirmed Canton org. Uninstall the app first so no Church Center cookie
+survives from an earlier test.
+
+1. Build once with `EXPO_PUBLIC_CHURCH_CENTER_URL` empty. Groups, Calendar,
+   Classes, and More → Church Center must all show "Church Center is not set
+   up", never a Church Center page. Then rebuild with the org set.
+2. With no one signed in, open Groups and Calendar. Both lists should render.
+3. More → Church Center → Sign in. The Church Center form must appear inside
+   the app, not in Safari or Chrome. Sign in with a member account.
+4. After signing in, open More → Church Center → Directory. It should list
+   members without a second login. A bounce to `/login?return=/directory`
+   means cookies are not persisting.
+5. Move Groups → Calendar → Classes → back to Directory. The session must hold
+   on every tab with no repeated login.
+6. Force quit the app, reopen it, and open Directory again. Still signed in
+   means cookies survived a cold start.
+7. Sign out in Church Center, then reopen Directory. It should send you back to
+   `/login`.
+8. On Android, press hardware back inside Church Center: it should go back one
+   page. On iOS, use the swipe-back gesture. Both should walk history before
+   leaving the tab.
+9. Tap Give Online or the church website from Home. It should open in the phone
+   browser, not inside the WebView.
+10. Turn on airplane mode and open Calendar. The "Could not load" screen with
+    Try again should appear instead of a blank page.
+
 ### Church Center org must be confirmed before shipping
 
 `https://crestviewbaptist.churchcenter.com` is the URL named in the product
-brief, and it is the current default. **As of November 24, 2026 that org is not
-the Canton church.** Its Church Center home shows Crestview Baptist Church in
-Griffin, GA (1670 North Expressway, Griffin, GA 30223), and no Church Center org
-is publicly discoverable for Crestview in Canton, NC.
+brief, but **as of November 24, 2026 that org is not the Canton church.** Its
+Church Center home shows Crestview Baptist Church in Griffin, GA (1670 North
+Expressway, Griffin, GA 30223), and no Church Center org is publicly
+discoverable for Crestview in Canton, NC. The Canton website does not publish a
+Church Center link either.
 
-The Canton website does not publish a Church Center link, and its events page
-lists the weekly rhythm rather than a Planning Center calendar. The church office
-needs to confirm the Canton Planning Center organization. Once confirmed, set
-`EXPO_PUBLIC_CHURCH_CENTER_URL` in `.env` and rebuild. No code change is needed.
+Because of that, the app has no default org. When
+`EXPO_PUBLIC_CHURCH_CENTER_URL` is unset, the WebView screens render "Church
+Center is not set up" with the variable name, and the app never loads the
+Griffin org. The church office needs to confirm the Canton Planning Center
+organization. Once confirmed, set the variable in `.env`, restart Expo or
+rebuild, and every tab follows it with no code change.
 
 ## Local development
 
@@ -78,6 +112,10 @@ npm install
 cp .env.example .env
 npx expo start
 ```
+
+Then set `EXPO_PUBLIC_CHURCH_CENTER_URL` in `.env` to the confirmed Canton org.
+`.env.example` ships that line commented out, so an unedited copy shows the
+setup screen on purpose.
 
 Press `i` for the iOS simulator, `a` for the Android emulator, or scan the QR
 code with Expo Go. `react-native-webview` ships in Expo Go, so no development
@@ -92,7 +130,7 @@ not start this one.
 
 | Variable | Required | Purpose |
 | --- | --- | --- |
-| `EXPO_PUBLIC_CHURCH_CENTER_URL` | Recommended | Church Center org root, no trailing slash. Defaults to `https://crestviewbaptist.churchcenter.com` |
+| `EXPO_PUBLIC_CHURCH_CENTER_URL` | Required | Church Center org root, no trailing slash. No default: when unset, Church Center screens show a setup message instead of loading another church's org |
 | `EXPO_PUBLIC_GIVE_URL` | Optional | Overrides Give Online. Defaults to MyVanco |
 | `EXPO_PUBLIC_LIVE_URL` | Optional | Overrides the livestream page |
 | `EXPO_PUBLIC_STAFF_URL` | Optional | Overrides the Our Staff page |

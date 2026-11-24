@@ -34,10 +34,14 @@ export default function MoreScreen() {
       label: 'Our Staff',
       onPress: () => void Linking.openURL(config.staffUrl),
     },
-    {
-      label: 'Church Center in browser',
-      onPress: () => void Linking.openURL(config.churchCenterRoot),
-    },
+    ...(config.churchCenterConfigured
+      ? [
+          {
+            label: 'Church Center in browser',
+            onPress: () => void Linking.openURL(config.churchCenterRoot),
+          },
+        ]
+      : []),
     {
       label: `Call ${config.phone}`,
       onPress: () => void Linking.openURL(`tel:${config.phoneTel}`),
@@ -101,9 +105,9 @@ export default function MoreScreen() {
 
       <Text style={styles.address}>{config.address}</Text>
       <Text style={styles.hint}>
-        Calendar, groups, and class signup use Planning Center Church Center
-        ({config.churchCenterRoot}). There is no custom Crestview API in this
-        app.
+        {config.churchCenterConfigured
+          ? `Calendar, groups, and class signup use Planning Center Church Center (${config.churchCenterRoot}). There is no custom Crestview API in this app.`
+          : 'Church Center is not set up yet. Set EXPO_PUBLIC_CHURCH_CENTER_URL to the Canton org in .env and restart the app. There is no custom Crestview API in this app.'}
       </Text>
     </Screen>
   );

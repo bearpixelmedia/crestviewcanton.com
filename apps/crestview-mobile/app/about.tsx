@@ -23,25 +23,39 @@ export default function AboutScreen() {
         </Text>
 
         <Text style={styles.section}>Church Center paths</Text>
-        <Text style={styles.body}>Calendar: {config.churchCenter.calendar}</Text>
-        <Text style={styles.body}>Groups: {config.churchCenter.groups}</Text>
-        <Text style={styles.body}>
-          Classes: {config.churchCenter.registrations}
-        </Text>
-        <Text style={styles.body}>
-          The calendar, groups, and class listings are public. Signing in,
-          joining a group, registering, and the directory need a Church Center
-          login. The app keeps that cookie session across tabs.
-        </Text>
+        {config.churchCenterConfigured ? (
+          <>
+            <Text style={styles.body}>
+              Calendar: {config.churchCenter.calendar}
+            </Text>
+            <Text style={styles.body}>Groups: {config.churchCenter.groups}</Text>
+            <Text style={styles.body}>
+              Classes: {config.churchCenter.registrations}
+            </Text>
+            <Text style={styles.body}>
+              The calendar, groups, and class listings are public. Signing in,
+              joining a group, registering, and the directory need a Church
+              Center login. The app keeps that cookie session across tabs.
+            </Text>
+          </>
+        ) : (
+          <Text style={styles.body}>
+            Not configured. Set EXPO_PUBLIC_CHURCH_CENTER_URL in .env to the
+            Canton Planning Center org and restart the app. Church Center does
+            not load until it is set.
+          </Text>
+        )}
 
         <Text style={styles.section}>Org URL in use</Text>
-        <Text style={styles.body}>{config.churchCenterRoot}</Text>
+        <Text style={styles.body}>
+          {config.churchCenterConfigured
+            ? config.churchCenterRoot
+            : 'None. This build has no Church Center org.'}
+        </Text>
         <Text style={styles.body}>
           Church Center is the member facing side. Staff create events, groups,
           and registrations in Planning Center Online. Before distributing a
-          build, confirm this org URL belongs to Crestview in Canton, NC and set
-          EXPO_PUBLIC_CHURCH_CENTER_URL if the church office uses a different
-          organization.
+          build, confirm this org URL belongs to Crestview in Canton, NC.
         </Text>
 
         <Text style={styles.section}>Built by</Text>

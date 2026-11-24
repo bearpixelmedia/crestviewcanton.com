@@ -33,8 +33,6 @@ export const site = {
   giveUrl: "https://secure.myvanco.com/L-ZB2Z/home",
   textToGive: "18285374412",
   textToGiveDisplay: "1 828 537 4412",
-  churchCenterRegistrations:
-    "https://crestviewbaptist.churchcenter.com/registrations",
   bfmUrl: "https://bfm.sbc.net/",
   bfmPdf:
     "https://bfm.sbc.net/wp-content/uploads/2024/08/BFM2000.pdf",

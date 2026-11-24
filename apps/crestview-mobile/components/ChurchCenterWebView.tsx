@@ -101,6 +101,24 @@ export function ChurchCenterWebView({ url, title }: Props) {
     setReloadKey((key) => key + 1);
   }, []);
 
+  // No org configured means no correct page to show. Fail loudly here instead
+  // of loading a fallback slug that belongs to another church.
+  if (!config.churchCenterConfigured) {
+    return (
+      <View style={styles.fallback}>
+        <Text style={styles.fallbackTitle}>Church Center is not set up</Text>
+        <Text style={styles.fallbackBody}>
+          This build has no Church Center org, so there is nothing to load. Set
+          EXPO_PUBLIC_CHURCH_CENTER_URL to the Crestview Canton Planning Center
+          org in .env, then restart the app.
+        </Text>
+        <Text style={styles.fallbackCode}>
+          EXPO_PUBLIC_CHURCH_CENTER_URL=https://your-org.churchcenter.com
+        </Text>
+      </View>
+    );
+  }
+
   if (Platform.OS === 'web') {
     return (
       <View style={styles.fallback}>
@@ -249,6 +267,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: brand.ink,
+  },
+  fallbackCode: {
+    marginTop: 4,
+    padding: 12,
+    backgroundColor: brand.fog,
+    fontFamily: Platform.select({
+      ios: 'Menlo',
+      android: 'monospace',
+      default: 'monospace',
+    }),
+    fontSize: 13,
+    color: brand.pine,
   },
   buttonRow: {
     flexDirection: 'row',
