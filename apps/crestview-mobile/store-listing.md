@@ -112,6 +112,77 @@ added later.
 a member test account, and note that Calendar, Groups, and Classes open without
 signing in.
 
+## Screenshots and graphics
+
+Sizes checked against Apple's Screenshot specifications and Google Play's preview
+asset rules in November 2026. Neither store accepts images with an alpha
+channel.
+
+### App Store
+
+- **iPhone, required:** at least one screenshot at **1206 x 2622** or
+  **1179 x 2556** portrait (iPhone with Dynamic Island, medium display). A
+  6.9-inch set at **1320 x 2868**, **1290 x 2796**, or **1260 x 2736** is also
+  accepted and scaled down, so either size satisfies the requirement.
+- **iPad 13-inch, required:** **2064 x 2752** or **2048 x 2732** portrait,
+  because `app.json` sets `supportsTablet: true`. Without it App Store Connect
+  will not accept the build. If the church decides the iPad layout is not ready,
+  the alternative is to ship iPhone-only by turning `supportsTablet` off, which
+  is a product decision, not a screenshot workaround.
+- 1 to 10 screenshots per size, JPEG or PNG, no transparency.
+- App icon: **1024 x 1024** PNG, no alpha, exported from
+  `assets/images/icon.png`.
+
+### Google Play
+
+- **Phone screenshots:** at least 2, up to 8, JPEG or 24-bit PNG with no alpha,
+  each side between **320 and 3840 px**, long side no more than twice the short
+  side. Capture at **1080 x 1920**.
+- 4 or more screenshots at 1080 px or larger make the listing eligible for
+  Google Play's larger recommendation formats.
+- **Feature graphic:** **1024 x 500**, JPEG or 24-bit PNG with no alpha.
+  Required for every listing.
+- **App icon:** **512 x 512**, 32-bit PNG with no alpha, 1 MB max.
+- 7-inch and 10-inch tablet screenshots are optional. Add them if the tablet
+  layout is checked.
+
+### Shot list
+
+Capture after the Canton org is confirmed, from a preview or production build
+rather than Expo Go, so no developer overlay appears. Use a member test account
+for shots 5 and 7, and keep real member names out of every image.
+
+| # | Screen | What to show | Capture on | Suggested caption |
+| --- | --- | --- | --- | --- |
+| 1 | Home | Native lockup and tagline, the REACH · EQUIP · SEND band, the Church Center card, and the Give Online, Watch Live, Our Staff rows | iPhone, iPad, Android | Your church, one tap away |
+| 2 | Calendar | `/calendar` with four to six real upcoming events and their dates | iPhone, iPad, Android | See what is coming up |
+| 3 | Groups | `/groups` with several groups visible | iPhone, iPad, Android | Find your groups |
+| 4 | Classes | `/registrations/events`, scrolled to show at least two classes | iPhone, iPad, Android | Sign up for a class |
+| 5 | Directory, signed in | `/directory` after Church Center sign-in, using the test household. Blur, cover, or use test-only names for everyone else | iPhone, iPad, Android | Directory for members |
+| 6 | More | Native More list: Church Center, website, giving, livestream, staff, phone, email, About | iPhone, Android | More ways to connect |
+| 7 | About, privacy | The Privacy section with the Privacy Policy link and the line that the app stores no member data | iPhone, Android | Clear about privacy |
+
+Recommended sets: 6 screenshots for each phone listing (shots 1 to 6, plus 7 if
+the About screen is wanted), and 4 for the iPad listing (Home, Calendar, Groups,
+Directory). Apple accepts 1 as a minimum, but 4 shows the layout across the app.
+Screenshots must match the build under review.
+
+### Capture setup
+
+- Point `.env` at the confirmed Canton org and rebuild. Every WebView tab must
+  show real content, not the setup message.
+- Use a clean device or simulator: light mode, full battery, 9:41 status bar, no
+  notifications or badges, no personal wallpaper, English (US).
+- iPhone: iPhone 16 Pro Max simulator or device gives 1320 x 2868. iPad: iPad Pro
+  13-inch (M4) gives 2064 x 2752. Android: Pixel emulator at 1080 x 1920.
+- Capture portrait, then export JPEG or fully opaque PNG. Flatten any
+  transparency before upload.
+- Sign in before shots 5 and 7, then sign out and clear app data afterwards.
+- Do not capture system permission prompts, debug banners, or a Church Center
+  login form with a real password entered.
+- Keep the store art out of the app bundle; `assets/images/*` holds only the
+  icons and splash that ship with the binary.
+
 ## Store review notes
 
 - The app is a WebView shell and Apple reviews that under guideline 4.2. The
