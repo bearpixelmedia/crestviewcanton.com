@@ -144,15 +144,26 @@ export default function AdultMinistryPage() {
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="font-display text-3xl">Find your group</h2>
           <p className="mt-3 max-w-xl text-mist/85">
-            Visit the welcome center this Sunday at 9:30 AM, or call the office
-            and we’ll help you connect.
+            Browse Life Groups and ministry gatherings on Church Center, or
+            visit the welcome center this Sunday at 9:30 AM and we’ll help you
+            connect.
           </p>
-          <Link
-            href="/plan-your-visit"
-            className="mt-6 inline-flex rounded-sm bg-dawn px-5 py-3 text-sm font-semibold text-forest"
-          >
-            Plan Your Visit
-          </Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href={site.churchCenter.groups}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-sm bg-dawn px-5 py-3 text-sm font-semibold text-forest"
+            >
+              Find a group on Church Center
+            </a>
+            <Link
+              href="/plan-your-visit"
+              className="rounded-sm border border-fog/30 px-5 py-3 text-sm font-semibold text-fog"
+            >
+              Plan Your Visit
+            </Link>
+          </div>
         </div>
       </section>
     </PageShell>

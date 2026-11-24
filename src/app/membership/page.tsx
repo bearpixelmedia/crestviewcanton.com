@@ -46,20 +46,23 @@ const steps = [
         Explore ministries and volunteer opportunities as you find your place
         to serve. Membership at Crestview is a meaningful commitment to this
         church family as we REACH-EQUIP-SEND together. We offer an Exploratory
-        New Members class about every six weeks, taught by the Pastor. Contact
-        the church office to connect with Pastor Dan and{" "}
+        New Members class about every six weeks, taught by the Pastor.{" "}
+        <a
+          href={site.churchCenter.registrations}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-canopy underline-offset-2 hover:underline"
+        >
+          Sign up for the next New Members class
+        </a>{" "}
+        on Church Center, or{" "}
         <Link
           href="/contact#new-members"
           className="font-semibold text-canopy underline-offset-2 hover:underline"
         >
-          sign up for the next New Members class
+          contact the church office
         </Link>
         .
-        <span className="mt-3 block text-ink/60">
-          Note: class signup currently goes through Contact Us (or a phone call
-          to the office). A dedicated Formspree or Church Center registration
-          can be wired when the church provides a preferred form or event link.
-        </span>
       </>
     ),
     href: "/serve",
@@ -159,9 +162,17 @@ export default function MembershipPage() {
             . We&apos;re saving you a seat.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href={site.churchCenter.registrations}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog"
+            >
+              Class signups on Church Center
+            </a>
             <Link
               href="/our-beliefs"
-              className="rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog"
+              className="rounded-sm border border-pine/25 px-5 py-3 text-sm font-semibold text-pine"
             >
               Our Beliefs
             </Link>

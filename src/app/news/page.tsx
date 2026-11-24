@@ -18,7 +18,7 @@ export default function NewsPage() {
       <PageHero
         eyebrow="News & Announcements"
         title="Stay connected with Crestview."
-        lead="Dated campaigns and one-off announcements change week to week. For the latest, check the Sunday bulletin, Facebook, and Church Center, then reach out to the office if you have something to share."
+        lead="Dated campaigns and one-off announcements change week to week. For the latest, check the Sunday bulletin, Facebook, and the church website, then reach out to the office if you have something to share."
       />
 
       <section className="bg-paper">

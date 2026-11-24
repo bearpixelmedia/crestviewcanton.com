@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
-import { brand } from '@/constants/Colors';
+import { colors, fonts } from '@/constants/theme';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -27,28 +27,28 @@ SplashScreen.preventAutoHideAsync();
 const CrestviewTheme = {
   dark: false as const,
   colors: {
-    primary: brand.canopy,
-    background: brand.paper,
-    card: brand.white,
-    text: brand.ink,
-    border: brand.fog,
-    notification: brand.dawn,
+    primary: colors.canopy,
+    background: colors.paper,
+    card: colors.white,
+    text: colors.ink,
+    border: colors.hairline,
+    notification: colors.dawn,
   },
   fonts: {
     regular: {
-      fontFamily: 'Manrope_400Regular',
+      fontFamily: fonts.body,
       fontWeight: '400' as const,
     },
     medium: {
-      fontFamily: 'Manrope_500Medium',
+      fontFamily: fonts.medium,
       fontWeight: '500' as const,
     },
     bold: {
-      fontFamily: 'Manrope_600SemiBold',
+      fontFamily: fonts.semibold,
       fontWeight: '600' as const,
     },
     heavy: {
-      fontFamily: 'Manrope_600SemiBold',
+      fontFamily: fonts.displayBold,
       fontWeight: '700' as const,
     },
   },
@@ -80,15 +80,14 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={CrestviewTheme}>
       <StatusBar style="dark" />
-      <Stack>
+      <Stack screenOptions={{ contentStyle: { backgroundColor: colors.paper } }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen
           name="about"
           options={{
             presentation: 'modal',
-            title: 'About',
-            headerTintColor: brand.pine,
-            headerStyle: { backgroundColor: brand.paper },
+            headerShown: false,
+            contentStyle: { backgroundColor: colors.paper },
           }}
         />
       </Stack>

@@ -52,3 +52,8 @@ next-env.d.ts
 .DS_Store
 Website/
 CONTENT.docx
+
+# agent scratch (logs, metro tmp, screenshots)
+.logs/
+.tmp/
+artifacts/

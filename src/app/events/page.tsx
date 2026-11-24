@@ -87,6 +87,25 @@ export default function EventsPage() {
         </div>
       </section>
 
+      <section className="bg-pine text-fog">
+        <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+          <h2 className="font-display text-3xl">See the full calendar</h2>
+          <p className="mt-3 max-w-xl text-mist/85">
+            Dated events, times, and locations live on Church Center — the same
+            calendar the Crestview app uses. Check it before you come, or browse
+            what&apos;s coming up next.
+          </p>
+          <a
+            href={site.churchCenter.calendar}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex rounded-sm bg-dawn px-5 py-3 text-sm font-semibold text-forest"
+          >
+            Church Center Calendar
+          </a>
+        </div>
+      </section>
+
       <GiveOnlineCta
         tone="fog"
         lead="Support the ministries and gatherings that keep our church family connected."

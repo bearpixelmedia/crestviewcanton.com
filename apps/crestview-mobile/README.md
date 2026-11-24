@@ -2,7 +2,7 @@
 
 Expo (React Native) shell for **Crestview Baptist Church** (Canton, NC).
 
-**Backend:** Planning Center **Church Center** (not a custom Crestview API). Calendar, groups, and class / event signup load Church Center pages in an in-app WebView. Give, livestream, and staff links open crestviewcanton.com (or MyVanco for giving).
+**Backend:** none of its own. The Calendar, Groups, and Classes tabs load the church’s Church Center pages (`crestviewbaptistchurch.churchcenter.com`) in an in-app WebView. Give, livestream, and staff links open the church website (`crestviewcanton.com`), with MyVanco for giving.
 
 Audience: **staff first**, plus **members who sign up for classes**.
 
@@ -27,19 +27,23 @@ The Next.js website at the repo root is separate. Do not run site scripts from t
 
 | Variable | Required? | Purpose |
 |----------|-----------|---------|
-| `EXPO_PUBLIC_CHURCH_CENTER_URL` | Recommended | Church Center org root, e.g. `https://crestviewbaptist.churchcenter.com`. Defaults to that slug (from the website registrations link). Byron should paste the real org URL if it differs. |
+| `EXPO_PUBLIC_SITE_URL` | Optional | Church website origin for Home / More links. Defaults to `https://crestviewcanton.com`. |
+| `EXPO_PUBLIC_CHURCH_CENTER_URL` | Optional | Church Center org used by the Calendar / Groups / Classes tabs. Defaults to `https://crestviewbaptistchurch.churchcenter.com`. |
 | `EXPO_PUBLIC_GIVE_URL` | Optional | Overrides Give Online (defaults to MyVanco). |
 | `EXPO_PUBLIC_LIVE_URL` | Optional | Overrides livestream page. |
 | `EXPO_PUBLIC_STAFF_URL` | Optional | Overrides Our Staff page. |
 
 Copy `.env.example` to `.env` for local work. Restart Expo after changing env vars.
 
-### How staff find the Church Center URL + Planning Center admin
+### Where the tabs go
 
-1. Open [churchcenter.com](https://churchcenter.com) or the church’s published Church Center link (often `https://<org>.churchcenter.com`).
-2. Crestview’s website already points registrations at `https://crestviewbaptist.churchcenter.com/registrations`. Use the same host for calendar (`/calendar`) and groups (`/groups`) unless Planning Center shows a different subdomain.
-3. For **admin** (create events, groups, registrations, rosters): staff sign in at [planningcenter.com](https://planningcenter.com) with a Planning Center organization account. Church Center is the public / member-facing surface; Planning Center Online is where staff manage data.
-4. Paste the org root into `EXPO_PUBLIC_CHURCH_CENTER_URL` (no trailing slash). Example: `https://crestviewbaptist.churchcenter.com`.
+| Tab | Page |
+|-----|------|
+| Calendar | `https://crestviewbaptistchurch.churchcenter.com/calendar` |
+| Groups | `https://crestviewbaptistchurch.churchcenter.com/groups` |
+| Classes | `https://crestviewbaptistchurch.churchcenter.com/registrations` |
+
+The church office maintains these pages in Church Center. Links that leave `crestviewbaptistchurch.churchcenter.com` (or `crestviewcanton.com`) open in the phone’s browser instead of the WebView.
 
 ## App tabs
 
@@ -48,7 +52,7 @@ Copy `.env.example` to `.env` for local work. Restart Expo after changing env va
 | Home | Crestview branding; links to Give, Live, Staff on the website |
 | Calendar | WebView → Church Center `/calendar` |
 | Groups | WebView → Church Center `/groups` |
-| Classes | WebView → Church Center `/registrations` (class / event signup) |
+| Classes | WebView → Church Center `/registrations` (class and event signups) |
 | More | Contact, website links, About (Bear Pixel Media credit) |
 
 ## TestFlight / Play Store notes
@@ -59,14 +63,14 @@ Copy `.env.example` to `.env` for local work. Restart Expo after changing env va
    - Android: `com.crestviewcanton.mobile`
 3. Apple: church or Bear Pixel Media Apple Developer account → App Store Connect app → EAS build (`eas build --platform ios`) → submit to TestFlight (`eas submit --platform ios`).
 4. Google: Play Console app (Internal testing track first) → EAS Android build → upload AAB.
-5. Privacy: Church Center / Planning Center handle auth and personal data for groups and registrations. Document that in store listings. This app does not store church member data itself.
+5. Privacy: the Calendar, Groups, and Classes tabs show public Church Center pages. The app stores no member data; forms and registrations are handled by Church Center.
 6. Icons / splash: replace `assets/images/*` with final Crestview artwork before store submission.
 
 ## Stack
 
 - Expo SDK 58 + Expo Router
 - TypeScript
-- `react-native-webview` for Church Center
+- `react-native-webview` for the Church Center pages
 - Brand colors from the website (`pine` / `paper` palette)
 - Fonts: Cormorant Garamond + Manrope (same families as the site)
 

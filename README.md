@@ -95,7 +95,7 @@ Set `NEXT_PUBLIC_FORMSPREE_ID` in the Vercel project env (recipient: crestviewca
 
 ## Mobile app (Expo)
 
-Staff-first + class signup shell lives in **`apps/crestview-mobile/`**. Backend is Planning Center Church Center (WebViews), not a custom API. Website `npm` scripts are unchanged.
+Staff-first + class signup shell lives in **`apps/crestview-mobile/`**. The Calendar / Groups / Classes tabs load the church’s Church Center pages in WebViews; there is no custom app API. Website `npm` scripts are unchanged.
 
 ```bash
 cd apps/crestview-mobile
@@ -109,7 +109,7 @@ See [`apps/crestview-mobile/README.md`](apps/crestview-mobile/README.md).
 ## Notes
 
 - Giving: `https://secure.myvanco.com/L-ZB2Z/home`
-- Church Center registrations: `https://crestviewbaptist.churchcenter.com/registrations`
+- App tabs (Church Center): `https://crestviewbaptistchurch.churchcenter.com/calendar`, `/groups`, `/registrations`
 - Office: 3258 Pisgah Drive, Canton, NC 28716 · (828) 648-1110
 - Reference content in `Website/` (gitignored)
 - Tammie / Eddie Beck: longer bios still pending church office
