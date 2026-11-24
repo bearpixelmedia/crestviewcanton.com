@@ -146,9 +146,11 @@ npx tsc --noEmit
 npx expo-doctor
 ```
 
-`npm test` runs Jest through the `jest-expo` preset. The suite covers
-`constants/config.ts`: no org configured, whitespace-only values, path building,
-and trailing-slash trimming. Device behavior still needs the smoke test above.
+`npm test` runs Jest through the `jest-expo` preset. `constants/config.ts` is
+covered for no org configured, whitespace-only values, path building, and
+trailing-slash trimming. `components/ChurchCenterWebView.test.tsx` checks that
+the setup message renders and no WebView mounts while the org is unset. Device
+behavior still needs the smoke test above.
 
 ## EAS builds for TestFlight and Play internal testing
 

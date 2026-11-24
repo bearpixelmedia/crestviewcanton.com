@@ -54,6 +54,34 @@ function shouldLoadInWebView(requestUrl: string): boolean {
 }
 
 export function ChurchCenterWebView({ url, title }: Props) {
+  // No org configured means no correct page to show. Fail loudly here instead
+  // of loading a fallback slug that belongs to another church. This check sits
+  // outside the content component so the setup screen renders without a
+  // navigator (and without mounting a WebView).
+  if (!config.churchCenterConfigured) {
+    return <ChurchCenterNotConfigured />;
+  }
+
+  return <ChurchCenterWebViewContent title={title} url={url} />;
+}
+
+function ChurchCenterNotConfigured() {
+  return (
+    <View style={styles.fallback}>
+      <Text style={styles.fallbackTitle}>Church Center is not set up</Text>
+      <Text style={styles.fallbackBody}>
+        This build has no Church Center org, so there is nothing to load. Set
+        EXPO_PUBLIC_CHURCH_CENTER_URL to the Crestview Canton Planning Center
+        org in .env, then restart the app.
+      </Text>
+      <Text style={styles.fallbackCode}>
+        EXPO_PUBLIC_CHURCH_CENTER_URL=https://your-org.churchcenter.com
+      </Text>
+    </View>
+  );
+}
+
+function ChurchCenterWebViewContent({ url, title }: Props) {
   // react-native-webview 14 types its class generic as never when the class
   // itself is used as the ref type, so derive the handle from the component.
   const webViewRef = useRef<ComponentRef<typeof WebView>>(null);
@@ -100,24 +128,6 @@ export function ChurchCenterWebView({ url, title }: Props) {
     setLoading(true);
     setReloadKey((key) => key + 1);
   }, []);
-
-  // No org configured means no correct page to show. Fail loudly here instead
-  // of loading a fallback slug that belongs to another church.
-  if (!config.churchCenterConfigured) {
-    return (
-      <View style={styles.fallback}>
-        <Text style={styles.fallbackTitle}>Church Center is not set up</Text>
-        <Text style={styles.fallbackBody}>
-          This build has no Church Center org, so there is nothing to load. Set
-          EXPO_PUBLIC_CHURCH_CENTER_URL to the Crestview Canton Planning Center
-          org in .env, then restart the app.
-        </Text>
-        <Text style={styles.fallbackCode}>
-          EXPO_PUBLIC_CHURCH_CENTER_URL=https://your-org.churchcenter.com
-        </Text>
-      </View>
-    );
-  }
 
   if (Platform.OS === 'web') {
     return (
