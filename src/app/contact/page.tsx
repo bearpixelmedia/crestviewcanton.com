@@ -110,9 +110,19 @@ export default function ContactPage() {
             <div id="new-members" className="scroll-mt-28">
               <h2 className="font-display text-2xl text-pine">Send a Message</h2>
               <p className="mt-2 text-sm text-ink/70">
-                We&apos;ll respond as soon as we can. If you are signing up for
-                the Exploratory New Members class, mention that in your message
-                (or call the office) and we will connect you with Pastor Dan.
+                We&apos;ll respond as soon as we can. Signing up for the
+                Exploratory New Members class?{" "}
+                <a
+                  href={site.churchCenter.registrations}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-canopy underline-offset-2 hover:underline"
+                >
+                  Register on Church Center
+                </a>
+                {" "}
+                — or mention it in your message and we&apos;ll connect you with
+                Pastor Dan.
               </p>
             </div>
             <ContactForm intent="contact" className="mt-6" />
