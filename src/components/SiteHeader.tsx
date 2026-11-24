@@ -17,6 +17,17 @@ export function SiteHeader({ variant }: Props) {
   const isHero = tone === "hero";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
+  const [openForPath, setOpenForPath] = useState(pathname);
+
+  // Close both menus when the route changes. Adjusting state during render is
+  // React's supported alternative to a one-shot effect here: React discards
+  // this pass and re-renders immediately with the menus closed.
+  if (openForPath !== pathname) {
+    setOpenForPath(pathname);
+    setMegaOpen(false);
+    setMobileOpen(false);
+  }
+
   const megaPanelId = useId();
   const desktopNavRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -62,11 +73,6 @@ export function SiteHeader({ variant }: Props) {
       if (closeTimer.current) clearTimeout(closeTimer.current);
     };
   }, []);
-
-  useEffect(() => {
-    setMegaOpen(false);
-    setMobileOpen(false);
-  }, [pathname]);
 
   // Match mobile drawer (bg-pine); keep logo/Close readable on that fill
   const menuPainted = mobileOpen;
