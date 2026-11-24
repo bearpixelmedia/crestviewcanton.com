@@ -1,12 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
-// `useEffect` is not invoked during server rendering, meaning
-// we can use this to determine if we're on the server or not.
+// Nothing to subscribe to: this hook only needs to know whether React is
+// rendering the server snapshot or the client snapshot.
+const subscribe = () => () => {};
+
+/**
+ * Returns `server` while rendering on the server and hydrating, then `client`
+ * on the client. `useSyncExternalStore` does the same job as the old
+ * setState-in-useEffect version without a cascading render after mount.
+ */
 export function useClientOnlyValue<S, C>(server: S, client: C): S | C {
-  const [value, setValue] = useState<S | C>(server);
-  useEffect(() => {
-    setValue(client);
-  }, [client]);
-
-  return value;
+  return useSyncExternalStore<S | C>(
+    subscribe,
+    () => client,
+    () => server,
+  );
 }

@@ -83,6 +83,15 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen
+          name="church-center"
+          options={{
+            title: 'Church Center',
+            headerTintColor: brand.pine,
+            headerStyle: { backgroundColor: brand.paper },
+            headerTitleStyle: { fontFamily: 'CormorantGaramond_600SemiBold' },
+          }}
+        />
+        <Stack.Screen
           name="about"
           options={{
             presentation: 'modal',

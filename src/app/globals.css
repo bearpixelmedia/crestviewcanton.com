@@ -44,6 +44,13 @@
     scroll-behavior: smooth;
   }
 
+  /* The home page renders a fixed mission strip. Reserve its height from first
+     paint so the strip never sits on top of the header and its menus before
+     hydration. Pages without the strip keep the 0px fallback. */
+  html:has([data-live-banner]) {
+    --yt-live-banner: 2.75rem;
+  }
+
   body {
     background: var(--background);
     color: var(--foreground);

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 
@@ -12,7 +11,6 @@ type LiveState = {
 };
 
 const POLL_MS = 60_000;
-const BANNER_VAR = "--yt-live-banner";
 
 /** Always-on home strip: REACH | EQUIP | SEND. Adds Watch now when YouTube is live. */
 export function HomeBanner() {
@@ -41,18 +39,11 @@ export function HomeBanner() {
     };
   }, []);
 
-  useEffect(() => {
-    const root = document.documentElement;
-    root.style.setProperty(BANNER_VAR, "2.75rem");
-    return () => {
-      root.style.removeProperty(BANNER_VAR);
-    };
-  }, []);
-
   return (
     <div
       role={isLive ? "status" : undefined}
       aria-live={isLive ? "polite" : undefined}
+      data-live-banner
       className="fixed inset-x-0 top-0 z-50 border-b border-dawn/30 bg-dawn text-forest"
     >
       <div className="mx-auto flex h-11 max-w-6xl items-center justify-between gap-3 px-5 sm:px-8">

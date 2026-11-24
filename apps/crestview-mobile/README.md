@@ -1,16 +1,195 @@
 # Crestview mobile app
 
-Expo (React Native) shell for **Crestview Baptist Church** (Canton, NC).
-
-**Backend:** Planning Center **Church Center** (not a custom Crestview API). Calendar, groups, and class / event signup load Church Center pages in an in-app WebView. Give, livestream, and staff links open crestviewcanton.com (or MyVanco for giving).
-
-Audience: **staff first**, plus **members who sign up for classes**.
+Expo (React Native) app for **Crestview Baptist Church**, Canton, NC. It is a
+branded shell around **Planning Center Church Center**, so staff and class
+members get groups, calendars, class signup, and the directory without a custom
+backend.
 
 Built by [Bear Pixel Media](https://bearpixelmedia.com).
 
-## Setup
+## Stack
 
-From this folder:
+- Expo SDK 58 with Expo Router (typed routes)
+- TypeScript
+- `react-native-webview` loading Church Center
+- Brand colors and mark taken from [crestviewcanton.com](https://crestviewcanton.com)
+
+## Tabs and Church Center URL mapping
+
+The Church Center org root comes from `EXPO_PUBLIC_CHURCH_CENTER_URL`. Every
+path below is relative to that root. There is no default org, so until the
+variable is set every Church Center screen shows a setup message instead of a
+WebView.
+
+| Tab | Opens | Login needed? |
+| --- | --- | --- |
+| Home | Native screen. Logo, Church Center entry point, Give / Live / Staff links | No |
+| Groups | `/groups` | List is public. "My groups", joining a group, and group signup need a Church Center login |
+| Calendar | `/calendar` | Event list is public. Event registration needs a login |
+| Classes | `/registrations/events` | List is public. Registering for a class needs a login |
+| More | Native screen. In-app Church Center (`/home`), website links, contact | Directory (`/directory`) needs a login |
+| About | Native screen with paths and credits | No |
+
+Church Center paths used by the app (see `constants/config.ts`):
+
+```
+/home
+/calendar
+/groups
+/registrations/events     # /registrations redirects here
+/directory                # redirects to /login?return=/directory
+/login
+```
+
+### Login and cookie behavior
+
+Church Center handles auth itself. The app does not have its own accounts, and
+it does not store member data.
+
+- Public pages: `/calendar`, `/groups`, and `/registrations/events` render
+  without a session.
+- Login required: the member directory, a member's groups, group join or signup,
+  event registration, and check-in all redirect to `/login`.
+- The WebView keeps the Church Center session with `sharedCookiesEnabled` on
+  iOS, `thirdPartyCookiesEnabled` on Android, and DOM storage enabled. Signing in
+  on one tab carries to the other tabs.
+- Sign-in identity providers that Planning Center can hand off to (Google,
+  Apple) stay inside the WebView. Any other external link (giving, website)
+  opens in the phone browser.
+- iOS swipe back and Android hardware back walk WebView history before leaving
+  the tab.
+
+### Device smoke test: login and directory
+
+Run this on a real iPhone and a real Android phone against a build pointed at
+the confirmed Canton org. Uninstall the app first so no Church Center cookie
+survives from an earlier test.
+
+1. Build once with `EXPO_PUBLIC_CHURCH_CENTER_URL` empty. Groups, Calendar,
+   Classes, and More → Church Center must all show "Church Center is not set
+   up", never a Church Center page. Then rebuild with the org set.
+2. With no one signed in, open Groups and Calendar. Both lists should render.
+3. More → Church Center → Sign in. The Church Center form must appear inside
+   the app, not in Safari or Chrome. Sign in with a member account.
+4. After signing in, open More → Church Center → Directory. It should list
+   members without a second login. A bounce to `/login?return=/directory`
+   means cookies are not persisting.
+5. Move Groups → Calendar → Classes → back to Directory. The session must hold
+   on every tab with no repeated login.
+6. Force quit the app, reopen it, and open Directory again. Still signed in
+   means cookies survived a cold start.
+7. Sign out in Church Center, then reopen Directory. It should send you back to
+   `/login`.
+8. On Android, press hardware back inside Church Center: it should go back one
+   page. On iOS, use the swipe-back gesture. Both should walk history before
+   leaving the tab.
+9. Tap Give Online or the church website from Home. It should open in the phone
+   browser, not inside the WebView.
+10. Turn on airplane mode and open Calendar. The "Could not load" screen with
+    Try again should appear instead of a blank page.
+
+### Church Center org must be confirmed before shipping
+
+`https://crestviewbaptist.churchcenter.com` is the URL named in the product
+brief, but **as of November 24, 2026 that org is not the Canton church.** Its
+Church Center home shows Crestview Baptist Church in Griffin, GA (1670 North
+Expressway, Griffin, GA 30223), and no Church Center org is publicly
+discoverable for Crestview in Canton, NC. The Canton website does not publish a
+Church Center link either.
+
+Because of that, the app has no default org. When
+`EXPO_PUBLIC_CHURCH_CENTER_URL` is unset, the WebView screens render "Church
+Center is not set up" with the variable name, and the app never loads the
+Griffin org. The Canton organization is now confirmed at
+`https://crestviewbaptistchurch.churchcenter.com`. The app still has no
+hardcoded default, so every environment must set the variable. For a new
+organization, follow the runbook below. Once the variable is set in `.env`,
+restart Expo or rebuild, and every tab follows it with no code change.
+
+## Planning Center org setup runbook
+
+Use this when the church does not already have a Planning Center organization.
+The church office or an authorized staff member must own the account. The person
+who creates it becomes the first organization administrator, so use a
+church-owned email and keep the recovery details with the office.
+
+### Before starting
+
+- Confirm the church does not already have a Planning Center account. Planning
+  Center cannot merge duplicate organizations. If one exists, ask its
+  organization administrator to invite you and add the needed products instead.
+  Signing up with an email already tied to an organization shows a warning.
+- Do not use `crestviewbaptist.churchcenter.com`. It is Crestview Baptist Church
+  in Griffin, GA, not the Canton church.
+
+### 1. Create the account
+
+1. Open https://accounts.planningcenteronline.com/sign_up. The Sign up button on
+   the Planning Center pricing page goes to the same place.
+2. Leave every product on its free plan. Current free limits: People unlimited,
+   Groups 15 members, Calendar 1 room, Services 5 team members, Registrations 5
+   attendees, Giving 10 donations per month, Check-Ins 10 per day, Church Center
+   unlimited, and Publishing Essential. The monthly total is $0. Paid plans can
+   be added later without creating a new account.
+3. Enter the church email and a password for the administrator. This is a
+   personal administrator login, not a shared church login.
+4. Verify the mobile number with the one-time code. Use a number the church
+   controls.
+5. Enter the organization details: Crestview Baptist Church, 3258 Pisgah Drive,
+   Canton, NC 28716, https://crestviewcanton.com. Accept the terms and follow the
+   trial prompt. With free plans the total is $0.
+6. Turn on two-step verification for the administrator account.
+
+### 2. Claim the Church Center URL
+
+1. In Planning Center, open the product menu in the top left and choose Account
+   settings.
+2. Go to Organization, then the Church Center tab.
+3. Enter the subdomain and choose Save Church Center URL. This church claimed
+   `crestviewbaptistchurch` on November 24, 2026, so its URL is
+   `https://crestviewbaptistchurch.churchcenter.com`.
+   - Setting up again from scratch: `crestviewcanton` is the shortest match for
+     crestviewcanton.com, with `crestviewcantonnc` as the fallback.
+   - Availability is only final when the URL saves.
+4. Copy the full URL and send it to whoever builds the app.
+5. Changing this URL later breaks bookmarks, printed QR codes, and shared links,
+   so settle it before announcing Church Center.
+
+### 3. Publish the pages the app opens
+
+Church Center web is on by default, but a product page appears only after its
+product is subscribed (the free plan counts) and the page is published.
+
+- Groups: `/groups` for the group list. Joining a group and "My groups" need a
+  login.
+- Calendar: `/calendar` for events. Event registration needs a login.
+- Registrations: `/registrations/events` for class signup.
+- Directory: `/directory`, visible to signed-in people according to the church's
+  directory settings.
+- Giving: optional. The app links to Vanco unless `EXPO_PUBLIC_GIVE_URL` is set.
+
+Publishing Essential is free and enables the Church Center mobile app listing.
+This repo's app is separate and reads the same Church Center site.
+
+### 4. Connect the app
+
+1. Put the confirmed URL in `.env`:
+   `EXPO_PUBLIC_CHURCH_CENTER_URL=https://crestviewbaptistchurch.churchcenter.com`
+2. Restart Expo. The Groups, Calendar, and Classes tabs should load and the setup
+   message should disappear.
+3. For EAS builds, set the same value in the EAS environment, or in the `preview`
+   and `production` profiles. A local `.env` is not uploaded with the build.
+4. Sign in with a member test account, not the administrator, and confirm the
+   directory, group join, event registration, and that the session survives an
+   app restart.
+5. Run the device smoke test above before capturing store screenshots.
+
+Reference: Planning Center help, "Brand new to Planning Center" at
+https://help.planningcenter.com/en/179947-brand-new-to-planning-center-and-chms-guide.html
+and "Set up Church Center and Publishing" at
+https://help.planningcenter.com/en/179950-set-up-church-center-and-publishing.html.
+
+## Local development
 
 ```bash
 cd apps/crestview-mobile
@@ -19,57 +198,151 @@ cp .env.example .env
 npx expo start
 ```
 
-Then press `i` (iOS simulator), `a` (Android emulator), or scan the QR code with Expo Go on a device.
+Then set `EXPO_PUBLIC_CHURCH_CENTER_URL` in `.env` to the confirmed Canton org.
+`.env.example` ships that line commented out, so an unedited copy shows the
+setup screen on purpose.
 
-The Next.js website at the repo root is separate. Do not run site scripts from this folder.
+Press `i` for the iOS simulator, `a` for the Android emulator, or scan the QR
+code with Expo Go. `react-native-webview` ships in Expo Go, so no development
+build is required to try the shell.
 
-## Environment variables
+Restart Expo after changing `.env`.
 
-| Variable | Required? | Purpose |
-|----------|-----------|---------|
-| `EXPO_PUBLIC_CHURCH_CENTER_URL` | Recommended | Church Center org root, e.g. `https://crestviewbaptist.churchcenter.com`. Defaults to that slug (from the website registrations link). Byron should paste the real org URL if it differs. |
-| `EXPO_PUBLIC_GIVE_URL` | Optional | Overrides Give Online (defaults to MyVanco). |
-| `EXPO_PUBLIC_LIVE_URL` | Optional | Overrides livestream page. |
-| `EXPO_PUBLIC_STAFF_URL` | Optional | Overrides Our Staff page. |
+The Next.js website at the repo root is a separate app. Root `npm run dev` does
+not start this one.
 
-Copy `.env.example` to `.env` for local work. Restart Expo after changing env vars.
+### Environment variables
 
-### How staff find the Church Center URL + Planning Center admin
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `EXPO_PUBLIC_CHURCH_CENTER_URL` | Required | Church Center org root, no trailing slash. No default: when unset, Church Center screens show a setup message instead of loading another church's org |
+| `EXPO_PUBLIC_GIVE_URL` | Optional | Overrides Give Online. Defaults to MyVanco |
+| `EXPO_PUBLIC_LIVE_URL` | Optional | Overrides the livestream page |
+| `EXPO_PUBLIC_STAFF_URL` | Optional | Overrides the Our Staff page |
 
-1. Open [churchcenter.com](https://churchcenter.com) or the church’s published Church Center link (often `https://<org>.churchcenter.com`).
-2. Crestview’s website already points registrations at `https://crestviewbaptist.churchcenter.com/registrations`. Use the same host for calendar (`/calendar`) and groups (`/groups`) unless Planning Center shows a different subdomain.
-3. For **admin** (create events, groups, registrations, rosters): staff sign in at [planningcenter.com](https://planningcenter.com) with a Planning Center organization account. Church Center is the public / member-facing surface; Planning Center Online is where staff manage data.
-4. Paste the org root into `EXPO_PUBLIC_CHURCH_CENTER_URL` (no trailing slash). Example: `https://crestviewbaptist.churchcenter.com`.
+Only `EXPO_PUBLIC_*` values are exposed to the app bundle, so never put a secret
+in `.env` here.
 
-## App tabs
+## Checks
 
-| Tab | Behavior |
-|-----|----------|
-| Home | Crestview branding; links to Give, Live, Staff on the website |
-| Calendar | WebView → Church Center `/calendar` |
-| Groups | WebView → Church Center `/groups` |
-| Classes | WebView → Church Center `/registrations` (class / event signup) |
-| More | Contact, website links, About (Bear Pixel Media credit) |
+```bash
+npm test
+npx tsc --noEmit
+npx expo-doctor
+```
 
-## TestFlight / Play Store notes
+`npm test` runs Jest through the `jest-expo` preset. `constants/config.ts` is
+covered for no org configured, whitespace-only values, path building, and
+trailing-slash trimming. `components/ChurchCenterWebView.test.tsx` checks that
+the setup message renders and no WebView mounts while the org is unset. Device
+behavior still needs the smoke test above.
 
-1. Create an [Expo](https://expo.dev) account and run `npx eas-cli login` then `npx eas-cli init` in this folder (replace the placeholder `extra.eas.projectId` in `app.json`).
-2. Bundle IDs in `app.json`:
+## EAS builds for TestFlight and Play internal testing
+
+The code is finished without any Apple or Google credentials. Credentials are
+only needed when a build is uploaded to a store account. Work through these in
+order: steps 1 to 4 set up the account and project, steps 5 to 8 cover bundle
+IDs, builds, and updates.
+
+1. Create the Expo account at https://expo.dev/signup with the church Gmail.
+   Use a shared username such as `crestview-canton`, verify the email, and keep
+   the recovery details with the church office. The account should belong to the
+   church or to Bear Pixel Media, not to a personal address that may leave with
+   whoever set it up.
+2. Create the EAS access token. Sign in, open Account settings, then Access
+   tokens, and choose Create token. Name it `eas-cli`, keep the default scope,
+   and copy the value once. Expo does not show it again.
+3. Store the token outside the repository:
+   - On this computer: export it in the shell that runs EAS
+     (`export EXPO_TOKEN=...`) or let `eas-cli` prompt for it. Never put it in
+     `.env`, `.env.example`, `.env.local`, or any tracked file.
+   - In automation: add it as a repository secret named `EXPO_TOKEN` under
+     Settings, Secrets and variables, Actions.
+
+   Paste the token into the prompt or the secret field, never into a message.
+4. Confirm the account, then link the project. With `EXPO_TOKEN` set, EAS
+   already knows the account; if you are signed out, run
+   `npx eas-cli@latest login` first. From this folder run:
+
+   ```bash
+   npx eas-cli@latest whoami
+   npx eas-cli@latest init
+   ```
+
+   `whoami` prints the account without printing the token. `init` writes
+   `extra.eas.projectId` into `app.json`; commit that change. If the token is
+   ever pasted into chat, a ticket, or a log, delete it in Access tokens and
+   create a new one.
+5. Bundle IDs are already set in `app.json`:
+
    - iOS: `com.crestviewcanton.mobile`
    - Android: `com.crestviewcanton.mobile`
-3. Apple: church or Bear Pixel Media Apple Developer account → App Store Connect app → EAS build (`eas build --platform ios`) → submit to TestFlight (`eas submit --platform ios`).
-4. Google: Play Console app (Internal testing track first) → EAS Android build → upload AAB.
-5. Privacy: Church Center / Planning Center handle auth and personal data for groups and registrations. Document that in store listings. This app does not store church member data itself.
-6. Icons / splash: replace `assets/images/*` with final Crestview artwork before store submission.
 
-## Stack
+   They can only change before the first store upload.
 
-- Expo SDK 58 + Expo Router
-- TypeScript
-- `react-native-webview` for Church Center
-- Brand colors from the website (`pine` / `paper` palette)
-- Fonts: Cormorant Garamond + Manrope (same families as the site)
+6. Internal builds (TestFlight / Play internal track). `eas.json` defines a
+   `preview` profile that produces an installable build:
 
-## Monorepo note
+   ```bash
+   npx eas-cli@latest build --profile preview --platform ios
+   npx eas-cli@latest build --profile preview --platform android
+   ```
 
-This app lives under `apps/crestview-mobile/` beside the Next.js site. It has its own `package.json` and `node_modules`. Root `npm run dev` still only starts the website.
+   iOS internal builds need each test device registered first
+   (`npx eas-cli@latest device:create`). Android preview builds are APKs.
+
+7. Production builds and store upload:
+
+   ```bash
+   npx eas-cli@latest build --profile production --platform all
+   npx eas-cli@latest submit --platform ios
+   npx eas-cli@latest submit --platform android
+   ```
+
+   - TestFlight: needs an Apple Developer Program membership, an App Store
+     Connect app record for `com.crestviewcanton.mobile`, and either an Apple ID
+     with an app-specific password or an App Store Connect API key. EAS prompts
+     for these on the first iOS build or submit.
+   - Play internal testing: needs a Google Play Console account, an app created
+     for `com.crestviewcanton.mobile`, and a service account JSON with release
+     permissions. Add it with `npx eas-cli@latest credentials`.
+   - The `production` profile auto-increments the build number. App version
+     stays at `app.json` `version` until it is raised by hand.
+
+8. Over-the-air updates are not configured. Add `expo-updates` and an update
+   channel later if the church wants JS-only fixes without a store build.
+
+### Store review notes
+
+- The app is a WebView shell, which Apple reviews under guideline 4.2 (minimum
+  functionality). The native Home, More, and About screens plus church-specific
+  shortcuts are the native value. Expect review questions and have the church's
+  Planning Center plan ready.
+- Privacy: Church Center and Planning Center handle accounts and member data.
+  The app stores no member data itself. Use
+  `https://crestviewcanton.com/privacy` as the privacy policy URL in App Store
+  Connect and Play Console; the page also links Planning Center's policy. The
+  app description can say the app stores no member data.
+- Replace `assets/images/*` if the church supplies newer artwork. The current
+  icons are generated from `public/brand/crestview-mark.png` in this repo.
+
+## Project layout
+
+```
+app/                      Expo Router routes
+  (tabs)/index.tsx        Home
+  (tabs)/groups.tsx       Church Center groups
+  (tabs)/calendar.tsx     Church Center calendar
+  (tabs)/classes.tsx      Church Center registrations
+  (tabs)/more.tsx         Links, contact, Church Center
+  church-center.tsx       Full Church Center WebView
+  about.tsx               Paths, org URL, credits
+components/               BrandLockup, Screen, ChurchCenterWebView
+constants/                Brand colors and config
+```
+
+## Out of scope
+
+- Custom Firebase, Supabase, or other backend
+- Scraping Planning Center APIs without OAuth
+- App Store or Play submission without the church's Apple and Google accounts

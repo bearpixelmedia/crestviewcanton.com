@@ -150,6 +150,12 @@ export const publicRoutes = [
     changeFrequency: "yearly" as const,
     priority: 0.7,
   },
+  {
+    path: "/privacy",
+    title: "Privacy Policy",
+    changeFrequency: "yearly" as const,
+    priority: 0.3,
+  },
 ] as const;
 
 export function absoluteUrl(path: string): string {

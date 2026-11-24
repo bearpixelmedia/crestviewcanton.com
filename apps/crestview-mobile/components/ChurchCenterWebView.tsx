@@ -1,6 +1,8 @@
-import { useCallback, useState } from 'react';
+import { useFocusEffect } from 'expo-router';
+import { type ComponentRef, useCallback, useRef, useState } from 'react';
 import {
   ActivityIndicator,
+  BackHandler,
   Linking,
   Platform,
   Pressable,
@@ -20,8 +22,10 @@ type Props = {
 
 function isChurchCenterHost(hostname: string): boolean {
   return (
-    hostname.endsWith('churchcenter.com') ||
-    hostname.endsWith('planningcenteronline.com')
+    hostname === 'churchcenter.com' ||
+    hostname.endsWith('.churchcenter.com') ||
+    hostname === 'planningcenteronline.com' ||
+    hostname.endsWith('.planningcenteronline.com')
   );
 }
 
@@ -32,17 +36,17 @@ function shouldLoadInWebView(requestUrl: string): boolean {
 
   try {
     const parsed = new URL(requestUrl);
-    if (isChurchCenterHost(parsed.hostname)) {
-      return true;
-    }
-    // Keep auth/oauth flows that Planning Center may open.
+
+    // Church Center, Planning Center admin, and the sign-in identity
+    // providers Planning Center can hand off to.
     if (
-      parsed.hostname.includes('planningcenter') ||
-      parsed.hostname.includes('accounts.google.com') ||
-      parsed.hostname.includes('appleid.apple.com')
+      isChurchCenterHost(parsed.hostname) ||
+      parsed.hostname === 'accounts.google.com' ||
+      parsed.hostname === 'appleid.apple.com'
     ) {
       return true;
     }
+
     return false;
   } catch {
     return true;
@@ -50,9 +54,63 @@ function shouldLoadInWebView(requestUrl: string): boolean {
 }
 
 export function ChurchCenterWebView({ url, title }: Props) {
+  // No org configured means no correct page to show. Fail loudly here instead
+  // of loading a fallback slug that belongs to another church. This check sits
+  // outside the content component so the setup screen renders without a
+  // navigator (and without mounting a WebView).
+  if (!config.churchCenterConfigured) {
+    return <ChurchCenterNotConfigured />;
+  }
+
+  return <ChurchCenterWebViewContent title={title} url={url} />;
+}
+
+function ChurchCenterNotConfigured() {
+  return (
+    <View style={styles.fallback}>
+      <Text style={styles.fallbackTitle}>Church Center is not set up</Text>
+      <Text style={styles.fallbackBody}>
+        This build has no Church Center org, so there is nothing to load. Set
+        EXPO_PUBLIC_CHURCH_CENTER_URL to the Crestview Canton Planning Center
+        org in .env, then restart the app.
+      </Text>
+      <Text style={styles.fallbackCode}>
+        EXPO_PUBLIC_CHURCH_CENTER_URL=https://your-org.churchcenter.com
+      </Text>
+    </View>
+  );
+}
+
+function ChurchCenterWebViewContent({ url, title }: Props) {
+  // react-native-webview 14 types its class generic as never when the class
+  // itself is used as the ref type, so derive the handle from the component.
+  const webViewRef = useRef<ComponentRef<typeof WebView>>(null);
+  const canGoBackRef = useRef(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
+
+  // Android hardware back should walk WebView history before leaving the tab.
+  useFocusEffect(
+    useCallback(() => {
+      if (Platform.OS !== 'android') {
+        return undefined;
+      }
+
+      const subscription = BackHandler.addEventListener(
+        'hardwareBackPress',
+        () => {
+          if (canGoBackRef.current) {
+            webViewRef.current?.goBack();
+            return true;
+          }
+          return false;
+        },
+      );
+
+      return () => subscription.remove();
+    }, []),
+  );
 
   const onShouldStartLoadWithRequest = useCallback(
     (request: { url: string }) => {
@@ -76,7 +134,7 @@ export function ChurchCenterWebView({ url, title }: Props) {
       <View style={styles.fallback}>
         <Text style={styles.fallbackTitle}>{title ?? 'Church Center'}</Text>
         <Text style={styles.fallbackBody}>
-          Church Center opens best in the Expo Go app on a phone, or in your
+          Church Center opens best in the Crestview app on a phone, or in your
           browser.
         </Text>
         <Pressable
@@ -121,14 +179,13 @@ export function ChurchCenterWebView({ url, title }: Props) {
               </Text>
             </Pressable>
           </View>
-          <Text style={styles.hint}>
-            Org URL: {config.churchCenterRoot}
-          </Text>
+          <Text style={styles.hint}>Org URL: {config.churchCenterRoot}</Text>
         </View>
       ) : null}
 
       <WebView
         key={reloadKey}
+        ref={webViewRef}
         source={{ uri: url }}
         style={[styles.webview, error ? styles.webviewHidden : null]}
         onLoadStart={() => {
@@ -142,10 +199,27 @@ export function ChurchCenterWebView({ url, title }: Props) {
             'Church Center did not load. Check your connection or confirm EXPO_PUBLIC_CHURCH_CENTER_URL.',
           );
         }}
+        onHttpError={(event) => {
+          const status = event.nativeEvent.statusCode;
+          if (status >= 400) {
+            setLoading(false);
+            setError(
+              `Church Center returned an error (${status}). Confirm the Church Center URL for the Canton org.`,
+            );
+          }
+        }}
+        onNavigationStateChange={(navigation) => {
+          canGoBackRef.current = navigation.canGoBack;
+        }}
         onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
         startInLoadingState
         allowsBackForwardNavigationGestures
         setSupportMultipleWindows={false}
+        // Keep the Church Center login session across tabs. Church Center uses
+        // cookies for member sign in (groups, directory, registrations).
+        sharedCookiesEnabled
+        thirdPartyCookiesEnabled
+        domStorageEnabled
       />
     </View>
   );
@@ -203,6 +277,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: brand.ink,
+  },
+  fallbackCode: {
+    marginTop: 4,
+    padding: 12,
+    backgroundColor: brand.fog,
+    fontFamily: Platform.select({
+      ios: 'Menlo',
+      android: 'monospace',
+      default: 'monospace',
+    }),
+    fontSize: 13,
+    color: brand.pine,
   },
   buttonRow: {
     flexDirection: 'row',

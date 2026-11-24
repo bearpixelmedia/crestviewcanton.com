@@ -16,20 +16,60 @@ export default function AboutScreen() {
       <View style={styles.content}>
         <Text style={styles.brand}>{config.churchName}</Text>
         <Text style={styles.body}>
-          This app is a branded shell for staff and members. Calendar, groups,
-          and class signup open Planning Center Church Center inside the app.
-          Give, livestream, and staff pages open crestviewcanton.com (or the
-          linked giving provider).
+          This app is a branded shell for staff and class members. Calendar,
+          groups, class signup, and the directory open Planning Center Church
+          Center inside the app. Give, livestream, and staff pages open
+          crestviewcanton.com or the linked giving provider.
         </Text>
 
-        <Text style={styles.section}>Church Center</Text>
+        <Text style={styles.section}>Church Center paths</Text>
+        {config.churchCenterConfigured ? (
+          <>
+            <Text style={styles.body}>
+              Calendar: {config.churchCenter.calendar}
+            </Text>
+            <Text style={styles.body}>Groups: {config.churchCenter.groups}</Text>
+            <Text style={styles.body}>
+              Classes: {config.churchCenter.registrations}
+            </Text>
+            <Text style={styles.body}>
+              The calendar, groups, and class listings are public. Signing in,
+              joining a group, registering, and the directory need a Church
+              Center login. The app keeps that cookie session across tabs.
+            </Text>
+          </>
+        ) : (
+          <Text style={styles.body}>
+            Not configured. Set EXPO_PUBLIC_CHURCH_CENTER_URL in .env to the
+            Canton Planning Center org and restart the app. Church Center does
+            not load until it is set.
+          </Text>
+        )}
+
+        <Text style={styles.section}>Org URL in use</Text>
         <Text style={styles.body}>
-          Org URL in use: {config.churchCenterRoot}
+          {config.churchCenterConfigured
+            ? config.churchCenterRoot
+            : 'None. This build has no Church Center org.'}
         </Text>
         <Text style={styles.body}>
-          Staff: sign in at planningcenter.com for admin. Members use Church
-          Center with the same org URL. If calendar or groups look empty,
-          confirm the slug with Byron and set EXPO_PUBLIC_CHURCH_CENTER_URL.
+          Church Center is the member facing side. Staff create events, groups,
+          and registrations in Planning Center Online. Before distributing a
+          build, confirm this org URL belongs to Crestview in Canton, NC.
+        </Text>
+
+        <Text style={styles.section}>Privacy</Text>
+        <Pressable
+          accessibilityRole="link"
+          accessibilityLabel="Privacy Policy"
+          onPress={() => void Linking.openURL(config.privacyUrl)}
+        >
+          <Text style={styles.credit}>Privacy Policy</Text>
+        </Pressable>
+        <Text style={styles.muted}>{config.privacyUrl}</Text>
+        <Text style={styles.body}>
+          The app stores no member data. Church Center and Planning Center
+          handle accounts and member information.
         </Text>
 
         <Text style={styles.section}>Built by</Text>

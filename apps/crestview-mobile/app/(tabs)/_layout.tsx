@@ -42,23 +42,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="calendar"
-        options={{
-          title: 'Calendar',
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{
-                ios: 'calendar',
-                android: 'calendar_month',
-                web: 'calendar_month',
-              }}
-              tintColor={color}
-              size={Platform.OS === 'ios' ? 26 : 24}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
         name="groups"
         options={{
           title: 'Groups',
@@ -68,6 +51,23 @@ export default function TabLayout() {
                 ios: 'person.3.fill',
                 android: 'groups',
                 web: 'groups',
+              }}
+              tintColor={color}
+              size={Platform.OS === 'ios' ? 26 : 24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="calendar"
+        options={{
+          title: 'Calendar',
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{
+                ios: 'calendar',
+                android: 'calendar_month',
+                web: 'calendar_month',
               }}
               tintColor={color}
               size={Platform.OS === 'ios' ? 26 : 24}

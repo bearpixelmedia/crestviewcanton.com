@@ -1,4 +1,4 @@
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import {
   Linking,
   Pressable,
@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 
+import { BrandLockup } from '@/components/BrandLockup';
 import { Screen } from '@/components/Screen';
 import { brand } from '@/constants/Colors';
 import { config } from '@/constants/config';
@@ -36,20 +37,42 @@ const quickLinks: QuickLink[] = [
 ];
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   return (
-    <Screen
-      title={config.shortName}
-      subtitle={config.tagline}
-    >
+    <Screen>
+      <View style={styles.header}>
+        <BrandLockup />
+        <Text style={styles.tagline}>{config.tagline}</Text>
+      </View>
+
       <View style={styles.heroBand}>
         <Text style={styles.heroEyebrow}>REACH · EQUIP · SEND</Text>
         <Text style={styles.heroBody}>
-          Staff tools and class signup live in Church Center. Use the tabs for
-          calendar, groups, and registrations, or open the website links below.
+          Groups, the church calendar, class signup, and the directory live in
+          Church Center. Use the tabs below or open Church Center here.
         </Text>
       </View>
 
-      <Text style={styles.sectionLabel}>Website links</Text>
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => router.push('/church-center')}
+        style={({ pressed }) => [
+          styles.primaryCard,
+          pressed && styles.linkRowPressed,
+        ]}
+      >
+        <View style={styles.linkCopy}>
+          <Text style={styles.primaryTitle}>Church Center</Text>
+          <Text style={styles.primaryBody}>
+            Sign in once for groups, directory, and everything else Church
+            Center offers.
+          </Text>
+        </View>
+        <Text style={styles.primaryChevron}>›</Text>
+      </Pressable>
+
+      <Text style={styles.sectionLabel}>At Crestview</Text>
       {quickLinks.map((item) => (
         <Pressable
           key={item.label}
@@ -78,11 +101,30 @@ export default function HomeScreen() {
           <Text style={styles.aboutText}>About this app</Text>
         </Pressable>
       </Link>
+
+      <View style={styles.credit}>
+        <Text style={styles.creditText}>Built by </Text>
+        <Pressable
+          accessibilityRole="link"
+          onPress={() => void Linking.openURL(config.bearPixel.url)}
+        >
+          <Text style={styles.creditLink}>{config.bearPixel.name}</Text>
+        </Pressable>
+      </View>
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
+  header: {
+    gap: 8,
+  },
+  tagline: {
+    fontFamily: 'Manrope_400Regular',
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#4a5c54',
+  },
   heroBand: {
     backgroundColor: brand.pine,
     padding: 20,
@@ -108,6 +150,30 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     color: brand.canopy,
     marginTop: 8,
+  },
+  primaryCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: brand.canopy,
+    paddingVertical: 18,
+    paddingHorizontal: 18,
+    gap: 12,
+  },
+  primaryTitle: {
+    fontFamily: 'CormorantGaramond_600SemiBold',
+    fontSize: 24,
+    color: brand.white,
+  },
+  primaryBody: {
+    fontFamily: 'Manrope_400Regular',
+    fontSize: 14,
+    lineHeight: 20,
+    color: brand.fog,
+  },
+  primaryChevron: {
+    fontSize: 28,
+    lineHeight: 28,
+    color: brand.goldSoft,
   },
   linkRow: {
     flexDirection: 'row',
@@ -149,6 +215,25 @@ const styles = StyleSheet.create({
   aboutText: {
     fontFamily: 'Manrope_500Medium',
     fontSize: 15,
+    color: brand.canopy,
+    textDecorationLine: 'underline',
+  },
+  credit: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 8,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: brand.fog,
+  },
+  creditText: {
+    fontFamily: 'Manrope_400Regular',
+    fontSize: 13,
+    color: '#4a5c54',
+  },
+  creditLink: {
+    fontFamily: 'Manrope_600SemiBold',
+    fontSize: 13,
     color: brand.canopy,
     textDecorationLine: 'underline',
   },
