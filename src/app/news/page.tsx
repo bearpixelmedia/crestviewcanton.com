@@ -32,8 +32,17 @@ export default function NewsPage() {
                   Events
                 </Link>{" "}
                 page for the weekly rhythm (Sunday, Wednesday, monthly groups,
-                and Teachlife Radio).
+                and Teachlife Radio), and the Church Center calendar for dated
+                events and sign-ups.
               </p>
+              <a
+                href={site.churchCenter.calendar}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex text-sm font-semibold text-dawn-deep hover:text-canopy"
+              >
+                Church Center Calendar
+              </a>
             </article>
             <article className="border-t border-pine/15 pt-6">
               <h2 className="font-display text-2xl text-pine">On Facebook</h2>

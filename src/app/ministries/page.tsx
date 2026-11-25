@@ -47,12 +47,22 @@ export default function MinistriesPage() {
             the welcome center and greeters can help you find a class. Life
             Groups Director, Josh Jamison.
           </p>
-          <Link
-            href="/adult-ministry"
-            className="mt-8 inline-flex text-sm font-semibold text-canopy underline-offset-4 hover:underline"
-          >
-            See Adult Ministry &amp; Small Groups
-          </Link>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href={site.churchCenter.groups}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog transition-colors hover:bg-canopy"
+            >
+              Find a group on Church Center
+            </a>
+            <Link
+              href="/adult-ministry"
+              className="inline-flex text-sm font-semibold text-canopy underline-offset-4 hover:underline"
+            >
+              See Adult Ministry &amp; Small Groups
+            </Link>
+          </div>
         </div>
       </section>
 

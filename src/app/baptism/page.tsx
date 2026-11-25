@@ -65,7 +65,17 @@ export default function BaptismPage() {
             >
               {site.pastorEmail}
             </a>
-            ) to share your story and schedule baptism.
+            ) to share your story and schedule baptism. Upcoming baptism and
+            class dates are listed in{" "}
+            <a
+              href={site.churchCenter.registrations}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-canopy"
+            >
+              Church Center registrations
+            </a>
+            .
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
