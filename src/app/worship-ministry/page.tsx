@@ -86,6 +86,18 @@ export default function WorshipMinistryPage() {
               volunteers who want to serve. Interested in auditions or joining the
               team? Reach out by email.
             </p>
+            <p className="mt-5 text-sm leading-relaxed text-ink/75">
+              Team rehearsals, auditions, and serving roles are shared in{" "}
+              <a
+                href={site.churchCenter.groups}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-canopy underline-offset-2 hover:underline"
+              >
+                Crestview Worship on Church Center
+              </a>
+              .
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="mailto:crestviewworship2@gmail.com"

@@ -56,6 +56,18 @@ export default function StudentMinistryPage() {
             foundation of faith based on biblical truth, becoming disciples for
             Christ and making an impact for the kingdom of God.
           </p>
+          <p className="mt-4 max-w-2xl text-sm text-ink/75">
+            Camp, retreat, and event dates are posted on the{" "}
+            <a
+              href={site.churchCenter.calendar}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-canopy underline-offset-2 hover:underline"
+            >
+              Church Center calendar
+            </a>
+            .
+          </p>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
             {studentGallery.map((photo) => (

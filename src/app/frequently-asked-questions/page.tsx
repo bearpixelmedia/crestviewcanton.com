@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { faqs } from "@/lib/faqs";
 import { faqPageJsonLd, pageMeta } from "@/lib/seo";
+import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = pageMeta({
@@ -54,6 +55,15 @@ export default function FaqPage() {
             <Link href="/plan-your-visit" className="font-semibold text-canopy">
               Plan Your Visit
             </Link>
+            , and current gathering times, groups, and event sign-ups live on{" "}
+            <a
+              href={site.churchCenter.calendar}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-canopy"
+            >
+              Church Center
+            </a>
             .
           </p>
         </div>

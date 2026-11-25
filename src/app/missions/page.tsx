@@ -72,7 +72,16 @@ export default function MissionsPage() {
             From senior adult ministry and family outreach to community care,
             Crestview looks for practical ways to love our neighbors. Contact the
             church office to learn about current local needs and volunteer
-            opportunities.
+            opportunities, or browse outreach groups on{" "}
+            <a
+              href={site.churchCenter.groups}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-canopy underline-offset-2 hover:underline"
+            >
+              Church Center
+            </a>
+            .
           </p>
         </div>
       </section>
