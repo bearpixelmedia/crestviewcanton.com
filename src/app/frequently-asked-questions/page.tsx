@@ -55,7 +55,7 @@ export default function FaqPage() {
             <Link href="/plan-your-visit" className="font-semibold text-canopy">
               Plan Your Visit
             </Link>
-            , and current gathering times, groups, and event sign-ups live on{" "}
+            . Current gathering times, groups, and event sign-ups live on{" "}
             <a
               href={site.churchCenter.calendar}
               target="_blank"

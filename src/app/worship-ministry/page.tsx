@@ -87,14 +87,14 @@ export default function WorshipMinistryPage() {
               team? Reach out by email.
             </p>
             <p className="mt-5 text-sm leading-relaxed text-ink/75">
-              Team rehearsals, auditions, and serving roles are shared in{" "}
+              Rehearsals, auditions, and serving roles are shared in{" "}
               <a
                 href={site.churchCenter.groups}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-canopy underline-offset-2 hover:underline"
               >
-                Crestview Worship on Church Center
+                Church Center groups
               </a>
               .
             </p>

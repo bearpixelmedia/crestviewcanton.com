@@ -65,8 +65,8 @@ export default function BaptismPage() {
             >
               {site.pastorEmail}
             </a>
-            ) to share your story and schedule baptism. Upcoming baptism and
-            class dates are listed in{" "}
+            ) to share your story and schedule baptism. Upcoming baptism dates
+            are also posted in{" "}
             <a
               href={site.churchCenter.registrations}
               target="_blank"

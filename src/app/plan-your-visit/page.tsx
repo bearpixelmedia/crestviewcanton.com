@@ -80,16 +80,16 @@ export default function PlanYourVisitPage() {
                 ))}
               </ul>
               <p className="mt-6 text-sm leading-relaxed text-ink/70">
-                Special services and one-off gatherings are posted on{" "}
+                Special services and one-off gatherings are posted on the{" "}
                 <a
                   href={site.churchCenter.calendar}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-canopy underline-offset-2 hover:underline"
                 >
-                  Church Center
+                  Church Center calendar
                 </a>
-                , check the calendar before you come.
+                . Check it before you come.
               </p>
             </div>
           </div>

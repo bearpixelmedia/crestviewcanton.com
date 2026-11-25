@@ -114,8 +114,8 @@ export default function ChildrensMinistryPage() {
               Grade, and 2nd–3rd Grade during Morning Worship.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-ink/75">
-              Sign-ups for Vacation Bible School, TeamKID, and other kids events
-              are posted on{" "}
+              Vacation Bible School, TeamKID, and other kids event sign-ups are
+              posted on{" "}
               <a
                 href={site.churchCenter.registrations}
                 target="_blank"
@@ -174,14 +174,6 @@ export default function ChildrensMinistryPage() {
             >
               Plan Your Visit
             </Link>
-            <a
-              href={site.churchCenter.registrations}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-sm border border-pine/25 px-5 py-3 text-sm font-semibold text-pine"
-            >
-              Kids sign-ups on Church Center
-            </a>
             <a
               href={site.social.facebookKids}
               target="_blank"

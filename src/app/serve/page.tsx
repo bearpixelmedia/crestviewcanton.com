@@ -139,14 +139,14 @@ export default function ServePage() {
                 <li>We’ll help with next steps and any training needed.</li>
               </ol>
               <p className="mt-4 text-sm text-ink/75">
-                You can also browse serving roles and ministry groups in{" "}
+                You can also browse serving roles and ministry groups on{" "}
                 <a
                   href={site.churchCenter.groups}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-canopy underline-offset-2 hover:underline"
                 >
-                  Church Center groups
+                  Church Center
                 </a>
                 .
               </p>
