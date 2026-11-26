@@ -13,29 +13,6 @@ export const metadata: Metadata = pageMeta({
   path: "/contact",
 });
 
-const ministryContacts = [
-  {
-    label: "General / Office",
-    detail: `${site.email} · ${site.phone}`,
-  },
-  {
-    label: "Children’s Ministry",
-    detail: "crestview4kidz@gmail.com",
-  },
-  {
-    label: "Youth Ministry",
-    detail: "crestviewyouth3258@gmail.com · 828-371-1235",
-  },
-  {
-    label: "Crestview Worship",
-    detail: "crestviewworship2@gmail.com",
-  },
-  {
-    label: "Senior Adults",
-    detail: site.pastorEmail,
-  },
-] as const;
-
 export default function ContactPage() {
   return (
     <PageShell>
@@ -93,17 +70,53 @@ export default function ContactPage() {
               </div>
             </dl>
 
-            <h3 className="mt-12 font-display text-2xl text-pine">
-              Ministry Contacts
+            <div className="mt-12 border border-pine/15 bg-fog px-6 py-6">
+              <p className="text-sm leading-relaxed text-ink/80">
+                Signing up for something? Joining a group or signing up for a
+                class happens in{" "}
+                <a
+                  href={site.churchCenter.groups}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-canopy underline-offset-2 hover:underline"
+                >
+                  Church Center groups
+                </a>{" "}
+                and{" "}
+                <a
+                  href={site.churchCenter.registrations}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-canopy underline-offset-2 hover:underline"
+                >
+                  Church Center registrations
+                </a>
+                , not through this page.
+              </p>
+            </div>
+
+            <h3 className="mt-10 font-display text-2xl text-pine">
+              Questions about a ministry?
             </h3>
-            <ul className="mt-5 space-y-4">
-              {ministryContacts.map((c) => (
-                <li key={c.label} className="text-sm">
-                  <p className="font-semibold text-canopy">{c.label}</p>
-                  <p className="text-ink/75">{c.detail}</p>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-3 text-sm leading-relaxed text-ink/75">
+              For questions rather than signups — children’s, students,
+              worship, senior adults, or anything else — start with the church
+              office and we’ll connect you with the right leader. Call{" "}
+              <a
+                href={`tel:${site.phoneTel}`}
+                className="font-semibold text-canopy"
+              >
+                {site.phone}
+              </a>{" "}
+              or email{" "}
+              <a
+                href={`mailto:${site.email}`}
+                className="font-semibold text-canopy"
+              >
+                {site.email}
+              </a>
+              .
+            </p>
           </div>
 
           <div className="bg-fog px-6 py-8 sm:px-8">
