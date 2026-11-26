@@ -14,46 +14,14 @@ export const metadata: Metadata = pageMeta({
 });
 
 const opportunities = [
-  {
-    area: "Crestview Worship",
-    contact: "Anita · crestviewworship2@gmail.com",
-    href: "/worship-ministry",
-  },
-  {
-    area: "Children’s Ministry / VBS / TeamKid / God’s Kidz",
-    contact: "crestview4kidz@gmail.com",
-    href: "mailto:crestview4kidz@gmail.com",
-  },
-  {
-    area: "Student Ministry",
-    contact: "Jarred Rathbone · crestviewyouth3258@gmail.com",
-    href: "mailto:crestviewyouth3258@gmail.com",
-  },
-  {
-    area: "Life Group teaching & hospitality",
-    contact: "Josh Jamison · joshuabradyj@gmail.com",
-    href: "mailto:joshuabradyj@gmail.com",
-  },
-  {
-    area: "Revolve Women Missions & Service",
-    contact: "Rhonda Beck · rhonda@1smartagency.com",
-    href: "mailto:rhonda@1smartagency.com",
-  },
-  {
-    area: "Senior Adult Ministry",
-    contact: `Pastor Dan · ${site.pastorEmail}`,
-    href: `mailto:${site.pastorEmail}`,
-  },
-  {
-    area: "Greeting / Welcome Center",
-    contact: `Sharon · ${site.email}`,
-    href: `mailto:${site.email}`,
-  },
-  {
-    area: "Men’s Ministry (God’s Mighty Warriors)",
-    contact: "Steve Kelley · chief1301@charter.net",
-    href: "mailto:chief1301@charter.net",
-  },
+  "Crestview Worship",
+  "Children’s Ministry / VBS / TeamKid / God’s Kidz",
+  "Student Ministry",
+  "Life Group teaching & hospitality",
+  "Revolve Women Missions & Service",
+  "Senior Adult Ministry",
+  "Greeting / Welcome Center",
+  "Men’s Ministry (God’s Mighty Warriors)",
 ] as const;
 
 export default function ServePage() {
@@ -88,21 +56,48 @@ export default function ServePage() {
             Where you can serve
           </h2>
           <ul className="mt-8 space-y-4">
-            {opportunities.map((o) => (
+            {opportunities.map((area) => (
               <li
-                key={o.area}
-                className="flex flex-col gap-1 border-b border-pine/10 pb-4 sm:flex-row sm:items-baseline sm:justify-between"
+                key={area}
+                className="border-b border-pine/10 pb-4 text-sm font-semibold text-pine"
               >
-                <span className="text-sm font-semibold text-pine">{o.area}</span>
-                <a
-                  href={o.href}
-                  className="text-sm text-canopy hover:underline"
-                >
-                  {o.contact}
-                </a>
+                {area}
               </li>
             ))}
           </ul>
+
+          <div className="mt-8 border border-pine/15 bg-fog px-6 py-6 sm:px-8">
+            <p className="text-sm leading-relaxed text-ink/80">
+              Ready to jump in? Every serving team is listed in{" "}
+              <a
+                href={site.churchCenter.groups}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-canopy underline-offset-2 hover:underline"
+              >
+                Church Center groups
+              </a>
+              , where you can join a team and see what is coming up.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-ink/70">
+              Not sure where you fit, or would rather talk it through? Call the
+              office at{" "}
+              <a
+                href={`tel:${site.phoneTel}`}
+                className="font-semibold text-canopy"
+              >
+                {site.phone}
+              </a>{" "}
+              or email{" "}
+              <a
+                href={`mailto:${site.email}`}
+                className="font-semibold text-canopy"
+              >
+                {site.email}
+              </a>
+              .
+            </p>
+          </div>
 
           <div className="mt-14 grid gap-12 lg:grid-cols-2">
             <div>
@@ -113,12 +108,15 @@ export default function ServePage() {
                 Crestview Worship exists to lead worshippers into authentic
                 worship through music, prayer, and technology. We’re always
                 looking for people with a passion for serving through music and
-                media production. Interested? Ask about the audition process at{" "}
+                media production. Rehearsals, auditions, and serving roles are
+                shared in{" "}
                 <a
-                  href="mailto:crestviewworship2@gmail.com"
-                  className="font-semibold text-canopy"
+                  href={site.churchCenter.groups}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-canopy underline-offset-2 hover:underline"
                 >
-                  crestviewworship2@gmail.com
+                  Church Center groups
                 </a>
                 .
               </p>
@@ -135,24 +133,12 @@ export default function ServePage() {
               </h3>
               <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-ink/75">
                 <li>Pray about where God is leading you to serve.</li>
-                <li>Contact the church office or the ministry leader above.</li>
+                <li>
+                  Find your team in Church Center, or contact the church office.
+                </li>
                 <li>We’ll help with next steps and any training needed.</li>
               </ol>
-              <p className="mt-4 text-sm text-ink/75">
-                You can also browse serving roles and ministry groups on{" "}
-                <a
-                  href={site.churchCenter.groups}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-canopy underline-offset-2 hover:underline"
-                >
-                  Church Center
-                </a>
-                .
-              </p>
-              <p className="mt-4 text-sm text-ink/65">
-                Office: {site.phone} · {site.email}
-              </p>
+
               <a
                 href={site.giveUrl}
                 target="_blank"
