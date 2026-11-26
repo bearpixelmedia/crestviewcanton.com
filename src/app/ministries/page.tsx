@@ -127,14 +127,25 @@ export default function MinistriesPage() {
                 >
                   Visit Worship Ministry
                 </Link>{" "}
-                or contact Anita about auditions:{" "}
+                and look for auditions and serving roles in{" "}
+                <a
+                  href={site.churchCenter.groups}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-canopy underline-offset-2 hover:underline"
+                >
+                  Church Center groups
+                </a>
+                .
+              </p>
+              <p className="mt-3 text-sm text-ink/55">
+                Questions for Anita Diaz?{" "}
                 <a
                   href="mailto:crestviewworship2@gmail.com"
-                  className="font-semibold text-canopy"
+                  className="hover:text-pine"
                 >
                   crestviewworship2@gmail.com
                 </a>
-                .
               </p>
               <p className="mt-4 text-sm leading-relaxed text-ink/75">
                 Family Ministry includes God’s Kidz, Children’s Choir, and

@@ -83,27 +83,17 @@ export default function WorshipMinistryPage() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink/75">
               Anita leads Crestview Worship and welcomes musicians and production
-              volunteers who want to serve. Interested in auditions or joining the
-              team? Reach out by email.
+              volunteers who want to serve. Rehearsals, auditions, and serving
+              roles are shared in Church Center groups.
             </p>
-            <p className="mt-5 text-sm leading-relaxed text-ink/75">
-              Rehearsals, auditions, and serving roles are shared in{" "}
+            <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={site.churchCenter.groups}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-canopy underline-offset-2 hover:underline"
-              >
-                Church Center groups
-              </a>
-              .
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="mailto:crestviewworship2@gmail.com"
                 className="rounded-sm bg-pine px-6 py-3.5 text-sm font-semibold text-fog transition-colors hover:bg-canopy"
               >
-                Email Crestview Worship
+                Join the team on Church Center
               </a>
               <Link
                 href="/our-staff"
@@ -119,7 +109,17 @@ export default function WorshipMinistryPage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-ink/55">
-              {site.phone} · crestviewworship2@gmail.com
+              Questions?{" "}
+              <a href={`tel:${site.phoneTel}`} className="hover:text-pine">
+                {site.phone}
+              </a>{" "}
+              ·{" "}
+              <a
+                href="mailto:crestviewworship2@gmail.com"
+                className="hover:text-pine"
+              >
+                crestviewworship2@gmail.com
+              </a>
             </p>
           </div>
         </div>

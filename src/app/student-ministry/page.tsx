@@ -75,6 +75,15 @@ export default function StudentMinistryPage() {
             >
               Church Center registrations
             </a>
+            . The youth group and its serving teams are listed in{" "}
+            <a
+              href={site.churchCenter.groups}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-canopy underline-offset-2 hover:underline"
+            >
+              Church Center groups
+            </a>
             .
           </p>
 
