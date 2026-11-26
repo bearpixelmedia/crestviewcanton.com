@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { photos } from "@/lib/photos";
@@ -164,6 +165,7 @@ export default function AdultMinistryPage() {
               Plan Your Visit
             </Link>
           </div>
+          <ChurchCenterNote className="mt-4" tone="dark" />
         </div>
       </section>
     </PageShell>

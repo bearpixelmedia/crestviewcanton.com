@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
@@ -57,6 +58,7 @@ export default function BaptismPage() {
             Upcoming baptism dates are posted in Church Center registrations,
             where you can sign up and tell us a little of your story.
           </p>
+          <ChurchCenterNote className="mt-3" />
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
@@ -66,6 +67,7 @@ export default function FaqPage() {
             </a>
             .
           </p>
+          <ChurchCenterNote className="mt-3" />
         </div>
       </section>
     </PageShell>

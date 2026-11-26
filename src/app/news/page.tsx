@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
@@ -42,6 +43,7 @@ export default function NewsPage() {
               >
                 Dated events on Church Center
               </a>
+              <ChurchCenterNote className="mt-3" />
             </article>
             <article className="border-t border-pine/15 pt-6">
               <h2 className="font-display text-2xl text-pine">On Facebook</h2>

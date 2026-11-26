@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { photos } from "@/lib/photos";
@@ -55,6 +56,7 @@ export default function MissionsPage() {
             </a>
             ; for questions, contact the church office.
           </p>
+          <ChurchCenterNote className="mt-3" />
 
           <h2 className="mt-10 font-display text-3xl text-pine">
             Living Our Vision

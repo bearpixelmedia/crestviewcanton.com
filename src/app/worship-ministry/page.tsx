@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { photos } from "@/lib/photos";
@@ -86,6 +87,7 @@ export default function WorshipMinistryPage() {
               volunteers who want to serve. Rehearsals, auditions, and serving
               roles are shared in Church Center groups.
             </p>
+            <ChurchCenterNote className="mt-4" />
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={site.churchCenter.groups}

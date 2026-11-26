@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
@@ -189,6 +190,7 @@ export default function MembershipPage() {
               Contact Us
             </Link>
           </div>
+          <ChurchCenterNote className="mt-6" />
         </div>
       </section>
     </PageShell>

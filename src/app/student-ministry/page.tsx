@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { photos } from "@/lib/photos";
@@ -86,6 +87,7 @@ export default function StudentMinistryPage() {
             </a>
             .
           </p>
+          <ChurchCenterNote className="mt-3" />
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
             {studentGallery.map((photo) => (

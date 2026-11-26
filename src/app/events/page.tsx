@@ -1,3 +1,4 @@
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { GiveOnlineCta } from "@/components/GiveOnlineCta";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
@@ -103,6 +104,7 @@ export default function EventsPage() {
           >
             Church Center Calendar
           </a>
+          <ChurchCenterNote className="mt-4" tone="dark" />
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
@@ -145,6 +146,7 @@ export default function PlanYourVisitPage() {
                 </a>
                 .
               </p>
+              <ChurchCenterNote className="mt-3" />
             </div>
           </div>
         </div>

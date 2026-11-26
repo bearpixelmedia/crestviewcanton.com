@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
 import { site } from "@/lib/site";
@@ -135,6 +136,7 @@ export default function ChildrensMinistryPage() {
               </a>
               .
             </p>
+            <ChurchCenterNote className="mt-4" />
           </div>
         </div>
       </section>

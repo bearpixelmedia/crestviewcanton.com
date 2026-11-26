@@ -106,6 +106,7 @@ export const navGroups = [
       { href: "/baptism", label: "Baptism" },
       { href: "/give-online", label: "Ways to Give" },
       { href: "/contact", label: "Contact" },
+      { href: "/church-center", label: "Church Center" },
     ],
   },
   {

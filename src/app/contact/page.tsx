@@ -1,3 +1,4 @@
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { ContactForm } from "@/components/ContactForm";
 import { GiveOnlineCta } from "@/components/GiveOnlineCta";
 import { PageHero } from "@/components/PageHero";
@@ -93,6 +94,7 @@ export default function ContactPage() {
                 </a>
                 , not through this page.
               </p>
+              <ChurchCenterNote className="mt-3" />
             </div>
 
             <h3 className="mt-10 font-display text-2xl text-pine">

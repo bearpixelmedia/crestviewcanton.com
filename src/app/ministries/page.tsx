@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { GiveOnlineCta } from "@/components/GiveOnlineCta";
 import { PageHero } from "@/components/PageHero";
 import { PageShell } from "@/components/PageShell";
@@ -147,6 +148,7 @@ export default function MinistriesPage() {
                   crestviewworship2@gmail.com
                 </a>
               </p>
+              <ChurchCenterNote className="mt-3" />
               <p className="mt-4 text-sm leading-relaxed text-ink/75">
                 Family Ministry includes God’s Kidz, Children’s Choir, and
                 seasonal activities.

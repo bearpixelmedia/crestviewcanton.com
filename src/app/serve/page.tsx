@@ -1,3 +1,4 @@
+import { ChurchCenterNote } from "@/components/ChurchCenterNote";
 import { ContactForm } from "@/components/ContactForm";
 import { GiveOnlineCta } from "@/components/GiveOnlineCta";
 import { PageHero } from "@/components/PageHero";
@@ -97,6 +98,7 @@ export default function ServePage() {
               </a>
               .
             </p>
+            <ChurchCenterNote className="mt-3" />
           </div>
 
           <div className="mt-14 grid gap-12 lg:grid-cols-2">

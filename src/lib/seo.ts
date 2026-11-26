@@ -115,6 +115,12 @@ export const publicRoutes = [
     priority: 0.8,
   },
   {
+    path: "/church-center",
+    title: "Church Center",
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  },
+  {
     path: "/sermons-media",
     title: "Sermons & Media",
     changeFrequency: "weekly" as const,
