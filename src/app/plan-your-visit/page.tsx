@@ -132,6 +132,19 @@ export default function PlanYourVisitPage() {
                 submitLabel="Send visit note"
                 className="mt-6"
               />
+              <p className="mt-5 text-sm leading-relaxed text-ink/60">
+                This note goes to the church office. Classes and events you can
+                sign up for are listed in{" "}
+                <a
+                  href={site.churchCenter.registrations}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-canopy underline-offset-2 hover:underline"
+                >
+                  Church Center
+                </a>
+                .
+              </p>
             </div>
           </div>
         </div>

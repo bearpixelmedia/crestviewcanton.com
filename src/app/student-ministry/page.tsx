@@ -66,6 +66,15 @@ export default function StudentMinistryPage() {
             >
               Church Center calendar
             </a>
+            ; when camp or retreat sign-ups open, they appear in{" "}
+            <a
+              href={site.churchCenter.registrations}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-canopy underline-offset-2 hover:underline"
+            >
+              Church Center registrations
+            </a>
             .
           </p>
 
