@@ -71,6 +71,17 @@ export function SiteFooter() {
               </a>
             </li>
           </ul>
+          <p className="mt-5 text-sm text-mist/80">
+            <a
+              href={site.churchCenter.root}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-fog underline-offset-2 hover:underline"
+            >
+              Church Center
+            </a>{" "}
+            · events, groups, and signups
+          </p>
           <a
             href={site.giveUrl}
             target="_blank"

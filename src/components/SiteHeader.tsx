@@ -114,6 +114,14 @@ export function SiteHeader({ variant }: Props) {
             ))}
           </nav>
           <a
+            href={site.churchCenter.root}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${triggerClass} ml-2 hidden rounded-sm px-2.5 py-2 xl:inline-flex`}
+          >
+            Church Center
+          </a>
+          <a
             href={site.giveUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -211,6 +219,15 @@ export function SiteHeader({ variant }: Props) {
               className="mb-5 inline-flex w-fit rounded-sm bg-dawn px-4 py-2.5 text-base font-semibold text-forest"
             >
               Give Online
+            </a>
+            <a
+              href={site.churchCenter.root}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="mb-5 inline-flex w-fit rounded-sm border border-mist/30 px-4 py-2.5 text-base font-semibold text-fog"
+            >
+              Church Center
             </a>
             {navGroups.map((group) => (
               <div key={group.id} className="mb-5 last:mb-0">

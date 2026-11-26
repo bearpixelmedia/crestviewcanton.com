@@ -43,13 +43,17 @@ export default function MissionsPage() {
             />
           </div>
           <p className="text-sm text-ink/70">
-            Outreach Coordinators, Jason &amp; Holly Haley ·{" "}
+            Outreach Coordinators, Jason &amp; Holly Haley. Outreach teams and
+            signups are listed in{" "}
             <a
-              href="mailto:hoddiewells86@gmail.com"
-              className="font-semibold text-canopy"
+              href={site.churchCenter.groups}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-canopy underline-offset-2 hover:underline"
             >
-              hoddiewells86@gmail.com
+              Church Center groups
             </a>
+            ; for questions, contact the church office.
           </p>
 
           <h2 className="mt-10 font-display text-3xl text-pine">

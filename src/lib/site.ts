@@ -33,6 +33,7 @@ export const site = {
   giveUrl: "https://secure.myvanco.com/L-ZB2Z/home",
   /** Church Center org the office keeps current for events, groups, and signups. */
   churchCenter: {
+    root: "https://crestviewbaptistchurch.churchcenter.com",
     calendar: "https://crestviewbaptistchurch.churchcenter.com/calendar",
     groups: "https://crestviewbaptistchurch.churchcenter.com/groups",
     registrations:
