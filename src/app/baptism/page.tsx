@@ -54,34 +54,22 @@ export default function BaptismPage() {
             Ready to take this next step?
           </h3>
           <p className="mt-3 text-ink/80 leading-relaxed">
-            Contact the church office (
-            <a href={`tel:${site.phoneTel}`} className="font-semibold text-canopy">
-              {site.phone}
-            </a>
-            ) or Pastor Dan (
-            <a
-              href={`mailto:${site.pastorEmail}`}
-              className="font-semibold text-canopy"
-            >
-              {site.pastorEmail}
-            </a>
-            ) to share your story and schedule baptism. Upcoming baptism dates
-            are also posted in{" "}
+            Upcoming baptism dates are posted in Church Center registrations,
+            where you can sign up and tell us a little of your story.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={site.churchCenter.registrations}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-canopy"
+              className="rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog transition-colors hover:bg-canopy"
             >
-              Church Center registrations
+              Sign up on Church Center
             </a>
-            .
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-3">
             <Link
               href="/our-beliefs"
-              className="rounded-sm bg-pine px-5 py-3 text-sm font-semibold text-fog"
+              className="rounded-sm border border-pine/25 px-5 py-3 text-sm font-semibold text-pine"
             >
               Our Beliefs
             </Link>
@@ -98,6 +86,21 @@ export default function BaptismPage() {
               Join Us Sunday
             </Link>
           </div>
+
+          <p className="mt-5 text-sm text-ink/55">
+            Questions first? Call the office at{" "}
+            <a href={`tel:${site.phoneTel}`} className="hover:text-pine">
+              {site.phone}
+            </a>{" "}
+            or email Pastor Dan at{" "}
+            <a
+              href={`mailto:${site.pastorEmail}`}
+              className="hover:text-pine"
+            >
+              {site.pastorEmail}
+            </a>
+            .
+          </p>
         </div>
       </section>
     </PageShell>
