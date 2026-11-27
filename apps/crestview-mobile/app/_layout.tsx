@@ -90,6 +90,14 @@ export default function RootLayout() {
             contentStyle: { backgroundColor: colors.paper },
           }}
         />
+        <Stack.Screen
+          name="church-center"
+          options={{
+            presentation: 'modal',
+            headerShown: false,
+            contentStyle: { backgroundColor: colors.paper },
+          }}
+        />
       </Stack>
     </ThemeProvider>
   );

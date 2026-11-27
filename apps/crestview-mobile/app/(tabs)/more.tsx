@@ -46,6 +46,11 @@ function buildGroups(push: (href: Href) => void): Group[] {
           meta: 'Church Center',
           onPress: () => push('/classes'),
         },
+        {
+          label: 'What is Church Center?',
+          meta: 'Guide',
+          onPress: () => push('/church-center'),
+        },
       ],
     },
     {

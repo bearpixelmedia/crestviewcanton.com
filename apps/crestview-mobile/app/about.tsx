@@ -69,6 +69,14 @@ export default function AboutScreen() {
             in the app opens in your browser.
           </Text>
           <Text style={styles.orgUrl}>{config.churchCenterUrl}</Text>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => router.push('/church-center')}
+            style={({ pressed }) => [styles.linkRow, pressed ? styles.pressed : null]}
+          >
+            <Text style={styles.linkLabel}>What is Church Center, and how do I sign in?</Text>
+            <Text style={styles.chevron}>›</Text>
+          </Pressable>
 
           <Text style={styles.section}>Visit us</Text>
           <View style={styles.card}>
@@ -205,6 +213,24 @@ const styles = StyleSheet.create({
     fontFamily: fonts.medium,
     fontSize: 13,
     lineHeight: 20,
+    color: colors.canopy,
+  },
+  linkRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    marginTop: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+  },
+  linkLabel: {
+    flex: 1,
+    fontFamily: fonts.medium,
+    fontSize: 14.5,
+    lineHeight: 21,
     color: colors.canopy,
   },
   row: {
